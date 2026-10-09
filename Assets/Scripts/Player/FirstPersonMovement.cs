@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class FirstPersonMovement : MonoBehaviour
 {
-    private Vector3 Velocity;
-    private Vector3 PlayerMovementInput;
-    private Vector2 PlayerMouseInput;
-    private float xRotation;
+    private Vector3 _velocity;
+    private Vector3 _playerMovementInput;
+    private Vector2 _playerMouseInput;
+    private float _xRotation;
 
     [Header("Components Needed")]
-    [SerializeField] private Transform PlayerCamera;
-    [SerializeField] private CharacterController Controller;
-    [SerializeField] private Transform Player;
+    [SerializeField] private Transform playerCamera;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private Transform player;
     [Space]
     [Header("Movement")]
-    [SerializeField] private float Speed;
-    [SerializeField] private float JumpForce;
-    [SerializeField] private float Sensetivity;
-    [SerializeField] private float Gravity = 9.81f;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float sensetivity;
+    [SerializeField] private float gravity = 9.81f;
 
     void Start()
     {
@@ -27,8 +27,8 @@ public class FirstPersonMovement : MonoBehaviour
     void Update()
     {
 
-        PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-        PlayerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        _playerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        _playerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         MovePlayer();
         MoveCamera();
@@ -36,33 +36,33 @@ public class FirstPersonMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput);
+        Vector3 MoveVector = transform.TransformDirection(_playerMovementInput);
 
 
-        if (Controller.isGrounded)
+        if (controller.isGrounded)
         {
-            Velocity.y = -1f;
+            _velocity.y = -1f;
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Velocity.y = JumpForce;
+                _velocity.y = jumpForce;
             }
         }
         else
         {
-            Velocity.y += Gravity * -2f * Time.deltaTime;
+            _velocity.y += gravity * -2f * Time.deltaTime;
         }
 
-        Controller.Move(MoveVector * Speed * Time.deltaTime);
-        Controller.Move(Velocity * Time.deltaTime);
+        controller.Move(MoveVector * speed * Time.deltaTime);
+        controller.Move(_velocity * Time.deltaTime);
 
     }
     private void MoveCamera()
     {
-        xRotation -= PlayerMouseInput.y * Sensetivity;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        _xRotation -= _playerMouseInput.y * sensetivity;
+        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
 
-        transform.Rotate(0f, PlayerMouseInput.x * Sensetivity, 0f);
-        PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        transform.Rotate(0f, _playerMouseInput.x * sensetivity, 0f);
+        playerCamera.transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
     }
 }
