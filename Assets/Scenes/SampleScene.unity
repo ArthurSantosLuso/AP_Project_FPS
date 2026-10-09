@@ -408,6 +408,127 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1845889458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8890073781221950465, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+  m_PrefabInstance: {fileID: 7635328786013796763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1845889459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845889458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfcd142b9f647284ea47cebe5b28f33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapon
+  abilities:
+  - {fileID: 1845889460}
+--- !u!114 &1845889460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845889458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc48bfeab19ef641ab0e919955eb935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RevolverShot
+  actionAudio: {fileID: 0}
+  staminaCost: 0
+  shakeIntensity: 0.5
+  shakeDuration: 0.2
+  shakeDelay: 0.2
+  onHitTimeScale: 0.02
+  onHitTimeScaleDuration: 0.05
+--- !u!1 &1998424268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+  m_PrefabInstance: {fileID: 7635328786013796763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1998424276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998424268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872d67c25d961264b86c861caaad91ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxValue: 100
+  shakeIntensityMultiplier: 0.5
+  shakeDuration: 0.2
+--- !u!114 &1998424277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998424268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05aef6cf9c1f59647afddcbc39657021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  shouldConsiderInteractable: 0
+  shouldAttack: 1
+  shouldUseStamina: 0
+  shouldUseHealth: 1
+  shouldUseUpgrades: 0
+  weapons:
+  - {fileID: 1845889459}
+  valuesBase:
+  - {fileID: 1998424276}
+--- !u!114 &1998424278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998424268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1998424279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998424268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7717289b7f785448b9d970178b16b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
 --- !u!1001 &7635328786013796763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -463,7 +584,25 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1998424277}
+    - targetCorrespondingSourceObject: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1998424276}
+    - targetCorrespondingSourceObject: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1998424279}
+    - targetCorrespondingSourceObject: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1998424278}
+    - targetCorrespondingSourceObject: {fileID: 8890073781221950465, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1845889459}
+    - targetCorrespondingSourceObject: {fileID: 8890073781221950465, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1845889460}
   m_SourcePrefab: {fileID: 100100000, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
