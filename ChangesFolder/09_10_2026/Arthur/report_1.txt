@@ -1,0 +1,11 @@
+Author: Arthur
+Date: 2026-10-09 23:06:33
+----------------------------------------
+Adicionei efeitos de parficulas e VFX para o disparo do revolver.
+Também implementei o sistema de Character -> Weapon -> Ability previamente desenvolvido no projeto de DJD3.
+Vou tentar alterar o sistema para suportar weapon em cada mão, para assim ter o revolver equipada na mão direita e a "mão" equipada na esqueda.
+Em ultimo caso vou fazer que o revolver possua as 3 abilities - Punch, Shot & Parry.
+
+Link para tutorial das particulas: https://www.youtube.com/watch?v=adgeiUNlajY
+
+Link para tutorial do VFX: https://www.youtube.com/watch?v=dPJQuD93-Ks
