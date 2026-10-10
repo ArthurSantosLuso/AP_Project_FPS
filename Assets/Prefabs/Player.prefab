@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5771710805995000836}
+  - {fileID: 3893056271542771335}
   m_Father: {fileID: 3701202999447605525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &277409132054013447
@@ -360,7 +361,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8939479719961633922}
         m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
-        m_MethodName: OnLightAttack
+        m_MethodName: TriggerAbilityZero
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -424,6 +425,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8939479719961633922}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: TriggerAbilityOne
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 14eaef6c-b3a1-4fbe-bafd-1e9df16a9a81
+    m_ActionName: 'Player/Parry[/Keyboard/f]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -437,6 +454,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2478682883082336603}
     m_Modifications:
+    - target: {fileID: 149431308436100769, guid: 7d380dbef0486c04287514313106bb98, type: 3}
+      propertyPath: 'abilities.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5356693719774360497}
     - target: {fileID: 5702408073525105485, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.336
@@ -502,3 +523,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5702408073525105485, guid: 7d380dbef0486c04287514313106bb98, type: 3}
   m_PrefabInstance: {fileID: 2250174236533786441}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2970397340334355517
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2478682883082336603}
+    m_Modifications:
+    - target: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.548
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.781
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9209901
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.38958603
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -45.858
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409826685247198458, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: m_Name
+      value: HandPlaceholder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 200637d1a8332374e926b212d4436448, type: 3}
+--- !u!4 &3893056271542771335 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2251257384339843770, guid: 200637d1a8332374e926b212d4436448, type: 3}
+  m_PrefabInstance: {fileID: 2970397340334355517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5356693719774360497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7164721412351166348, guid: 200637d1a8332374e926b212d4436448, type: 3}
+  m_PrefabInstance: {fileID: 2970397340334355517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c308ce828b4cc46a5042232794f646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParryAbility

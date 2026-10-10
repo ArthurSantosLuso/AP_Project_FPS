@@ -15183,6 +15183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   abilities:
   - {fileID: 4704967608929118273}
+  - {fileID: 0}
 --- !u!114 &4704967608929118273
 MonoBehaviour:
   m_ObjectHideFlags: 0
