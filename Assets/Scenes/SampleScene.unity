@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 1342570247}
   - component: {fileID: 1342570246}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Dummy Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
