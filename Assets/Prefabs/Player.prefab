@@ -168,7 +168,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5327,7 +5327,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -10257,7 +10257,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -15151,7 +15151,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -20009,6 +20009,10 @@ GameObject:
   - component: {fileID: 8871023123450388918}
   - component: {fileID: 2871613101378338267}
   - component: {fileID: 2495520105243189091}
+  - component: {fileID: 8098189878815549309}
+  - component: {fileID: 2873379133418613361}
+  - component: {fileID: 8939479719961633922}
+  - component: {fileID: 324852064982861304}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -20180,6 +20184,84 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8098189878815549309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05aef6cf9c1f59647afddcbc39657021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  shouldConsiderInteractable: 0
+  shouldAttack: 1
+  shouldUseStamina: 0
+  shouldUseHealth: 1
+  shouldUseUpgrades: 0
+  weapons:
+  - {fileID: 7392848264006709046}
+  valuesBase:
+  - {fileID: 2873379133418613361}
+--- !u!114 &2873379133418613361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872d67c25d961264b86c861caaad91ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxValue: 100
+  shakeIntensityMultiplier: 0.5
+  shakeDuration: 0.2
+--- !u!114 &8939479719961633922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7717289b7f785448b9d970178b16b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
+--- !u!114 &324852064982861304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &2250174236533786441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20273,7 +20355,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2577843959690410496, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7608024154236926857}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7234428668316648264, guid: 7d380dbef0486c04287514313106bb98, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7392848264006709046}
+    - targetCorrespondingSourceObject: {fileID: 7234428668316648264, guid: 7d380dbef0486c04287514313106bb98, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3041090837375681658}
   m_SourcePrefab: {fileID: 100100000, guid: 7d380dbef0486c04287514313106bb98, type: 3}
 --- !u!4 &4394509277187718473 stripped
 Transform:
@@ -20290,3 +20378,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5702408073525105485, guid: 7d380dbef0486c04287514313106bb98, type: 3}
   m_PrefabInstance: {fileID: 2250174236533786441}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8890073781221950465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7234428668316648264, guid: 7d380dbef0486c04287514313106bb98, type: 3}
+  m_PrefabInstance: {fileID: 2250174236533786441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7392848264006709046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8890073781221950465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfcd142b9f647284ea47cebe5b28f33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapon
+  abilities:
+  - {fileID: 3041090837375681658}
+--- !u!114 &3041090837375681658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8890073781221950465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc48bfeab19ef641ab0e919955eb935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RevolverShot
+  actionAudio: {fileID: 0}
+  staminaCost: 0
+  shakeIntensity: 0.5
+  shakeDuration: 0.2
+  shakeDelay: 0.2
+  onHitTimeScale: 0.02
+  onHitTimeScaleDuration: 0.05
