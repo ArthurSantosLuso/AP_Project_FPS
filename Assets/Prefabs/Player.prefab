@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 277409132054013447}
   - component: {fileID: 6274899463555890184}
   - component: {fileID: 4174437069481277953}
+  - component: {fileID: 4970092816861793775}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -139,6 +140,35 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &4970092816861793775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303212111548186670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972bd529a1e795348aa2b1069c920454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraEffects
+  movement: {fileID: 2871613101378338267}
+  playerInput: {fileID: 8939479719961633922}
+  playerCamera: {fileID: 277409132054013447}
+  speedLines: {fileID: 0}
+  dashFovBoost: 30
+  aimFov: 25
+  fovSpeed: 12
+  strafeTilt: 2.5
+  dashTilt: 6
+  tiltSpeed: 10
+  bobFrequency: 12
+  bobHeight: 0.04
+  bobSmoothing: 10
+  landingDipPerSpeed: 0.02
+  maxLandingDip: 0.3
+  landingRecoverSpeed: 8
+  speedLinesFadeSpeed: 15
 --- !u!1 &3943055605265084933
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,16 +335,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175aa8b1ff3ef344399adfa95e78d5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstPersonMovement
-  playerCamera: {fileID: 2478682883082336603}
+  playerCamera: {fileID: 620008582986588458}
   controller: {fileID: 8871023123450388918}
   player: {fileID: 3701202999447605525}
   speed: 8
   jumpForce: 5
   sensetivity: 3
   gravity: 9.81
-  _dashSpeed: 30
-  _dashDuration: 0.15
-  _dashCooldown: 0.8
+  dashSpeed: 30
+  dashDuration: 0.15
+  dashCooldown: 0.8
 --- !u!114 &8098189878815549309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7717289b7f785448b9d970178b16b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
+  crosshairAnimator: {fileID: 0}
 --- !u!114 &324852064982861304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +507,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 14eaef6c-b3a1-4fbe-bafd-1e9df16a9a81
     m_ActionName: 'Player/Parry[/Keyboard/f]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8939479719961633922}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 66d116cc-39f1-4e98-8561-2e542c4ad354
+    m_ActionName: 'Player/Dash[/Keyboard/leftShift]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8939479719961633922}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: OnAim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e9a2bda0-766b-4c13-b361-d2ede6d90f31
+    m_ActionName: 'Player/Aim[/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
