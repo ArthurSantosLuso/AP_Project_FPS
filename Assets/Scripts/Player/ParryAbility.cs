@@ -3,16 +3,40 @@ using UnityEngine;
 public class ParryAbility : Ability
 {
     [SerializeField] private ParryVFX parryVFX;
+
+    [Header("Parrying")]
+    [SerializeField] private float parryCooldown = 2f;
+
+    private float   _parryTimer;
+    private bool    _canParry = true;
+
+    private void Update()
+    {
+        if (!_canParry)
+        {
+            _parryTimer += Time.deltaTime;
+
+            if (_parryTimer > parryCooldown)
+            {
+                _canParry = true;
+                _parryTimer = 0f;
+            }
+        }
+    }
+
     public override void Perform()
     {
-        if (!CanAttack()) return;
-
-        parryVFX.TriggerVFX();
+        if (CanAttack())
+        {
+            parryVFX.TriggerVFX();
+            _canParry = false;
+        }
     }
 
     protected override bool CanAttack()
     {
-        return true;
+        if (!_canParry) return false;
+        else return true;
     }
 
     private void OnTriggerEnter(Collider other)
