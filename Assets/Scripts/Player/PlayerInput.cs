@@ -7,13 +7,16 @@ using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
     //[SerializeField]
+    [SerializeField] private Animator crosshairAnimator;
     //private UIHandler uiHandler;
 
     private Character character;
-    //private PlayerMovement playerMovement;
+    private FirstPersonMovement _firstPersonMovement;
+   
     //private Interactor interactor;
-    
-    
+
+    public bool AimHeld { get; private set; }
+
     public Vector2 MoveInput { get; private set; }
     public bool SprintHeld { get; private set; }
 
@@ -24,7 +27,7 @@ public class PlayerInput : MonoBehaviour
     {
         // uiHandler = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIHandler>();
         character = GetComponent<Character>();
-        // playerMovement = GetComponent<PlayerMovement>();
+        _firstPersonMovement = GetComponent<FirstPersonMovement>();
         // interactor = GetComponent<Interactor>();
     }
 
@@ -92,7 +95,7 @@ public class PlayerInput : MonoBehaviour
 
         if (context.phase == InputActionPhase.Performed)
         {
-            // playerMovement.UseDash();
+            _firstPersonMovement.UseDash();
         }
     }
 
@@ -108,6 +111,18 @@ public class PlayerInput : MonoBehaviour
 
             //interactor.ExecuteInteraction();
         }
+    }
+
+    public void OnAim(InputAction.CallbackContext context)
+    {
+        if (!VerifyIfPlayerCanAct()) return;
+
+        if (context.phase == InputActionPhase.Performed)
+            AimHeld = true;
+        else if (context.phase == InputActionPhase.Canceled)
+            AimHeld = false;
+
+        crosshairAnimator.SetBool("IsAiming", AimHeld);
     }
 
     public void OnSkipDialogue(InputAction.CallbackContext context)

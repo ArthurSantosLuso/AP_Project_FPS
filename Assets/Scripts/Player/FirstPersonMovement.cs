@@ -17,6 +17,20 @@ public class FirstPersonMovement : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float sensetivity;
     [SerializeField] private float gravity = 9.81f;
+    [Space]
+    [Header("Dash")]
+    [SerializeField] private float dashSpeed = 30f;
+    [SerializeField] private float dashDuration = 0.15f;
+    [SerializeField] private float dashCooldown = 0.8f;
+
+    private Vector3 _dashDirection;
+    private float _dashTimer;
+    private float _dashCooldownTimer;
+
+    public Vector3 MovementInput => _playerMovementInput;
+    public bool IsGrounded => controller.isGrounded;
+    public float VerticalSpeed => _velocity.y;
+    public bool IsDashing => _dashTimer > 0f;
 
     void Start()
     {
@@ -36,6 +50,15 @@ public class FirstPersonMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        if (_dashTimer > 0f)
+        {
+            _dashTimer -= Time.deltaTime;
+            controller.Move(_dashDirection * dashSpeed * Time.deltaTime);
+            return;
+        }
+
+        _dashCooldownTimer -= Time.deltaTime;
+
         Vector3 MoveVector = transform.TransformDirection(_playerMovementInput);
 
 
@@ -64,5 +87,16 @@ public class FirstPersonMovement : MonoBehaviour
 
         transform.Rotate(0f, _playerMouseInput.x * sensetivity, 0f);
         playerCamera.transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+    }
+
+    public void UseDash()
+    {
+        if (_dashTimer > 0f || _dashCooldownTimer > 0f) return;
+
+        Vector3 inputDirection = transform.TransformDirection(_playerMovementInput);
+        _dashDirection = inputDirection == Vector3.zero ? transform.forward : inputDirection.normalized;
+        _velocity.y = 0f;
+        _dashTimer = dashDuration;
+        _dashCooldownTimer = dashCooldown;
     }
 }
