@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.VFX;
 
-public class PistolShoot : MonoBehaviour
+public class PistolShootVFX : MonoBehaviour
 {
     [Header("Weapon animation")]
     [SerializeField] private Animator animator;
@@ -28,22 +28,19 @@ public class PistolShoot : MonoBehaviour
     private Coroutine _smokeRoutine;
     
 
-    private void Update()
+    public void TriggerVFX()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        animator.SetTrigger("Shoot");
+        foreach (var particle in particles)
         {
-            animator.SetTrigger("Shoot");
-            foreach (var particle in particles)
-            {
-                particle.Play();
-            }
-
-            if (_flashRoutine != null) StopCoroutine(_flashRoutine);
-            _flashRoutine = StartCoroutine(ActivateShotFlashLight());
-
-            if (_smokeRoutine != null) StopCoroutine(_smokeRoutine);
-            _smokeRoutine = StartCoroutine(ActivateSmokeVFX());
+            particle.Play();
         }
+
+        if (_flashRoutine != null) StopCoroutine(_flashRoutine);
+        _flashRoutine = StartCoroutine(ActivateShotFlashLight());
+
+        if (_smokeRoutine != null) StopCoroutine(_smokeRoutine);
+        _smokeRoutine = StartCoroutine(ActivateSmokeVFX());
     }
 
     private IEnumerator ActivateShotFlashLight()

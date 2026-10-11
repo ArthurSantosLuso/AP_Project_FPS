@@ -39,7 +39,7 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    public void OnLightAttack(InputAction.CallbackContext context)
+    public void TriggerAbilityZero(InputAction.CallbackContext context)
     {
         if (!VerifyIfPlayerCanAct()) return;
 
@@ -49,7 +49,7 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    public void OnHeavyAttack(InputAction.CallbackContext context)
+    public void TriggerAbilityOne(InputAction.CallbackContext context)
     {
         if (!VerifyIfPlayerCanAct()) return;
 
@@ -59,7 +59,7 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    public void OnSpecialAbility(InputAction.CallbackContext context)
+    public void TriggerAbilityTwo(InputAction.CallbackContext context)
     {
         if (!VerifyIfPlayerCanAct()) return;
 

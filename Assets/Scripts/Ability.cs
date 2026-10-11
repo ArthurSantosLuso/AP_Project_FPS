@@ -56,7 +56,6 @@ public abstract class Ability : MonoBehaviour
 
     public abstract void Perform();
     protected abstract bool CanAttack();
-    protected abstract void IdentifyEnemyInRange(List<IDamageable> entitiesHit);
 
     public virtual void EnableHitbox() { }
     public virtual void DisableHitbox() { }
