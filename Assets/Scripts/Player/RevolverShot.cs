@@ -11,6 +11,11 @@ public class RevolverShot : Ability
     [Header("Firing")]
     [SerializeField] private float fireRate = 2f;
 
+    [Header("Aiming")]
+    [SerializeField] private Camera aimCamera;
+    [SerializeField] private LayerMask aimMask = -0;
+    [SerializeField] private float maxAimDistance = 100f;
+
     [Header("Pool")]
     [SerializeField] private int defaultCapacity = 6;
     [SerializeField] private int maxSize = 6;
@@ -21,6 +26,7 @@ public class RevolverShot : Ability
     private void Awake()
     {
         if (shotPoint == null) shotPoint = transform;
+        if (aimCamera == null) aimCamera = Camera.main;
 
         _pool = new ObjectPool<Bullet>(
             createFunc: () => Instantiate(bulletPrefab),
@@ -32,12 +38,24 @@ public class RevolverShot : Ability
             maxSize: maxSize);
     }
 
+    private Quaternion GetShotRotation()
+    {
+        Ray ray = aimCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+
+        Vector3 target = Physics.Raycast(ray, out RaycastHit hit, maxAimDistance, aimMask, QueryTriggerInteraction.Ignore)
+            ? hit.point
+            : ray.GetPoint(maxAimDistance);
+
+        Vector3 dir = target - shotPoint.position;
+        return dir.sqrMagnitude > 0.001f ? Quaternion.LookRotation(dir) : shotPoint.rotation;
+    }
+
     private void SpawnBullet()
     {
         Bullet bullet = _pool.Get();
 
         shootVFX.TriggerVFX();
-        bullet.Launch(shotPoint.position, shotPoint.rotation, gameObject, _pool.Release);
+        bullet.Launch(shotPoint.position, GetShotRotation(), gameObject, _pool.Release);
     }
 
     public override void Perform()

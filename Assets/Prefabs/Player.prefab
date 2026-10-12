@@ -339,7 +339,7 @@ MonoBehaviour:
   controller: {fileID: 8871023123450388918}
   player: {fileID: 3701202999447605525}
   speed: 8
-  jumpForce: 5
+  jumpForce: 8
   sensetivity: 3
   gravity: 9.81
   dashSpeed: 30
@@ -556,6 +556,14 @@ PrefabInstance:
       propertyPath: 'abilities.Array.data[1]'
       value: 
       objectReference: {fileID: 5356693719774360497}
+    - target: {fileID: 4704967608929118273, guid: 7d380dbef0486c04287514313106bb98, type: 3}
+      propertyPath: aimCamera
+      value: 
+      objectReference: {fileID: 277409132054013447}
+    - target: {fileID: 4704967608929118273, guid: 7d380dbef0486c04287514313106bb98, type: 3}
+      propertyPath: aimMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 5702408073525105485, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.336
