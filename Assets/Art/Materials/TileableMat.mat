@@ -178,7 +178,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EmissionNoiseSpeed: 0.17
-    - _EmissionPower: 1.2
+    - _EmissionPower: 0.3
     - _EnableInstancedPerPixelNormal: 1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
@@ -217,6 +217,6 @@ Material:
     - _Multiply_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Scale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _UvsScale: {r: 0.01, g: 0.01, b: 0, a: 0}
+    - _UvsScale: {r: 0.09, g: 0.09, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
