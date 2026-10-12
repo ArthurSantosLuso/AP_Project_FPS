@@ -168,21 +168,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4970092816861793775, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: dashTilt
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970092816861793775, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: tiltSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970092816861793775, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: speedLines
       value: 
       objectReference: {fileID: 1855870283}
-    - target: {fileID: 4970092816861793775, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: strafeTilt
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_Name
       value: Player
