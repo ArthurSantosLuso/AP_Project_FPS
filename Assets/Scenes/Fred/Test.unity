@@ -127,10 +127,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2871613101378338267, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: dashAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 014a9d55239fa73489de238a62ad5f66, type: 3}
     - target: {fileID: 3701202999447605525, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -175,30 +171,10 @@ PrefabInstance:
       propertyPath: speedLines
       value: 
       objectReference: {fileID: 2071711019}
-    - target: {fileID: 5356693719774360497, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: actionAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 088c1e7056ebd9c419c945f35af04e19, type: 3}
-    - target: {fileID: 5356693719774360497, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: parrySuccessAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: aa7ba15bbc6f67d4b8d8123b3e30ec94, type: 3}
-    - target: {fileID: 6805324514879434504, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: actionAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: f7f72b84062a8ed4a9f60d242cd43b08, type: 3}
     - target: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8939479719961633922, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: aimInAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 3bc08f69fd4111c4bb1598098076e037, type: 3}
-    - target: {fileID: 8939479719961633922, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: aimOutAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: a591f20596b7b294b89ab39fba06c07f, type: 3}
     - target: {fileID: 8939479719961633922, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: crosshairAnimator
       value: 
