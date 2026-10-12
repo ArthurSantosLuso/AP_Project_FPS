@@ -7,6 +7,8 @@ public class ParryAbility : Ability
     [Header("Parrying")]
     [SerializeField] private float parryCooldown = 2f;
 
+    [SerializeField] private AudioClip parrySuccessAudio;
+
     private float   _parryTimer;
     private bool    _canParry = true;
 
@@ -30,6 +32,7 @@ public class ParryAbility : Ability
         {
             parryVFX.TriggerVFX();
             _canParry = false;
+            PlayActionAudio();
         }
     }
 
@@ -48,6 +51,7 @@ public class ParryAbility : Ability
             // Absorve bullet logic...
 
             parryable.Parry();
+            AudioManager.Instance.PlaySound(parrySuccessAudio);
         }
     }
 }

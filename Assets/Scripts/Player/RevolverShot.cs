@@ -64,6 +64,7 @@ public class RevolverShot : Ability
         {
             _nextFireTime = Time.time + 1f / fireRate;
             SpawnBullet();
+            PlayActionAudio();
         }
     }
 

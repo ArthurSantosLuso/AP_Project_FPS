@@ -15,7 +15,11 @@ public class PlayerInput : MonoBehaviour
    
     //private Interactor interactor;
 
+    // Aim
+    [SerializeField] private AudioClip aimInAudio;
+    [SerializeField] private AudioClip aimOutAudio;
     public bool AimHeld { get; private set; }
+   
 
     public Vector2 MoveInput { get; private set; }
     public bool SprintHeld { get; private set; }
@@ -118,9 +122,15 @@ public class PlayerInput : MonoBehaviour
         if (!VerifyIfPlayerCanAct()) return;
 
         if (context.phase == InputActionPhase.Performed)
+        {
             AimHeld = true;
+            AudioManager.Instance.PlaySound(aimInAudio);
+        }
         else if (context.phase == InputActionPhase.Canceled)
+        {
             AimHeld = false;
+            AudioManager.Instance.PlaySound(aimOutAudio);
+        }
 
         crosshairAnimator.SetBool("IsAiming", AimHeld);
     }
