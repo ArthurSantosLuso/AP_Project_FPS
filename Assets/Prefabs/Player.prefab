@@ -345,6 +345,7 @@ MonoBehaviour:
   dashSpeed: 30
   dashDuration: 0.15
   dashCooldown: 0.8
+  dashAudio: {fileID: 8300000, guid: 014a9d55239fa73489de238a62ad5f66, type: 3}
 --- !u!114 &8098189878815549309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
   crosshairAnimator: {fileID: 0}
+  aimInAudio: {fileID: 8300000, guid: 3bc08f69fd4111c4bb1598098076e037, type: 3}
+  aimOutAudio: {fileID: 8300000, guid: a591f20596b7b294b89ab39fba06c07f, type: 3}
 --- !u!114 &324852064982861304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,6 +564,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 277409132054013447}
     - target: {fileID: 4704967608929118273, guid: 7d380dbef0486c04287514313106bb98, type: 3}
+      propertyPath: actionAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: f7f72b84062a8ed4a9f60d242cd43b08, type: 3}
+    - target: {fileID: 4704967608929118273, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: aimMask.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -681,6 +688,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HandPlaceholder
       objectReference: {fileID: 0}
+    - target: {fileID: 7164721412351166348, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: actionAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 088c1e7056ebd9c419c945f35af04e19, type: 3}
+    - target: {fileID: 7164721412351166348, guid: 200637d1a8332374e926b212d4436448, type: 3}
+      propertyPath: parrySuccessAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: aa7ba15bbc6f67d4b8d8123b3e30ec94, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -43,7 +43,7 @@ public abstract class Ability : MonoBehaviour
 
     protected void PlayActionAudio()
     {
-        AudioManager.Instance.PlaySound(actionAudio, Random.Range(0.9f, 1.1f));
+        AudioManager.Instance.PlaySound(actionAudio/*, Random.Range(0.9f, 1.1f)*/);
     }
 
     // public abstract float AbilityRange { get; }
