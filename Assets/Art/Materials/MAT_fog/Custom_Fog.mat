@@ -42,7 +42,7 @@ Material:
     - lightScattering: 0.473
     - maxDistance: 100
     - noiseOffset: 0.1
-    - noiseTiling: 1.5
+    - noiseTiling: 1
     - stepSize: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

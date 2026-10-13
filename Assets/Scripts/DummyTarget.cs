@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DummyTarget : MonoBehaviour, IDamageable
 {
     [SerializeField] private float health = 100f;
+    [SerializeField] private Slider _uiHealthBar;
 
     public bool CanDamage()
     {
@@ -12,6 +14,7 @@ public class DummyTarget : MonoBehaviour, IDamageable
     public void Damage(float damageValue)
     {
         health -= damageValue;
+        _uiHealthBar.value = health;
         if (health <= 0f) Destroy(gameObject);
     }
 
