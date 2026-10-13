@@ -212,7 +212,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 0.7208192, b: 0, a: 1}
-    - _FinalMultiplyColor: {r: 1, g: 0.7809372, b: 0.42830187, a: 1}
+    - _FinalMultiplyColor: {r: 0.3207547, g: 0.2402054, b: 0.11075114, a: 1}
     - _MultiplyColor: {r: 1, g: 1, b: 1, a: 1}
     - _Multiply_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Scale: {r: 0.2, g: 0.2, b: 0, a: 0}
