@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -20,8 +22,10 @@ public class RevolverShot : Ability
     [SerializeField] private int defaultCapacity = 6;
     [SerializeField] private int maxSize = 6;
 
+    private int                 currentBulletCount = 6;
+    private float               _nextFireTime;
+    private Queue<BulletData>   revolverCylinder;
     private IObjectPool<Bullet> _pool;
-    private float _nextFireTime;
 
     private void Awake()
     {
@@ -55,7 +59,7 @@ public class RevolverShot : Ability
         Bullet bullet = _pool.Get();
 
         shootVFX.TriggerVFX();
-        bullet.Launch(shotPoint.position, GetShotRotation(), gameObject, _pool.Release);
+        bullet.Launch(revolverCylinder.Dequeue(), shotPoint.position, GetShotRotation(), gameObject, _pool.Release);
     }
 
     public override void Perform()
@@ -72,5 +76,13 @@ public class RevolverShot : Ability
     {
         if (Time.time < _nextFireTime) return false;
         else return true;
+    }
+
+    public void AddBullet(BulletData bulletToAdd)
+    {
+        if (currentBulletCount < maxSize)
+        {
+            revolverCylinder.Enqueue(bulletToAdd);
+        }
     }
 }

@@ -8,17 +8,10 @@ using UnityEngine;
 /// </summary>
 public class Bullet : MonoBehaviour
 {
-    [Header("Stats")]
-    [SerializeField] private float speed = 40f;
-    [SerializeField] private float damage = 10f;
-    [SerializeField] private float lifetime = 3f;
+    [Header("Bullet Info")]
+    [SerializeField] private BulletData data;
 
-    [Header("Collision")]
-    [SerializeField] private LayerMask hitMask = ~0;      // layers the bullet can hit
-    [SerializeField] private float radius = 0.05f;        // 0 = thin raycast, >0 = spherecast
-
-    [Header("Optional")]
-    [SerializeField] private GameObject hitEffectPrefab;  // Any blood effect or impact on collision
+    private BulletData _data;
 
     private float timeAlive;
     private GameObject owner;
@@ -27,8 +20,9 @@ public class Bullet : MonoBehaviour
     /// <summary>
     /// Called by the shooter every time the bullet is (re)used.
     /// </summary>
-    public void Launch(Vector3 position, Quaternion rotation, GameObject shooter, Action<Bullet> release)
+    public void Launch(BulletData bulletData, Vector3 position, Quaternion rotation, GameObject shooter, Action<Bullet> release)
     {
+        _data = bulletData;
         transform.SetPositionAndRotation(position, rotation);
         owner = shooter;
         releaseToPool = release;
@@ -38,13 +32,13 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         timeAlive += Time.deltaTime;
-        if (timeAlive >= lifetime)
+        if (timeAlive >= _data.lifetime)
         {
             Despawn();
             return;
         }
 
-        float stepDistance = speed * Time.deltaTime;
+        float stepDistance = _data.speed * Time.deltaTime;
         Vector3 origin = transform.position;
         Vector3 direction = transform.forward;
 
@@ -60,9 +54,9 @@ public class Bullet : MonoBehaviour
 
     private bool TryCast(Vector3 origin, Vector3 direction, float distance, out RaycastHit hit)
     {
-        bool found = radius > 0f
-            ? Physics.SphereCast(origin, radius, direction, out hit, distance, hitMask, QueryTriggerInteraction.Ignore)
-            : Physics.Raycast(origin, direction, out hit, distance, hitMask, QueryTriggerInteraction.Ignore);
+        bool found = _data.radius > 0f
+            ? Physics.SphereCast(origin, _data.radius, direction, out hit, distance, _data.hitMask, QueryTriggerInteraction.Ignore)
+            : Physics.Raycast(origin, direction, out hit, distance, _data.hitMask, QueryTriggerInteraction.Ignore);
 
         // Ignore the shooter's own colliders.
         if (found && owner != null && hit.collider.transform.root == owner.transform.root)
@@ -73,11 +67,12 @@ public class Bullet : MonoBehaviour
 
     private void OnHit(RaycastHit hit)
     {
-        var damageable = hit.collider.GetComponentInParent<IDamageable>();
-        damageable?.Damage(damage);
+        var ctx = new BulletHitContext(hit, owner, _data.damage);
+        foreach(var effect in _data.onHitEffects)
+            effect.Apply(ctx);
 
-        if (hitEffectPrefab != null)
-            Instantiate(hitEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+        if (_data.hitEffectPrefab != null)
+            Instantiate(_data.hitEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
 
         Despawn();
     }
