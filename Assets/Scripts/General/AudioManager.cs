@@ -23,7 +23,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private List<AudioSource> audioSources;
+    private struct AudioSourceSetup
+    {
+        public bool musicExclusive;
+        public AudioSource audioSource;
+
+        public AudioSourceSetup(AudioSource source, bool isForMusic)
+        {
+            audioSource = source;
+            musicExclusive = isForMusic;
+        }
+    }
+
+    private List<AudioSourceSetup> audioSources;
 
     void Awake()
     {
@@ -43,15 +55,15 @@ public class AudioManager : MonoBehaviour
         _instance = this;
         //DontDestroyOnLoad(gameObject);  
 
-        audioSources = new List<AudioSource>();
+        audioSources = new List<AudioSourceSetup>();
     }
 
     public void PlaySound(AudioClip audio, float pitch = 1f)
     {
         AudioSource audioSource;
-        CheckForFreeAudioSource(out audioSource);
+        CheckForFreeAudioSource(out audioSource, false);
         if (audioSource == null)
-            audioSource = CreateNewAudioSource();
+            audioSource = CreateNewAudioSource(false);
 
         audioSource.pitch = pitch;
         audioSource.PlayOneShot(audio, sfxVolume);
@@ -60,11 +72,11 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(AudioClip audio)
     {
         AudioSource audioSource;
-        CheckForFreeAudioSource(out audioSource);
+        CheckForFreeAudioSource(out audioSource, true);
 
         if (audioSource == null)
         {
-            audioSource = CreateNewAudioSource();
+            audioSource = CreateNewAudioSource(true);
         }
         audioSource.volume = musicVolume;
         audioSource.loop = true;
@@ -72,13 +84,13 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
-    public void CheckForFreeAudioSource(out AudioSource source)
+    public void CheckForFreeAudioSource(out AudioSource source, bool souldBeMusicExclusive)
     {
-        foreach (AudioSource audioSource in audioSources)
+        foreach (AudioSourceSetup audioS in audioSources)
         {
-            if (!audioSource.isPlaying)
+            if (!audioS.audioSource.isPlaying && audioS.musicExclusive == souldBeMusicExclusive)
             {
-                source = audioSource;
+                source = audioS.audioSource;
                 return;
             }
         }
@@ -86,19 +98,20 @@ public class AudioManager : MonoBehaviour
         source = null;
     }
 
-    public AudioSource CreateNewAudioSource()
+    public AudioSource CreateNewAudioSource(bool isMusicExclusive)
     {
         AudioSource newAudioSource = gameObject.AddComponent<AudioSource>();
-        audioSources.Add(newAudioSource);
-        return newAudioSource;
+        AudioSourceSetup audioSourceConfig = new AudioSourceSetup(newAudioSource, isMusicExclusive);
+        audioSources.Add(audioSourceConfig);
+        return audioSourceConfig.audioSource;
     }
 
     public AudioSource PlayLoopingSound(AudioClip audio)
     {
         AudioSource audioSource;
-        CheckForFreeAudioSource(out audioSource);
+        CheckForFreeAudioSource(out audioSource, false);
         if (audioSource == null)
-            audioSource = CreateNewAudioSource();
+            audioSource = CreateNewAudioSource(false);
 
         audioSource.clip = audio;
         audioSource.loop = true;
