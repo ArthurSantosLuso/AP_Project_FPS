@@ -513,7 +513,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615065}
   - {fileID: 8926484042661615080}
   dataType: 0
-  capacity: 10
+  capacity: 12
   stripCapacity: 16
   particlePerStripCount: 16
   needsComputeBounds: 0
