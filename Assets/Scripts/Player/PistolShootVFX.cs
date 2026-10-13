@@ -11,11 +11,12 @@ public class PistolShootVFX : MonoBehaviour
     [Space]
     [Header("Particle system. (Smoke, fire, flash & sparks")]
     [SerializeField] private List<ParticleSystem> particles;
-    [SerializeField] float smokeEmitionDuration = 0.08f;
+    
 
     [Space]
     [Header("Smoke VFX")]
     [SerializeField] private VisualEffect smokeVFX;
+    [SerializeField] float smokeEmitionDuration = 0.08f;
 
     [Space]
     [Header("Gunshot flash light")]

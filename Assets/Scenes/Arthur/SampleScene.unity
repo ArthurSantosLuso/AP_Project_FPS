@@ -166,11 +166,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &116493859 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 93672939097514668, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-  m_PrefabInstance: {fileID: 7635328786013796763}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &168269891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3062,10 @@ PrefabInstance:
       propertyPath: speedLines
       value: 
       objectReference: {fileID: 2097613161}
+    - target: {fileID: 5465811069922483732, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      propertyPath: smokeEmitionDuration
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_Name
       value: Player
