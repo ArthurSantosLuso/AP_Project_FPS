@@ -48,15 +48,15 @@ public class ParryAbility : Ability
 
     private void OnTriggerEnter(Collider other)
     {
-        Parryable parryable = other.GetComponent<Parryable>();
+            Parryable parryable = other.GetComponent<Parryable>();
         
-        if (parryable != null)
-        {
-            // Absorve bullet logic...
-            revolver.AddBullet(bulletToAddWhenParry);
+            if (parryable != null)
+            {
+                // Absorve bullet logic...
+                revolver.AddBullet(bulletToAddWhenParry);
 
-            parryable.Parry();
-            AudioManager.Instance.PlaySound(parrySuccessAudio);
-        }
+                parryable.Parry();
+                AudioManager.Instance.PlaySound(parrySuccessAudio);
+            }
     }
 }

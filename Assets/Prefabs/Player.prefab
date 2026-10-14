@@ -296,8 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e851feb3fb417d7199e91b2e812ab259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitMarker
-  marker: {fileID: 0}
-  audioSource: {fileID: 0}
+  marker: {fileID: 5423259095958275915}
+  audioSource: {fileID: 3070098261301522869}
   showDuration: 0.15
   popScale: 1.6
   hitStopDuration: 0.03
@@ -1188,14 +1188,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6608367355503246952}
   - component: {fileID: 6421637392122455545}
-  - component: {fileID: 6352510101362102745}
+  - component: {fileID: 8117890698761514381}
   m_Layer: 0
   m_Name: MuzzleLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6608367355503246952
 Transform:
   m_ObjectHideFlags: 0
@@ -1276,7 +1276,7 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &6352510101362102745
+--- !u!114 &8117890698761514381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1705,6 +1705,7 @@ MonoBehaviour:
   maxValue: 100
   shakeIntensityMultiplier: 0.5
   shakeDuration: 0.2
+  healthSlider: {fileID: 0}
 --- !u!114 &8939479719961633922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3050,15 +3051,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1839072313037420436, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.406558
       objectReference: {fileID: 0}
     - target: {fileID: 1839072313037420436, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.406558
       objectReference: {fileID: 0}
     - target: {fileID: 1839072313037420436, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.406558
       objectReference: {fileID: 0}
     - target: {fileID: 1839072313037420436, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3070,7 +3071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1870796238091892958, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2178702501911837582, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: lengthInSec
@@ -3118,27 +3119,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2195208505876309477, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_Range
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2195208505876309477, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_Color.b
-      value: 0.2391716
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2195208505876309477, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_Color.g
-      value: 0.47329575
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2195208505876309477, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_Color.r
-      value: 0.8742138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2195208505876309477, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_Intensity
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2195208505876309477, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2195208505876309477, guid: 7d380dbef0486c04287514313106bb98, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2307689577909945059, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_Enabled
@@ -3150,7 +3155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2987430577424967680, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4183436954170184791, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_Name
@@ -3418,7 +3423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148838309205480271, guid: 7d380dbef0486c04287514313106bb98, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

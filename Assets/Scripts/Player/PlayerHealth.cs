@@ -1,12 +1,14 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : ValueBase, IDamageable, IHealable
 {
     [Header("Screen Shake Settings")]
     [SerializeField] private float shakeIntensityMultiplier = 0.5f;
     [SerializeField] private float shakeDuration = 0.2f;
+
+    [Header("UI Params")]
+    [SerializeField] private Slider healthSlider;
 
     public override void ApplyUpgrades()
     {
@@ -25,6 +27,7 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
     {
         base.ReduceValue(damageValue);
         OnValueChanged?.Invoke(0, currentValue, maxValue);
+        healthSlider.value = currentValue;
 
         //if (ScreenShake.Instance != null) //trigger camera shake
         //{
@@ -72,9 +75,11 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
     {
         return currentValue > 0;
     }
+
     public void DamageNoStagger(float damageValue)
     {
         Damage(damageValue);
+        healthSlider.value = currentValue;
     }
 
     public void Heal(float amount)
