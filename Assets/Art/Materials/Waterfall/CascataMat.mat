@@ -11,8 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 55993ce8644c8231888801188317885a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _REFRACTION
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -36,7 +35,7 @@ Material:
     - _NormalStrength: 0.51
     - _Opacity: 0.481
     - _ReflectionStrength: 0.175
-    - _Refraction: 1
+    - _Refraction: 0
     - _RefractionStrength: 0.0238
     - _Smoothness: 0.571
     - _SpecularStrength: 1.241
