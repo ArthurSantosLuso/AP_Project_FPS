@@ -40,6 +40,8 @@ public class RevolverShot : Ability
             collectionCheck: false,
             defaultCapacity: defaultCapacity,
             maxSize: maxSize);
+
+        revolverCylinder = new Queue<BulletData>();
     }
 
     private Quaternion GetShotRotation()
@@ -70,11 +72,15 @@ public class RevolverShot : Ability
             SpawnBullet();
             PlayActionAudio();
         }
+        else
+        {
+            Debug.Log("Cant shot!");
+        }
     }
 
     protected override bool CanAttack()
     {
-        if (Time.time < _nextFireTime) return false;
+        if (Time.time < _nextFireTime || revolverCylinder.Count < 1) return false;
         else return true;
     }
 

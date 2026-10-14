@@ -18,8 +18,8 @@ MonoBehaviour:
   radius: 0.05
   hitMask:
     serializedVersion: 2
-    m_Bits: 0
-  hitEffectPrefab: {fileID: 0}
+    m_Bits: 4294967295
+  hitEffectPrefab: {fileID: 7205977080414648799, guid: 9a3ab020da1da7f409699054f2b8515c, type: 3}
   onHitEffects:
   - {fileID: 11400000, guid: 2b769e8269a74e846a1572ca6eca57fc, type: 2}
   - {fileID: 11400000, guid: 041a65db6d907094e827819a6b0d305a, type: 2}
