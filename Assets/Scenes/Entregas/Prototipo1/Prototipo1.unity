@@ -14,19 +14,19 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.7, g: 0.73, b: 0.73, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.017
   m_LinearFogStart: 12
   m_LinearFogEnd: 70
-  m_AmbientSkyColor: {r: 0.32, g: 0.44, b: 0.44, a: 1}
-  m_AmbientEquatorColor: {r: 0.16, g: 0.26, b: 0.27, a: 1}
-  m_AmbientGroundColor: {r: 0.07, g: 0.12, b: 0.13, a: 1}
+  m_AmbientSkyColor: {r: 2.8679247, g: 2.8679247, b: 2.8679247, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
-  m_SubtractiveShadowColor: {r: 0.07058824, g: 0.09019608, b: 0.1764706, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 4599a511b07cf681bb13103c2c5c07ca, type: 2}
+  m_SubtractiveShadowColor: {r: 0.15, g: 0.13449702, b: 0.060000006, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 62bdef3c9d317234fb85932d322b2ed2, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -378,7 +378,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.8
+    m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -431,13 +431,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224244286}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12230808, y: 0.8712638, z: -0.38791165, w: 0.27470845}
+  m_LocalRotation: {x: 0.17670354, y: 0.8194912, z: -0.33944437, w: 0.42660013}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 125, z: 0}
 --- !u!1 &232344122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,7 +1908,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 8458b4c63d3a4569aa4bef6f40b6a02c, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
 --- !u!4 &1062963381
 Transform:
   m_ObjectHideFlags: 0
@@ -3418,6 +3418,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4114915666740600398, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790810375978261721, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790810375978261721, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
