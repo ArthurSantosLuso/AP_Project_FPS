@@ -1,0 +1,36 @@
+using UnityEngine;
+
+public class CollectWaterBullet : MonoBehaviour
+{
+    [SerializeField] private BulletData bulletToCollect;
+    [SerializeField] private RevolverShot revolver;
+
+    private bool _canCollect;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<FirstPersonMovement>() != null)
+        {
+            _canCollect = true;
+            Debug.Log("Can collect water bullet");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<FirstPersonMovement>() != null)
+            _canCollect = false;
+        Debug.Log("Cannot collect water bullet anymore");
+    }
+
+    private void Update()
+    {
+        if (_canCollect)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                revolver.AddBullet(bulletToCollect);
+            }
+        }
+    }
+}
