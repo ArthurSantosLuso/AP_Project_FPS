@@ -296,13 +296,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e851feb3fb417d7199e91b2e812ab259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitMarker
-  _marker: {fileID: 5423259095958275915}
-  _audioSource: {fileID: 3070098261301522869}
-  _showDuration: 0.15
-  _popScale: 1.6
-  _hitStopDuration: 0.03
-  _flashColor: {r: 1, g: 1, b: 1, a: 1}
-  _targetFlashDuration: 0.06
+  marker: {fileID: 0}
+  audioSource: {fileID: 0}
+  showDuration: 0.15
+  popScale: 1.6
+  hitStopDuration: 0.03
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  targetFlashDuration: 0.06
 --- !u!114 &7916855301870337376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,7 +1732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7302e1967b19564eeaeb6a644ccfae43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitStop
-  _frozenTimeScale: 0.02
+  frozenTimeScale: 0.02
 --- !u!114 &456769977586520493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1897,15 +1897,15 @@ Canvas:
   m_GameObject: {fileID: 9141187168180311600}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 277409132054013447}
+  m_PlaneDistance: 0.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0

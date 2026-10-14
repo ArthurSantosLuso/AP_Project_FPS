@@ -24,8 +24,8 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.071437, g: 0.088880904, b: 0.17610055, a: 1}
+  m_AmbientMode: 1
+  m_SubtractiveShadowColor: {r: 0.15, g: 0.13449702, b: 0.060000006, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 62bdef3c9d317234fb85932d322b2ed2, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 0bb0cdc75d7bc7d4a8e9b9a1ac06177f, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 2e18ff59f92dbcc4b87839477f27dec5, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 80663086507760163, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 80663086507760163, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_VertexColorAlwaysGammaSpace
@@ -1598,6 +1598,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1695059549}
+    - target: {fileID: 1443176173228280698, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2272615427460871889, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: m_Name
       value: PlayerCanvas
@@ -3522,7 +3526,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1695059549}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 0.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0

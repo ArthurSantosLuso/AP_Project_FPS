@@ -37,17 +37,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - densityMult: 0.03
-    - densityThreshold: 0.55
+    - densityMult: 0.05
+    - densityThreshold: 0.6
     - lightScattering: 0.473
     - maxDistance: 100
     - noiseOffset: 0.1
-    - noiseTiling: 1
+    - noiseTiling: 0.75
     - stepSize: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - fogColor: {r: 1, g: 1, b: 1, a: 1}
+    - fogColor: {r: 1, g: 0, b: 0, a: 1}
     - fogWind: {r: 0.5, g: 0.5, b: 0, a: 0.7}
-    - lightContribution: {r: 5.9692497, g: 11.336024, b: 16.766571, a: 1}
+    - lightContribution: {r: 6.706628, g: 11.7774935, b: 16.766571, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
