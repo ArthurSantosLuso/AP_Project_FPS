@@ -17,6 +17,11 @@ public class Bullet : MonoBehaviour
     private GameObject owner;
     private Action<Bullet> releaseToPool;
 
+    private void Start()
+    {
+        _data = data;
+    }
+
     /// <summary>
     /// Called by the shooter every time the bullet is (re)used.
     /// </summary>
@@ -26,6 +31,14 @@ public class Bullet : MonoBehaviour
         transform.SetPositionAndRotation(position, rotation);
         owner = shooter;
         releaseToPool = release;
+        timeAlive = 0f;
+    }
+
+    public void SetupBullet(BulletData bulletData, Vector3 position, Quaternion rotation, GameObject shooter)
+    {
+        _data = bulletData;
+        transform.SetPositionAndRotation(position, rotation);
+        owner = shooter;
         timeAlive = 0f;
     }
 
@@ -80,5 +93,6 @@ public class Bullet : MonoBehaviour
     private void Despawn()
     {
         if (releaseToPool != null) releaseToPool(this);
+        else Destroy(gameObject);
     }
 }

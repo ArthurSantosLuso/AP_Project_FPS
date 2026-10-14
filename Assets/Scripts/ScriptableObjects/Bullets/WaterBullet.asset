@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6182acdd820c4eb4baf7bdf305632bcb, type: 3}
   m_Name: WaterBullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
+  bulletPrefab: {fileID: 1580899344318569217, guid: 908f9da2068bb5e4c81faa9e2d680b52, type: 3}
   speed: 40
   damage: 20
   lifetime: 3
@@ -19,7 +20,7 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  hitEffectPrefab: {fileID: 0}
+  hitEffectPrefab: {fileID: 6905142187129451433, guid: 6be714ef3cbee404e8be9d452748f03d, type: 3}
   onHitEffects:
   - {fileID: 11400000, guid: 2b769e8269a74e846a1572ca6eca57fc, type: 2}
   - {fileID: 11400000, guid: cdeb975f82fae1f7a9dbaff412644fe5, type: 2}

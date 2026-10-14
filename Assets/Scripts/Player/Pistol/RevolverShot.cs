@@ -32,14 +32,14 @@ public class RevolverShot : Ability
         if (shotPoint == null) shotPoint = transform;
         if (aimCamera == null) aimCamera = Camera.main;
 
-        _pool = new ObjectPool<Bullet>(
-            createFunc: () => Instantiate(bulletPrefab),
-            actionOnGet: b => b.gameObject.SetActive(true),
-            actionOnRelease: b => b.gameObject.SetActive(false),
-            actionOnDestroy: b => Destroy(b.gameObject),
-            collectionCheck: false,
-            defaultCapacity: defaultCapacity,
-            maxSize: maxSize);
+        //_pool = new ObjectPool<Bullet>(
+        //    createFunc: () => Instantiate(bulletPrefab),
+        //    actionOnGet: b => b.gameObject.SetActive(true),
+        //    actionOnRelease: b => b.gameObject.SetActive(false),
+        //    actionOnDestroy: b => Destroy(b.gameObject),
+        //    collectionCheck: false,
+        //    defaultCapacity: defaultCapacity,
+        //    maxSize: maxSize);
 
         revolverCylinder = new Queue<BulletData>();
     }
@@ -58,10 +58,13 @@ public class RevolverShot : Ability
 
     private void SpawnBullet()
     {
-        Bullet bullet = _pool.Get();
+        // Bullet bullet = _pool.Get();
 
         shootVFX.TriggerVFX();
-        bullet.Launch(revolverCylinder.Dequeue(), shotPoint.position, GetShotRotation(), gameObject, _pool.Release);
+        BulletData bulletData = revolverCylinder.Dequeue();
+        GameObject bulletGO = bulletData.bulletPrefab;
+        bulletGO.GetComponent<Bullet>().SetupBullet(bulletData, shotPoint.position, GetShotRotation(), gameObject);
+        Instantiate(bulletGO);
     }
 
     public override void Perform()

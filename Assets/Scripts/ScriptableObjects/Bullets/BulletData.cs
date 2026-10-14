@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BulletData", menuName = "Scriptable Objects/BulletData")]
 public class BulletData : ScriptableObject
 {
+    public GameObject bulletPrefab;
     public float speed = 40f;
     public float damage = 10f;
     public float lifetime = 3f;
