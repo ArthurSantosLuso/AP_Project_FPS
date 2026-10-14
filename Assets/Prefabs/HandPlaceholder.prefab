@@ -189,11 +189,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2251257384339843770}
-  - component: {fileID: 2976238766419350008}
   - component: {fileID: 4605576301558478164}
+  - component: {fileID: 6505713543708601565}
+  - component: {fileID: 2976238766419350008}
   - component: {fileID: 7164721412351166348}
   - component: {fileID: 5227190210807549347}
-  - component: {fileID: 6505713543708601565}
   m_Layer: 0
   m_Name: HandPlaceholder
   m_TagString: Untagged
@@ -219,28 +219,6 @@ Transform:
   - {fileID: 6108522535935621026}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 40.333, y: 0, z: -49.192}
---- !u!95 &2976238766419350008
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6409826685247198458}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a7984616b62f0c24bb8bbdc1ea325ea9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &4605576301558478164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -262,39 +240,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9137378, y: 1.759687, z: 0.34709537}
   m_Center: {x: 0.3879759, y: 0.48235947, z: 0.3264441}
---- !u!114 &7164721412351166348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6409826685247198458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c308ce828b4cc46a5042232794f646, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ParryAbility
-  actionAudio: {fileID: 0}
-  staminaCost: 0
-  shakeIntensity: 0.5
-  shakeDuration: 0.2
-  shakeDelay: 0.2
-  onHitTimeScale: 0.02
-  onHitTimeScaleDuration: 0.05
-  parryVFX: {fileID: 5227190210807549347}
---- !u!114 &5227190210807549347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6409826685247198458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c815a50703180d746a1f7478061e3257, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ParryVFX
-  animator: {fileID: 2976238766419350008}
 --- !u!54 &6505713543708601565
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -322,6 +267,63 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2976238766419350008
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409826685247198458}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a7984616b62f0c24bb8bbdc1ea325ea9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7164721412351166348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409826685247198458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c308ce828b4cc46a5042232794f646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParryAbility
+  actionAudio: {fileID: 0}
+  staminaCost: 0
+  shakeIntensity: 0.5
+  shakeDuration: 0.2
+  shakeDelay: 0.2
+  onHitTimeScale: 0.02
+  onHitTimeScaleDuration: 0.05
+  parryVFX: {fileID: 5227190210807549347}
+  parryCooldown: 2
+  parrySuccessAudio: {fileID: 0}
+--- !u!114 &5227190210807549347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409826685247198458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c815a50703180d746a1f7478061e3257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParryVFX
+  animator: {fileID: 2976238766419350008}
 --- !u!1 &7279403746795816076
 GameObject:
   m_ObjectHideFlags: 0

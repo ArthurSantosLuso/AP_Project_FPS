@@ -236,9 +236,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3634033410471473854}
   - component: {fileID: 7477614737933697598}
-  - component: {fileID: 3070098261301522869}
   - component: {fileID: 860355990234802180}
   - component: {fileID: 7916855301870337376}
+  - component: {fileID: 3070098261301522869}
   m_Layer: 0
   m_Name: Juice
   m_TagString: Untagged
@@ -284,6 +284,41 @@ MonoBehaviour:
   _flashFadeSpeed: 12
   _impactFadeSpeed: 6
   _dashFadeSpeed: 10
+--- !u!114 &860355990234802180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891233296915566842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e851feb3fb417d7199e91b2e812ab259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitMarker
+  _marker: {fileID: 5423259095958275915}
+  _audioSource: {fileID: 3070098261301522869}
+  _showDuration: 0.15
+  _popScale: 1.6
+  _hitStopDuration: 0.03
+  _flashColor: {r: 1, g: 1, b: 1, a: 1}
+  _targetFlashDuration: 0.06
+--- !u!114 &7916855301870337376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891233296915566842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c00b52fa087a0c7ba9a3e4f59ca244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactFrameSequence
+  _inkVolume: {fileID: 190749281620952862}
+  _tintVolume: {fileID: 5436137840783795122}
+  _frameDuration: 0.04
+  _frameCount: 4
 --- !u!82 &3070098261301522869
 AudioSource:
   m_ObjectHideFlags: 0
@@ -381,41 +416,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &860355990234802180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891233296915566842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e851feb3fb417d7199e91b2e812ab259, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HitMarker
-  _marker: {fileID: 5423259095958275915}
-  _audioSource: {fileID: 3070098261301522869}
-  _showDuration: 0.15
-  _popScale: 1.6
-  _hitStopDuration: 0.03
-  _flashColor: {r: 1, g: 1, b: 1, a: 1}
-  _targetFlashDuration: 0.06
---- !u!114 &7916855301870337376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891233296915566842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c00b52fa087a0c7ba9a3e4f59ca244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ImpactFrameSequence
-  _inkVolume: {fileID: 190749281620952862}
-  _tintVolume: {fileID: 5436137840783795122}
-  _frameDuration: 0.04
-  _frameCount: 4
 --- !u!1 &2243431390372410662
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,9 +576,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2478682883082336603}
   - component: {fileID: 277409132054013447}
-  - component: {fileID: 6274899463555890184}
-  - component: {fileID: 4174437069481277953}
   - component: {fileID: 4970092816861793775}
+  - component: {fileID: 4174437069481277953}
+  - component: {fileID: 6274899463555890184}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -653,14 +653,35 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6274899463555890184
-AudioListener:
+--- !u!114 &4970092816861793775
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3303212111548186670}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972bd529a1e795348aa2b1069c920454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraEffects
+  movement: {fileID: 2871613101378338267}
+  playerInput: {fileID: 8939479719961633922}
+  playerCamera: {fileID: 277409132054013447}
+  speedLines: {fileID: 0}
+  dashFovBoost: 30
+  aimFov: 25
+  fovSpeed: 12
+  strafeTilt: 1.5
+  dashTilt: 5
+  tiltSpeed: 5
+  bobFrequency: 12
+  bobHeight: 0.04
+  bobSmoothing: 10
+  landingDipPerSpeed: 0.02
+  maxLandingDip: 0.3
+  landingRecoverSpeed: 8
+  speedLinesFadeSpeed: 15
 --- !u!114 &4174437069481277953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,35 +726,14 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &4970092816861793775
-MonoBehaviour:
+--- !u!81 &6274899463555890184
+AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3303212111548186670}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bd529a1e795348aa2b1069c920454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraEffects
-  movement: {fileID: 2871613101378338267}
-  playerInput: {fileID: 8939479719961633922}
-  playerCamera: {fileID: 277409132054013447}
-  speedLines: {fileID: 0}
-  dashFovBoost: 30
-  aimFov: 25
-  fovSpeed: 12
-  strafeTilt: 1.5
-  dashTilt: 5
-  tiltSpeed: 5
-  bobFrequency: 12
-  bobHeight: 0.04
-  bobSmoothing: 10
-  landingDipPerSpeed: 0.02
-  maxLandingDip: 0.3
-  landingRecoverSpeed: 8
-  speedLinesFadeSpeed: 15
 --- !u!1 &3369751245009612511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,6 +1061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2733524459865805546}
   - component: {fileID: 8020453168852741861}
+  - component: {fileID: 7465591599367618691}
   m_Layer: 0
   m_Name: GunPowerLight
   m_TagString: Untagged
@@ -1148,6 +1149,35 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &7465591599367618691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6231506398765896148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &6344556965849521843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6608367355503246952}
   - component: {fileID: 6421637392122455545}
+  - component: {fileID: 6352510101362102745}
   m_Layer: 0
   m_Name: MuzzleLight
   m_TagString: Untagged
@@ -1245,6 +1276,35 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &6352510101362102745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344556965849521843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &7616776462223232329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,14 +1366,14 @@ GameObject:
   - component: {fileID: 7402117626297827269}
   - component: {fileID: 874574180288943101}
   - component: {fileID: 8871023123450388918}
+  - component: {fileID: 324852064982861304}
   - component: {fileID: 2871613101378338267}
   - component: {fileID: 8098189878815549309}
   - component: {fileID: 2873379133418613361}
   - component: {fileID: 8939479719961633922}
-  - component: {fileID: 324852064982861304}
   - component: {fileID: 3480790314510697941}
-  - component: {fileID: 4809069644765206917}
   - component: {fileID: 456769977586520493}
+  - component: {fileID: 4809069644765206917}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1420,80 +1480,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2871613101378338267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8310918309783210065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 175aa8b1ff3ef344399adfa95e78d5e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FirstPersonMovement
-  playerCamera: {fileID: 620008582986588458}
-  controller: {fileID: 8871023123450388918}
-  player: {fileID: 3701202999447605525}
-  speed: 8
-  jumpForce: 8
-  sensetivity: 3
-  gravity: 9.81
-  dashSpeed: 30
-  dashDuration: 0.15
-  dashCooldown: 0.8
-  dashAudio: {fileID: 8300000, guid: 014a9d55239fa73489de238a62ad5f66, type: 3}
---- !u!114 &8098189878815549309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8310918309783210065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05aef6cf9c1f59647afddcbc39657021, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Character
-  shouldConsiderInteractable: 0
-  shouldAttack: 1
-  shouldUseStamina: 0
-  shouldUseHealth: 1
-  shouldUseUpgrades: 0
-  weapons:
-  - {fileID: 2101170502045454824}
-  valuesBase:
-  - {fileID: 2873379133418613361}
---- !u!114 &2873379133418613361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8310918309783210065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 872d67c25d961264b86c861caaad91ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxValue: 100
-  shakeIntensityMultiplier: 0.5
-  shakeDuration: 0.2
---- !u!114 &8939479719961633922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8310918309783210065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7717289b7f785448b9d970178b16b6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
-  crosshairAnimator: {fileID: 0}
-  aimInAudio: {fileID: 8300000, guid: 3bc08f69fd4111c4bb1598098076e037, type: 3}
-  aimOutAudio: {fileID: 8300000, guid: a591f20596b7b294b89ab39fba06c07f, type: 3}
 --- !u!114 &324852064982861304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1660,6 +1646,80 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2871613101378338267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175aa8b1ff3ef344399adfa95e78d5e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FirstPersonMovement
+  playerCamera: {fileID: 620008582986588458}
+  controller: {fileID: 8871023123450388918}
+  player: {fileID: 3701202999447605525}
+  speed: 8
+  jumpForce: 8
+  sensetivity: 3
+  gravity: 9.81
+  dashSpeed: 30
+  dashDuration: 0.15
+  dashCooldown: 0.8
+  dashAudio: {fileID: 8300000, guid: 014a9d55239fa73489de238a62ad5f66, type: 3}
+--- !u!114 &8098189878815549309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05aef6cf9c1f59647afddcbc39657021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  shouldConsiderInteractable: 0
+  shouldAttack: 1
+  shouldUseStamina: 0
+  shouldUseHealth: 1
+  shouldUseUpgrades: 0
+  weapons:
+  - {fileID: 2101170502045454824}
+  valuesBase:
+  - {fileID: 2873379133418613361}
+--- !u!114 &2873379133418613361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872d67c25d961264b86c861caaad91ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxValue: 100
+  shakeIntensityMultiplier: 0.5
+  shakeDuration: 0.2
+--- !u!114 &8939479719961633922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7717289b7f785448b9d970178b16b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
+  crosshairAnimator: {fileID: 0}
+  aimInAudio: {fileID: 8300000, guid: 3bc08f69fd4111c4bb1598098076e037, type: 3}
+  aimOutAudio: {fileID: 8300000, guid: a591f20596b7b294b89ab39fba06c07f, type: 3}
 --- !u!114 &3480790314510697941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1673,6 +1733,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitStop
   _frozenTimeScale: 0.02
+--- !u!114 &456769977586520493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6569b26d0c216f971ba09d710315a2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovementFeedback
+  _movement: {fileID: 2871613101378338267}
+  _audioSource: {fileID: 4809069644765206917}
+  _footstepClips: []
+  _stepInterval: 0.42
+  _landingClip: {fileID: 0}
+  _minLandingSpeed: 4
+  _landingTraumaPerSpeed: 0.03
+  _dashClip: {fileID: 0}
 --- !u!82 &4809069644765206917
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1770,26 +1850,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &456769977586520493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8310918309783210065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6569b26d0c216f971ba09d710315a2fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovementFeedback
-  _movement: {fileID: 2871613101378338267}
-  _audioSource: {fileID: 4809069644765206917}
-  _footstepClips: []
-  _stepInterval: 0.42
-  _landingClip: {fileID: 0}
-  _minLandingSpeed: 4
-  _landingTraumaPerSpeed: 0.03
-  _dashClip: {fileID: 0}
 --- !u!1 &9141187168180311600
 GameObject:
   m_ObjectHideFlags: 0
