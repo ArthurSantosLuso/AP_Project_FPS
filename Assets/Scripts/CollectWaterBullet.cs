@@ -5,6 +5,8 @@ public class CollectWaterBullet : MonoBehaviour
     [SerializeField] private BulletData bulletToCollect;
     [SerializeField] private RevolverShot revolver;
 
+    [SerializeField] private AudioClip collectAudio;
+
     private bool _canCollect;
 
     private void OnTriggerEnter(Collider other)
@@ -30,6 +32,7 @@ public class CollectWaterBullet : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 revolver.AddBullet(bulletToCollect);
+                AudioManager.Instance.PlaySound(collectAudio);
             }
         }
     }
