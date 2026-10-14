@@ -119,6 +119,22 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!225 &58211169 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 5004414795522688695, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+  m_PrefabInstance: {fileID: 1782421488}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &76112244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6101881002928335667, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+  m_PrefabInstance: {fileID: 1782421488}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &97092068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +2010,11 @@ Transform:
   - {fileID: 1856862849}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1268189034 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7327413316023370297, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+  m_PrefabInstance: {fileID: 1782421488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1281214707 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 277409132054013447, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
@@ -2007,6 +2028,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2873379133418613361, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 76112244}
     - target: {fileID: 3701202999447605525, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.52
@@ -2047,10 +2072,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4970092816861793775, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      propertyPath: speedLines
+      value: 
+      objectReference: {fileID: 58211169}
     - target: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8939479719961633922, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      propertyPath: crosshairAnimator
+      value: 
+      objectReference: {fileID: 1268189034}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3303,6 +3336,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1281214707}
+    - target: {fileID: 1620574241793368330, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.29803923
+      objectReference: {fileID: 0}
     - target: {fileID: 2272615427460871889, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: m_Name
       value: PlayerCanvas
