@@ -46,13 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraSway
   _movement: {fileID: 2871613101378338267}
-  _swayFrequency: 10.05
-  _swayWidth: 0.03
-  _swayRoll: 1
-  _breathFrequency: 1.5
-  _breathHeight: 0.009
-  _breathPitch: 0.3
-  _blendSpeed: 6.07
+  swayFrequency: 6
+  swayWidth: 0.03
+  swayRoll: 1
+  breathFrequency: 1.5
+  breathHeight: 0.006
+  breathPitch: 0.3
+  blendSpeed: 6
 --- !u!1 &508557264203070889
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,8 +974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aeff1519e201e5878a61392a042e138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraShake
-  _maxAngle: 4
-  _recoverSpeed: 18
+  maxAngle: 4
+  recoverSpeed: 18
 --- !u!1 &5821858612307240188
 GameObject:
   m_ObjectHideFlags: 0
