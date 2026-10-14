@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CascataMat
+  m_Shader: {fileID: 4800000, guid: 55993ce8644c8231888801188317885a, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _REFRACTION
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _Acceleration: 1
+    - _BottomFoam: 0.408
+    - _EdgeBreakup: 0.232
+    - _FlipV: 0
+    - _FlowSpeed: 2.3
+    - _FoamStreaks: 0
+    - _FresnelPower: 5.81
+    - _NormalStrength: 0.51
+    - _Opacity: 0.481
+    - _ReflectionStrength: 0.175
+    - _Refraction: 1
+    - _RefractionStrength: 0.0238
+    - _Smoothness: 0.571
+    - _SpecularStrength: 1.241
+    - _StreakContrast: 1.51
+    - _StreakDensity: 46.54
+    - _StreakStretch: 10
+    - _TopFoam: 0.0449
+    - _WobbleAmount: 0.05
+    m_Colors:
+    - _ColorDeep: {r: 0.03, g: 0.17999998, b: 0.19999996, a: 1}
+    - _ColorShallow: {r: 0.29999998, g: 0.62, b: 0.64, a: 1}
+    - _FoamColor: {r: 0.92, g: 0.96999997, b: 0.96999997, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
