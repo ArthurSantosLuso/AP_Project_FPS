@@ -178,7 +178,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EmissionNoiseSpeed: 0.17
-    - _EmissionPower: 0.3
+    - _EmissionPower: 0.4
     - _EnableInstancedPerPixelNormal: 1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
@@ -211,8 +211,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 0.7208192, b: 0, a: 1}
-    - _FinalMultiplyColor: {r: 0.3207547, g: 0.2402054, b: 0.11075114, a: 1}
+    - _EmissionColor: {r: 1, g: 0.7875107, b: 0, a: 1}
+    - _FinalMultiplyColor: {r: 0.5622641, g: 0.2712281, b: 0.14321814, a: 1}
     - _MultiplyColor: {r: 1, g: 1, b: 1, a: 1}
     - _Multiply_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Scale: {r: 0.2, g: 0.2, b: 0, a: 0}

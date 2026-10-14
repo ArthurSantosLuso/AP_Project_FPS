@@ -71,7 +71,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 9c9f7d49df526794ca70af6c9f5185d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,14 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ef45235978d06408e0f3b90d810531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  speed: 40
-  damage: 10
-  lifetime: 1.5
-  hitMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  radius: 0.05
-  hitEffectPrefab: {fileID: 0}
+  data: {fileID: 0}
 --- !u!1001 &647501422202902941
 PrefabInstance:
   m_ObjectHideFlags: 0
