@@ -1,20 +1,23 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Class that handle the hit UI feedback. 
+/// </summary>
 public class HitMarker : MonoBehaviour
 {
     public static HitMarker Instance { get; private set; }
 
     [Header("References")]
-    [SerializeField] private RectTransform _marker;
-    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private RectTransform marker;
+    [SerializeField] private AudioSource audioSource;
     [Space]
     [Header("Marker")]
-    [SerializeField] private float _showDuration = 0.15f;
-    [SerializeField] private float _popScale = 1.6f;
-    [SerializeField] private float _hitStopDuration = 0.03f;
-    [SerializeField] private Color _flashColor = Color.white;
-    [SerializeField] private float _targetFlashDuration = 0.06f;
+    [SerializeField] private float showDuration = 0.15f;
+    [SerializeField] private float popScale = 1.6f;
+    [SerializeField] private float hitStopDuration = 0.03f;
+    [SerializeField] private Color flashColor = Color.white;
+    [SerializeField] private float targetFlashDuration = 0.06f;
 
     private float _hideTime;
     private AudioClip _tickClip;
@@ -22,38 +25,51 @@ public class HitMarker : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        _marker.gameObject.SetActive(false);
+        // Set the marker inactive 
+        marker.gameObject.SetActive(false);
+        // Create the procedural
         _tickClip = CreateTickClip();
     }
 
+    /// <summary>
+    /// Trigger the hit UI.
+    /// </summary>
+    /// <param name="target"></param>
     public void ShowHit(Collider target)
     {
-        _marker.gameObject.SetActive(true);
-        _marker.localScale = Vector3.one * _popScale;
-        _hideTime = Time.unscaledTime + _showDuration;
-        _audioSource.PlayOneShot(_tickClip);
-        HitStop.Instance?.Freeze(_hitStopDuration);
+        // Activate the marker
+        marker.gameObject.SetActive(true);
+        // Pop the marker scale
+        marker.localScale = Vector3.one * popScale;
+        // Calculate the time to hide the marker
+        _hideTime = Time.unscaledTime + showDuration;
+        // Play tick audio
+        audioSource.PlayOneShot(_tickClip);
+        // Freeze the time
+        HitStop.Instance?.Freeze(hitStopDuration);
 
+        // Remove it. Should be handle by entity itself
         var targetRenderer = target.GetComponentInChildren<Renderer>();
         if (targetRenderer != null) StartCoroutine(FlashTarget(targetRenderer));
     }
 
     private void Update()
     {
-        if (!_marker.gameObject.activeSelf) return;
+        if (!marker.gameObject.activeSelf) return;
 
-        _marker.localScale = Vector3.Lerp(_marker.localScale, Vector3.one, 20f * Time.unscaledDeltaTime);
-        if (Time.unscaledTime >= _hideTime) _marker.gameObject.SetActive(false);
+        marker.localScale = Vector3.Lerp(marker.localScale, Vector3.one, 20f * Time.unscaledDeltaTime);
+        if (Time.unscaledTime >= _hideTime) marker.gameObject.SetActive(false);
     }
 
+    // Remove it. Should be handle by entity itself
     private IEnumerator FlashTarget(Renderer targetRenderer)
     {
         var propertyBlock = new MaterialPropertyBlock();
-        propertyBlock.SetColor("_BaseColor", _flashColor);
-        propertyBlock.SetColor("_EmissionColor", _flashColor * 2f);
+        propertyBlock.SetColor("_BaseColor", flashColor);
+        propertyBlock.SetColor("_EmissionColor", flashColor * 2f);
         targetRenderer.SetPropertyBlock(propertyBlock);
 
-        yield return new WaitForSecondsRealtime(_targetFlashDuration);
+        yield return new WaitForSecondsRealtime(targetFlashDuration);
 
         if (targetRenderer != null) targetRenderer.SetPropertyBlock(null);
     }

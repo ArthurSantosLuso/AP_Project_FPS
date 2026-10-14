@@ -46,13 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraSway
   _movement: {fileID: 2871613101378338267}
-  _swayFrequency: 10.05
-  _swayWidth: 0.03
-  _swayRoll: 1
-  _breathFrequency: 1.5
-  _breathHeight: 0.009
-  _breathPitch: 0.3
-  _blendSpeed: 6.07
+  swayFrequency: 6
+  swayWidth: 0.03
+  swayRoll: 1
+  breathFrequency: 1.5
+  breathHeight: 0.006
+  breathPitch: 0.3
+  blendSpeed: 6
 --- !u!1 &508557264203070889
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,8 +974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aeff1519e201e5878a61392a042e138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraShake
-  _maxAngle: 4
-  _recoverSpeed: 18
+  maxAngle: 4
+  recoverSpeed: 18
 --- !u!1 &5821858612307240188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,8 +1312,8 @@ GameObject:
   - component: {fileID: 8939479719961633922}
   - component: {fileID: 324852064982861304}
   - component: {fileID: 3480790314510697941}
-  - component: {fileID: 4809069644765206917}
   - component: {fileID: 456769977586520493}
+  - component: {fileID: 4809069644765206917}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1673,6 +1673,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitStop
   _frozenTimeScale: 0.02
+--- !u!114 &456769977586520493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6569b26d0c216f971ba09d710315a2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovementFeedback
+  _movement: {fileID: 2871613101378338267}
+  _audioSource: {fileID: 4809069644765206917}
+  _footstepClips: []
+  _stepInterval: 0.42
+  _landingClip: {fileID: 0}
+  _minLandingSpeed: 4
+  _landingTraumaPerSpeed: 0.03
+  _dashClip: {fileID: 0}
 --- !u!82 &4809069644765206917
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1770,26 +1790,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &456769977586520493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8310918309783210065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6569b26d0c216f971ba09d710315a2fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovementFeedback
-  _movement: {fileID: 2871613101378338267}
-  _audioSource: {fileID: 4809069644765206917}
-  _footstepClips: []
-  _stepInterval: 0.42
-  _landingClip: {fileID: 0}
-  _minLandingSpeed: 4
-  _landingTraumaPerSpeed: 0.03
-  _dashClip: {fileID: 0}
 --- !u!1 &9141187168180311600
 GameObject:
   m_ObjectHideFlags: 0
