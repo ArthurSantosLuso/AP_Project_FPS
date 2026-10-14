@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class EnemyProjectile : Parryable
 {
     [SerializeField] private float speed;
+    [SerializeField] private float damage;
 
     private float _timeAlive;
 
@@ -25,5 +27,14 @@ public class EnemyProjectile : Parryable
     public override void Parry()
     {
         base.Parry();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<IDamageable>() != null)
+        {
+            other.GetComponent<IDamageable>().Damage(damage);
+            Destroy(gameObject);
+        }
     }
 }
