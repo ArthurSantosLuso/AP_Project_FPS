@@ -23,3 +23,4 @@ MonoBehaviour:
   onHitEffects:
   - {fileID: 11400000, guid: 2b769e8269a74e846a1572ca6eca57fc, type: 2}
   - {fileID: 11400000, guid: 041a65db6d907094e827819a6b0d305a, type: 2}
+  - {fileID: 11400000, guid: cdeb975f82fae1f7a9dbaff412644fe5, type: 2}

@@ -22,3 +22,4 @@ MonoBehaviour:
   hitEffectPrefab: {fileID: 0}
   onHitEffects:
   - {fileID: 11400000, guid: 2b769e8269a74e846a1572ca6eca57fc, type: 2}
+  - {fileID: 11400000, guid: cdeb975f82fae1f7a9dbaff412644fe5, type: 2}
