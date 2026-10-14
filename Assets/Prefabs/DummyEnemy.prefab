@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DummyTarget
   health: 100
-  _uiHealthBar: {fileID: 4653235549257508880}
+  uiHealthBar: {fileID: 4653235549257508880}
 --- !u!114 &5217688033436937260
 MonoBehaviour:
   m_ObjectHideFlags: 0

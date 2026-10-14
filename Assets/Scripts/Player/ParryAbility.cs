@@ -1,13 +1,17 @@
+using UnityEditor.Rendering.Universal;
 using UnityEngine;
 
 public class ParryAbility : Ability
 {
-    [SerializeField] private ParryVFX parryVFX;
 
     [Header("Parrying")]
     [SerializeField] private float parryCooldown = 2f;
-
     [SerializeField] private AudioClip parrySuccessAudio;
+    [SerializeField] private ParryVFX parryVFX;
+
+    [Header("Remove Later")]
+    [SerializeField] private BulletData bulletToAddWhenParry;
+    [SerializeField] private RevolverShot revolver;
 
     private float   _parryTimer;
     private bool    _canParry = true;
@@ -49,6 +53,7 @@ public class ParryAbility : Ability
         if (parryable != null)
         {
             // Absorve bullet logic...
+            revolver.AddBullet(bulletToAddWhenParry);
 
             parryable.Parry();
             AudioManager.Instance.PlaySound(parrySuccessAudio);
