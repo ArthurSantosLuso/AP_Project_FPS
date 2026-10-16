@@ -1382,8 +1382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38aa559821df6ad449b40d29812def2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectWaterBullet
-  bulletToCollect: {fileID: 11400000, guid: b489f634eec90a548a8a6c4f80ffbcbc, type: 2}
+  bulletToCollect: {fileID: 11400000, guid: 1aaa835c12c331c4eac41d76871cd8aa, type: 2}
   revolver: {fileID: 1848233494}
+  collectAudio: {fileID: 8300000, guid: 73ed5dc76404d794c910360288845bee, type: 3}
 --- !u!1 &1575724046
 GameObject:
   m_ObjectHideFlags: 0

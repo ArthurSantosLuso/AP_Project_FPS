@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyPatrolPlaceHolder : MonoBehaviour
+public class EnemyPatrolPlaceHolder : PausableMonoBehaviour
 {
     [SerializeField] private float moveDistance = 3f;
     [SerializeField] private float moveSpeed = 1f;

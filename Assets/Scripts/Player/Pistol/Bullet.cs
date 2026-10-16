@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        _data = data;
+        if (_data == null) _data = data;
     }
 
     /// <summary>

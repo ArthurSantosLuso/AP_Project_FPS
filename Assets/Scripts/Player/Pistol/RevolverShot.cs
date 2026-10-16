@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -62,9 +64,9 @@ public class RevolverShot : Ability
 
         shootVFX.TriggerVFX();
         BulletData bulletData = revolverCylinder.Dequeue();
-        GameObject bulletGO = bulletData.bulletPrefab;
-        bulletGO.GetComponent<Bullet>().SetupBullet(bulletData, shotPoint.position, GetShotRotation(), gameObject);
-        Instantiate(bulletGO);
+
+        GameObject go = Instantiate(bulletData.bulletPrefab);
+        go.GetComponent<Bullet>().SetupBullet(bulletData, shotPoint.position, GetShotRotation(), gameObject);
     }
 
     public override void Perform()
@@ -89,7 +91,7 @@ public class RevolverShot : Ability
 
     public void AddBullet(BulletData bulletToAdd)
     {
-        if (currentBulletCount < maxSize)
+        if (revolverCylinder.Count < maxSize)
         {
             revolverCylinder.Enqueue(bulletToAdd);
         }

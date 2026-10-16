@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ProjectileSpawner : MonoBehaviour
+public class ProjectileSpawner : PausableMonoBehaviour
 {
     [SerializeField] private GameObject prefab;
     [SerializeField] private GameObject shotPoint;

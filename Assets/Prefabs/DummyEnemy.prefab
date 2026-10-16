@@ -488,9 +488,10 @@ GameObject:
   - component: {fileID: 6375897082156196134}
   - component: {fileID: 6928828516584842864}
   - component: {fileID: 5564237666038901693}
-  - component: {fileID: 1961140140763622113}
   - component: {fileID: 5217688033436937260}
   - component: {fileID: 5803200194090959830}
+  - component: {fileID: 6755619907422220862}
+  - component: {fileID: 2819744687867151308}
   m_Layer: 6
   m_Name: DummyEnemy
   m_TagString: Untagged
@@ -596,20 +597,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1961140140763622113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7392358693912777165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e25ebd5fa57bf428020026c66a3cf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DummyTarget
-  health: 100
-  uiHealthBar: {fileID: 4653235549257508880}
 --- !u!114 &5217688033436937260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,6 +625,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrolPlaceHolder
   moveDistance: 3
   moveSpeed: 1
+--- !u!114 &6755619907422220862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7392358693912777165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff348946d34f57d42a042da663bdba80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxValue: 100
+  uiHealthBar: {fileID: 4653235549257508880}
+--- !u!114 &2819744687867151308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7392358693912777165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b920ea77bcd44e4f9da6eb4724c3273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Freezable
+  unfreezeGraceTime: 0.1
+  entityAnimator: {fileID: 0}
 --- !u!1 &8403901517035763259
 GameObject:
   m_ObjectHideFlags: 0
