@@ -18,11 +18,6 @@ public class CameraEffects : MonoBehaviour
     [SerializeField] private float dashTilt = 6f;
     [SerializeField] private float tiltSpeed = 10f;
     [Space]
-    [Header("Head Bob")]
-    [SerializeField] private float bobFrequency = 12f;
-    [SerializeField] private float bobHeight = 0.04f;
-    [SerializeField] private float bobSmoothing = 10f;
-    [Space]
     [Header("Landing")]
     [SerializeField] private float landingDipPerSpeed = 0.02f;
     [SerializeField] private float maxLandingDip = 0.3f;
@@ -49,11 +44,10 @@ public class CameraEffects : MonoBehaviour
     {
         UpdateFieldOfView();
         UpdateTilt();
-        UpdateHeadBob();
         UpdateLandingDip();
         UpdateSpeedLines();
 
-        transform.localPosition = _startLocalPosition + Vector3.up * (_bobOffset - _landingDip);
+        transform.localPosition = _startLocalPosition + Vector3.up * -_landingDip;
         transform.localRotation = Quaternion.Euler(0f, 0f, _tilt);
     }
 
@@ -72,17 +66,6 @@ public class CameraEffects : MonoBehaviour
         float targetTilt = -movement.MovementInput.x * tiltAmount;
 
         _tilt = Mathf.Lerp(_tilt, targetTilt, tiltSpeed * Time.deltaTime);
-    }
-
-    private void UpdateHeadBob()
-    {
-        bool isWalking = movement.IsGrounded && !movement.IsDashing
-            && movement.MovementInput.sqrMagnitude > 0.01f;
-
-        if (isWalking) _bobTimer += bobFrequency * Time.deltaTime;
-        float targetOffset = isWalking ? Mathf.Sin(_bobTimer) * bobHeight : 0f;
-
-        _bobOffset = Mathf.Lerp(_bobOffset, targetOffset, bobSmoothing * Time.deltaTime);
     }
 
     private void UpdateLandingDip()

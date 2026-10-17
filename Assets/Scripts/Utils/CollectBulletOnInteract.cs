@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CollectWaterBullet : MonoBehaviour
+public class CollectBulletOnInteract : MonoBehaviour
 {
     [SerializeField] private BulletData bulletToCollect;
     [SerializeField] private RevolverShot revolver;
