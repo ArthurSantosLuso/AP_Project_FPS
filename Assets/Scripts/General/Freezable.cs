@@ -1,12 +1,16 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem.iOS;
+using TMPro.EditorUtilities;
 
 public class Freezable : MonoBehaviour, IFreezable
 {
     [SerializeField] float unfreezeGraceTime = 0.1f;
     [SerializeField] private Animator entityAnimator;
+    [SerializeField] private GameObject frozenVFX;
     // Add later the camp to stop navmesh in case of an enemy
+
+    private GameObject _currentFrozenVFXGameObject;
 
     /// <summary>
     /// Get if entity is frozen or not
@@ -75,12 +79,17 @@ public class Freezable : MonoBehaviour, IFreezable
             if (entityAnimator != null ) entityAnimator.speed = 0f;
             foreach (PausableMonoBehaviour pausable in GetComponents<PausableMonoBehaviour>())
                 pausable.Pause();
+
+            _currentFrozenVFXGameObject = Instantiate(frozenVFX, transform.position, Quaternion.identity, transform);
         }
         else
         {
             if (entityAnimator != null) entityAnimator.speed = 1f;
             foreach (PausableMonoBehaviour pausable in GetComponents<PausableMonoBehaviour>())
                 pausable.UnPause();
+
+            Destroy(_currentFrozenVFXGameObject);
+            _currentFrozenVFXGameObject = null;
         }
     }
 }
