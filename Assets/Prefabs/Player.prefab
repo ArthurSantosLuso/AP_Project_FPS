@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3762770370971841023}
   m_Layer: 0
-  m_Name: weapon_hammer
+  m_Name: revolver_hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 5280736767787902553}
   - component: {fileID: 6759037027340183834}
   m_Layer: 0
-  m_Name: Hannd
+  m_Name: Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7042,7 +7042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7319588167227026099}
   m_Layer: 0
-  m_Name: weapon_sight
+  m_Name: revolver_sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7180,7 +7180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3688398409065756309}
   m_Layer: 0
-  m_Name: weapon_trigger
+  m_Name: revolver_trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7282,7 +7282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7345156217678941782}
   m_Layer: 0
-  m_Name: weapon_muzzle
+  m_Name: revolver_muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7459,7 +7459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1668612248824246604}
   m_Layer: 0
-  m_Name: weapon_latch
+  m_Name: revolver_latch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13583,7 +13583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3566336194692584529}
   m_Layer: 0
-  m_Name: weapon_cylinder
+  m_Name: revolver_cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13615,7 +13615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6552793883127051718}
   m_Layer: 0
-  m_Name: weapon_barrel
+  m_Name: revolver_barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18791,7 +18791,7 @@ GameObject:
   - component: {fileID: 2357976757906568526}
   - component: {fileID: 3164366224926436796}
   m_Layer: 0
-  m_Name: Revolver
+  m_Name: revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23992,7 +23992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2788416882085990169}
   m_Layer: 0
-  m_Name: weapon_speedloader
+  m_Name: revolver_speedloader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
