@@ -129,6 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 12150051}
   - component: {fileID: 12150050}
+  - component: {fileID: 12150053}
+  - component: {fileID: 12150052}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -148,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c349c0d9d38aa94a87b0691a222ee08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sceneMusic: {fileID: 0}
+  sceneMusic: {fileID: 8300000, guid: 5c9871618298b2c47adf393061a95c0b, type: 3}
   musicVolume: 0.09
   sfxVolume: 1
 --- !u!4 &12150051
@@ -166,6 +168,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &12150052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12150049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c00b52fa087a0c7ba9a3e4f59ca244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactFrameSequence
+  inkVolume: {fileID: 2060331112}
+  tintVolume: {fileID: 469711981}
+  frameDuration: 0.04
+  frameCount: 4
+--- !u!114 &12150053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12150049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7302e1967b19564eeaeb6a644ccfae43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitStop
+  frozenTimeScale: 0.02
 --- !u!1 &168269891
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +536,17 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &469711981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8600820257973399590, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+  m_PrefabInstance: {fileID: 2097613160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
 --- !u!114 &538454187 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2357976757906568526, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
@@ -2002,6 +2044,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2060331112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2747324623691196546, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+  m_PrefabInstance: {fileID: 2097613160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
 --- !u!1001 &2097613160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2092,18 +2145,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4114915666740600398, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6101881002928335667, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_Value
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6790810375978261721, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6790810375978261721, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2448,10 +2489,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2357976757906568526, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: actionFailedAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 9d400d047a0c02b4ead7e47f2ecb26c8, type: 3}
     - target: {fileID: 2873379133418613361, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: healthSlider
       value: 
