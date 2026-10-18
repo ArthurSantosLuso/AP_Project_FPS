@@ -1,16 +1,17 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.InputSystem.iOS;
-using TMPro.EditorUtilities;
+using System.Collections.Generic;
 
 public class Freezable : MonoBehaviour, IFreezable
 {
     [SerializeField] float unfreezeGraceTime = 0.1f;
     [SerializeField] private Animator entityAnimator;
     [SerializeField] private GameObject frozenVFX;
+    [SerializeField] private Material iceMaterial;
     // Add later the camp to stop navmesh in case of an enemy
 
     private GameObject _currentFrozenVFXGameObject;
+    private Dictionary<Renderer, Material[]> originals = new();
 
     /// <summary>
     /// Get if entity is frozen or not
@@ -80,6 +81,21 @@ public class Freezable : MonoBehaviour, IFreezable
             foreach (PausableMonoBehaviour pausable in GetComponents<PausableMonoBehaviour>())
                 pausable.Pause();
 
+            
+            foreach (Renderer r in GetComponentsInChildren<Renderer>())
+            {
+                if (r is ParticleSystemRenderer || r is TrailRenderer) continue;
+
+                Material[] mats = r.sharedMaterials;
+                originals[r] = mats;
+
+                var iced = new Material[mats.Length];
+                for (int i = 0; i < iced.Length; i++)
+                    iced[i] = iceMaterial;
+                r.sharedMaterials = iced;
+
+            }
+
             _currentFrozenVFXGameObject = Instantiate(frozenVFX, transform.position, Quaternion.identity, transform);
         }
         else
@@ -87,6 +103,15 @@ public class Freezable : MonoBehaviour, IFreezable
             if (entityAnimator != null) entityAnimator.speed = 1f;
             foreach (PausableMonoBehaviour pausable in GetComponents<PausableMonoBehaviour>())
                 pausable.UnPause();
+
+            foreach (var kv in originals)
+            {
+                if (kv.Key != null)
+                {
+                    kv.Key.sharedMaterials = kv.Value;
+                }
+            }
+            originals.Clear();
 
             Destroy(_currentFrozenVFXGameObject);
             _currentFrozenVFXGameObject = null;

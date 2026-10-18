@@ -656,6 +656,7 @@ MonoBehaviour:
   unfreezeGraceTime: 0.1
   entityAnimator: {fileID: 0}
   frozenVFX: {fileID: 5132673496616156292, guid: 893ce42d03b5a844fbea203a9e510f78, type: 3}
+  iceMaterial: {fileID: 2100000, guid: ae9db865c745d6049b02c9957035ea0c, type: 2}
 --- !u!1 &8403901517035763259
 GameObject:
   m_ObjectHideFlags: 0
