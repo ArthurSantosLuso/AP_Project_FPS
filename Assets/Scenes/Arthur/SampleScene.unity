@@ -2480,6 +2480,10 @@ PrefabInstance:
       propertyPath: _playerCamera
       value: 
       objectReference: {fileID: 1835290998}
+    - target: {fileID: 6928828516584842864, guid: 55a87417e4275b546abcfc5553589cdc, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ae9db865c745d6049b02c9957035ea0c, type: 2}
     - target: {fileID: 7392358693912777165, guid: 55a87417e4275b546abcfc5553589cdc, type: 3}
       propertyPath: m_Name
       value: DummyEnemy
