@@ -4,7 +4,6 @@ using UnityEngine;
 public class WeaponFeedback : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Light _muzzleLight;
     [SerializeField] private Camera _playerCamera;
     [Space]
     [Header("Shoot")]
@@ -18,29 +17,16 @@ public class WeaponFeedback : MonoBehaviour
     [SerializeField] private float _punchTrauma = 0.35f;
     [SerializeField] private float _punchHitStopDuration = 0.1f;
 
-    private float _muzzleLightTimer;
-
     public void OnShootFeedback()
     {
         CameraShake.Instance?.Kick(_shootKick);
         CameraShake.Instance?.Shake(_shootTrauma);
         _playerCamera.fieldOfView += _shootFovKick;
-        _muzzleLight.enabled = true;
-        _muzzleLightTimer = _muzzleLightDuration;
     }
-
-    public void OnPunchHitFeedback()
+        public void OnPunchHitFeedback()
     {
         CameraShake.Instance?.Kick(_punchKick);
         CameraShake.Instance?.Shake(_punchTrauma);
         HitStop.Instance?.Freeze(_punchHitStopDuration);
-    }
-
-    private void Update()
-    {
-        if (!_muzzleLight.enabled) return;
-
-        _muzzleLightTimer -= Time.unscaledDeltaTime;
-        if (_muzzleLightTimer <= 0f) _muzzleLight.enabled = false;
     }
 }
