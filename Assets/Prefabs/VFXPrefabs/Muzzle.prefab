@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4654657626714974775}
+  - component: {fileID: -4390706195521606128}
   m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   - {fileID: 5805642528075741225}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &-4390706195521606128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6905142187129451433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf45c3d5e847cb4ca95a02a52c93a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterSeconds
+  lifeTime: 1.5
 --- !u!1 &8613882811392146148
 GameObject:
   m_ObjectHideFlags: 0
