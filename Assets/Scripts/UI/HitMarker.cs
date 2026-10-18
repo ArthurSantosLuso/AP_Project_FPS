@@ -15,8 +15,6 @@ public class HitMarker : MonoBehaviour
     [SerializeField] private float showDuration = 0.15f;
     [SerializeField] private float popScale = 1.6f;
     [SerializeField] private float hitStopDuration = 0.03f;
-    [SerializeField] private Color flashColor = Color.white;
-    [SerializeField] private float targetFlashDuration = 0.06f;
 
     private float _hideTime;
     private AudioClip _tickClip;
@@ -46,10 +44,6 @@ public class HitMarker : MonoBehaviour
         AudioManager.Instance.PlaySound(_tickClip);
         // Freeze the time
         HitStop.Instance?.Freeze(hitStopDuration);
-
-        // Remove it. Should be handle by entity itself
-        var targetRenderer = target.GetComponentInChildren<Renderer>();
-        if (targetRenderer != null) StartCoroutine(FlashTarget(targetRenderer));
     }
 
     private void Update()
@@ -58,19 +52,6 @@ public class HitMarker : MonoBehaviour
 
         marker.localScale = Vector3.Lerp(marker.localScale, Vector3.one, 20f * Time.unscaledDeltaTime);
         if (Time.unscaledTime >= _hideTime) marker.gameObject.SetActive(false);
-    }
-
-    // Remove it. Should be handle by entity itself
-    private IEnumerator FlashTarget(Renderer targetRenderer)
-    {
-        var propertyBlock = new MaterialPropertyBlock();
-        propertyBlock.SetColor("_BaseColor", flashColor);
-        propertyBlock.SetColor("_EmissionColor", flashColor * 2f);
-        targetRenderer.SetPropertyBlock(propertyBlock);
-
-        yield return new WaitForSecondsRealtime(targetFlashDuration);
-
-        if (targetRenderer != null) targetRenderer.SetPropertyBlock(null);
     }
 
     // Short procedural "tick" so the marker works without an audio asset.
