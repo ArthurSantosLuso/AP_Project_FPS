@@ -3,10 +3,6 @@ using UnityEngine.UI;
 
 public class PlayerHealth : ValueBase, IDamageable, IHealable
 {
-    [Header("Screen Shake Settings")]
-    [SerializeField] private float shakeIntensityMultiplier = 0.5f;
-    [SerializeField] private float shakeDuration = 0.2f;
-
     [Header("UI Params")]
     [SerializeField] private Slider healthSlider;
 
