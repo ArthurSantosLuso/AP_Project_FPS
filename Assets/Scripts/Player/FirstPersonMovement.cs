@@ -22,7 +22,6 @@ public class FirstPersonMovement : MonoBehaviour
     [SerializeField] private float dashSpeed = 30f;
     [SerializeField] private float dashDuration = 0.15f;
     [SerializeField] private float dashCooldown = 0.8f;
-    [SerializeField] private AudioClip dashAudio;
 
     private Vector3 _dashDirection;
     private float _dashTimer;
@@ -99,6 +98,5 @@ public class FirstPersonMovement : MonoBehaviour
         _velocity.y = 0f;
         _dashTimer = dashDuration;
         _dashCooldownTimer = dashCooldown;
-        AudioManager.Instance.PlaySound(dashAudio);
     }
 }
