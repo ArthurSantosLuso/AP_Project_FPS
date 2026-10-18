@@ -1,27 +1,35 @@
 using UnityEngine;
 
+[RequireComponent(typeof(FirstPersonMovement))]
 public class MovementFeedback : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private FirstPersonMovement _movement;
-    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private FirstPersonMovement movement;
     [Space]
     [Header("Footsteps")]
-    [SerializeField] private AudioClip[] _footstepClips;
-    [SerializeField] private float _stepInterval = 0.42f;
+    [SerializeField] private AudioClip[] footstepClips;
+    [SerializeField] private float stepInterval = 0.42f;
     [Space]
     [Header("Landing")]
-    [SerializeField] private AudioClip _landingClip;
-    [SerializeField] private float _minLandingSpeed = 4f;
-    [SerializeField] private float _landingTraumaPerSpeed = 0.03f;
+    [SerializeField] private AudioClip landingClip;
+    [SerializeField] private float minLandingSpeed = 4f;
+    [SerializeField] private float landingTraumaPerSpeed = 0.03f;
     [Space]
     [Header("Dash")]
-    [SerializeField] private AudioClip _dashClip;
+    [SerializeField] private AudioClip dashClip;
 
     private float _stepTimer;
     private bool _wasGrounded;
     private bool _wasDashing;
     private float _fallSpeed;
+
+    private void Start()
+    {
+        if (movement == null)
+        {
+            movement = GetComponent<FirstPersonMovement>();
+        }       
+    }
 
     private void Update()
     {
@@ -32,8 +40,8 @@ public class MovementFeedback : MonoBehaviour
 
     private void UpdateFootsteps()
     {
-        bool isWalking = _movement.IsGrounded && !_movement.IsDashing
-            && _movement.MovementInput.sqrMagnitude > 0.01f;
+        bool isWalking = movement.IsGrounded && !movement.IsDashing
+            && movement.MovementInput.sqrMagnitude > 0.01f;
 
         if (!isWalking)
         {
@@ -42,41 +50,40 @@ public class MovementFeedback : MonoBehaviour
         }
 
         _stepTimer += Time.deltaTime;
-        if (_stepTimer < _stepInterval) return;
+        if (_stepTimer < stepInterval) return;
 
         _stepTimer = 0f;
-        if (_footstepClips.Length > 0)
-            PlayClip(_footstepClips[Random.Range(0, _footstepClips.Length)], 0.5f);
+        if (footstepClips.Length > 0)
+            PlayAudio(footstepClips[Random.Range(0, footstepClips.Length)], 0.5f);
     }
 
     private void UpdateLanding()
     {
-        if (!_movement.IsGrounded) _fallSpeed = Mathf.Max(_fallSpeed, -_movement.VerticalSpeed);
+        if (!movement.IsGrounded) _fallSpeed = Mathf.Max(_fallSpeed, -movement.VerticalSpeed);
 
-        if (_movement.IsGrounded && !_wasGrounded && _fallSpeed >= _minLandingSpeed)
+        if (movement.IsGrounded && !_wasGrounded && _fallSpeed >= minLandingSpeed)
         {
-            CameraShake.Instance?.Shake(_fallSpeed * _landingTraumaPerSpeed);
-            PlayClip(_landingClip, Mathf.Clamp01(_fallSpeed / 15f));
+            CameraShake.Instance?.Shake(_fallSpeed * landingTraumaPerSpeed);
+            PlayAudio(landingClip, Mathf.Clamp01(_fallSpeed / 15f));
         }
 
-        if (_movement.IsGrounded) _fallSpeed = 0f;
-        _wasGrounded = _movement.IsGrounded;
+        if (movement.IsGrounded) _fallSpeed = 0f;
+        _wasGrounded = movement.IsGrounded;
     }
 
     private void UpdateDash()
     {
-        bool isDashing = _movement.IsDashing;
-        if (isDashing && !_wasDashing) PlayClip(_dashClip, 0.8f);
+        bool isDashing = movement.IsDashing;
+        if (isDashing && !_wasDashing) PlayAudio(dashClip, 0.8f);
 
         ScreenFeedback.Instance?.SetDashing(isDashing);
         _wasDashing = isDashing;
     }
 
-    private void PlayClip(AudioClip clip, float volume)
+    private void PlayAudio(AudioClip clip, float volume)
     {
         if (clip == null) return;
 
-        _audioSource.pitch = Random.Range(0.9f, 1.1f);
-        _audioSource.PlayOneShot(clip, volume);
+        AudioManager.Instance.PlaySound(clip, Random.Range(0.9f, 1.1f));
     }
 }

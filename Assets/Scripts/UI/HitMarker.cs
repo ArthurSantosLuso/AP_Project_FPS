@@ -10,7 +10,6 @@ public class HitMarker : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private RectTransform marker;
-    [SerializeField] private AudioSource audioSource;
     [Space]
     [Header("Marker")]
     [SerializeField] private float showDuration = 0.15f;
@@ -44,7 +43,7 @@ public class HitMarker : MonoBehaviour
         // Calculate the time to hide the marker
         _hideTime = Time.unscaledTime + showDuration;
         // Play tick audio
-        audioSource.PlayOneShot(_tickClip);
+        AudioManager.Instance.PlaySound(_tickClip);
         // Freeze the time
         HitStop.Instance?.Freeze(hitStopDuration);
 
