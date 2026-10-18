@@ -7,8 +7,9 @@ public abstract class Ability : MonoBehaviour
     [Tooltip("Audio to be played when the ability is performed.")]
     [SerializeField]
     protected AudioClip actionAudio;
+    [Tooltip("Audio to be played when the ability cannot be performed.")]
     [SerializeField]
-    protected float staminaCost;
+    protected AudioClip actionFailedAudio;
 
     [Header("On Hit Effects Propreties")]
     [SerializeField]
@@ -43,21 +44,27 @@ public abstract class Ability : MonoBehaviour
 
     protected void PlayActionAudio()
     {
-        AudioManager.Instance.PlaySound(actionAudio/*, Random.Range(0.9f, 1.1f)*/);
+        if (actionAudio == null)
+        {
+            Debug.Log($"{name} has no 'actionAudio' to be played");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound(actionAudio, Random.Range(0.9f, 1.1f));
+        }
     }
 
-    // public abstract float AbilityRange { get; }
-
-    //protected IEnumerator OnHitEffects()
-    //{
-    //    // Tiny time freeze on every hit
-    //    HitStopManager.Instance?.DoTimeEffect(onHitTimeScaleDuration, onHitTimeScale);
-
-    //    yield return new WaitForSecondsRealtime(onHitTimeScaleDuration);
-
-    //    // Screen Shake when attack lands
-    //    ScreenShake.Instance?.ShakeWithDelay(shakeIntensity * 2, shakeDuration, shakeDelay);
-    //}
+    protected void PlayActionFailedAudio()
+    {
+        if (actionAudio == null)
+        {
+            Debug.Log($"{name} has no 'actionFailedAudio' to be played");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound(actionFailedAudio, Random.Range(0.9f, 1.1f));
+        }
+    }
 
     public abstract void Perform();
     protected abstract bool CanAttack();

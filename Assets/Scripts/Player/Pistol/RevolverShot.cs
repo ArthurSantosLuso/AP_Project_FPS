@@ -1,9 +1,5 @@
 using System.Collections.Generic;
-using TMPro;
-using UnityEditor;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class RevolverShot : Ability
 {
@@ -20,28 +16,18 @@ public class RevolverShot : Ability
     [SerializeField] private LayerMask aimMask = -0;
     [SerializeField] private float maxAimDistance = 100f;
 
-    [Header("Pool")]
-    [SerializeField] private int defaultCapacity = 6;
-    [SerializeField] private int maxSize = 6;
+    [Header("Revolver Configuration")]
+    [Tooltip("Max number of bullets player can have at the same time")]
+    [SerializeField] private int cylinderSize = 6;
 
-    private int                 currentBulletCount = 6;
+    private int                 currentBulletCount = 0;
     private float               _nextFireTime;
     private Queue<BulletData>   revolverCylinder;
-    private IObjectPool<Bullet> _pool;
 
     private void Awake()
     {
         if (shotPoint == null) shotPoint = transform;
         if (aimCamera == null) aimCamera = Camera.main;
-
-        //_pool = new ObjectPool<Bullet>(
-        //    createFunc: () => Instantiate(bulletPrefab),
-        //    actionOnGet: b => b.gameObject.SetActive(true),
-        //    actionOnRelease: b => b.gameObject.SetActive(false),
-        //    actionOnDestroy: b => Destroy(b.gameObject),
-        //    collectionCheck: false,
-        //    defaultCapacity: defaultCapacity,
-        //    maxSize: maxSize);
 
         revolverCylinder = new Queue<BulletData>();
     }
@@ -60,13 +46,13 @@ public class RevolverShot : Ability
 
     private void SpawnBullet()
     {
-        // Bullet bullet = _pool.Get();
-
         shootVFX.TriggerVFX();
         BulletData bulletData = revolverCylinder.Dequeue();
 
         GameObject go = Instantiate(bulletData.bulletPrefab);
         go.GetComponent<Bullet>().SetupBullet(bulletData, shotPoint.position, GetShotRotation(), gameObject);
+
+        currentBulletCount = revolverCylinder.Count;
     }
 
     public override void Perform()
@@ -79,21 +65,24 @@ public class RevolverShot : Ability
         }
         else
         {
+            PlayActionFailedAudio();
             Debug.Log("Cant shot!");
         }
     }
 
     protected override bool CanAttack()
     {
-        if (Time.time < _nextFireTime || revolverCylinder.Count < 1) return false;
+        if (Time.time < _nextFireTime || currentBulletCount < 1) return false;
         else return true;
     }
 
     public void AddBullet(BulletData bulletToAdd)
     {
-        if (revolverCylinder.Count < maxSize)
+        if (currentBulletCount < cylinderSize)
         {
             revolverCylinder.Enqueue(bulletToAdd);
+
+            currentBulletCount = revolverCylinder.Count;
         }
     }
 }
