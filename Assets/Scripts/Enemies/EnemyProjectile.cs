@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 
 public class EnemyProjectile : Parryable
 {
@@ -31,7 +30,7 @@ public class EnemyProjectile : Parryable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IDamageable>() != null)
+        if (other.GetComponent<IDamageable>() != null && other.GetComponent<EnemyHealth>() == null)
         {
             other.GetComponent<IDamageable>().Damage(damage);
             Destroy(gameObject);
