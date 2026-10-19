@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier
+public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResistance
 {
     [SerializeField] private Slider uiHealthBar;
     [SerializeField] private Color flashColor = Color.white;
     [SerializeField] private float targetFlashDuration = 0.06f;
+    [SerializeField] private BulletResistance[] resistances;
+
 
     /// <summary>
     /// Raised after damage is applied. Use by anything that want to react to hits.
@@ -19,29 +22,45 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier
     /// </summary>
     public Action<EnemyHealth> OnDeath;
 
-    private bool isDead;
+    private bool _isDead;
+    private Dictionary<BulletData, float> _resistanceMap;
 
-    public bool IsDead => isDead;
+    public bool IsDead => _isDead;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        _resistanceMap = new Dictionary<BulletData, float>();
+        foreach (var r in resistances)
+        {
+            if (r.bullet != null)
+            {
+                _resistanceMap[r.bullet] = r.multiplier;
+            }
+        }
+    }
+
+    public float GetMultiplier(BulletData bullet)
+        => bullet != null && _resistanceMap.TryGetValue(bullet, out float m) ? m : 1f; 
 
     public void Damage(float damageValue)
     {
         ApplyDamage(damageValue);
 
-        Renderer renderer = GetComponentInChildren<Renderer>();
-        if (renderer != null) StartCoroutine(FlashTarget(renderer));
+        TryFlash();
     }
 
     public void DamageNoStagger(float damageValue)
     {
         ApplyDamage(damageValue);
 
-        Renderer renderer = GetComponentInChildren<Renderer>();
-        if (renderer != null) StartCoroutine(FlashTarget(renderer));
+        TryFlash();
     }
 
     private void ApplyDamage(float damageValue)
     {
-        if (isDead) return;
+        if (_isDead) return;
 
         ReduceValue(damageValue);
 
@@ -58,12 +77,18 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier
 
     private void Kill()
     {
-        isDead = true;
+        _isDead = true;
 
         if (OnDeath != null)
             OnDeath.Invoke(this);   // Whoever listens decides what happens next
         else
             Destroy(gameObject);
+    }
+
+    private void TryFlash()
+    {
+        Renderer renderer = GetComponentInChildren<Renderer>();
+        if (renderer != null) StartCoroutine(FlashTarget(renderer));
     }
 
     private IEnumerator FlashTarget(Renderer targetRenderer)
@@ -78,6 +103,6 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier
         if (targetRenderer != null) targetRenderer.SetPropertyBlock(null);
     }
 
-    public bool CanDamage() => !isDead && currentValue > 0f;
-    public bool HasBlood() => true;
+    public bool CanDamage() => !_isDead && currentValue > 0f;
+    public bool HasBlood() => true;   
 }

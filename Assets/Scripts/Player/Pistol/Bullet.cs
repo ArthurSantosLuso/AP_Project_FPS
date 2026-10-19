@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -80,7 +81,7 @@ public class Bullet : MonoBehaviour
 
     private void OnHit(RaycastHit hit)
     {
-        var ctx = new BulletHitContext(hit, owner, _data.damage);
+        var ctx = new BulletHitContext(hit, owner, _data.damage, _data);
         foreach(var effect in _data.onHitEffects)
             effect.Apply(ctx);
 

@@ -7,7 +7,9 @@ public class IceEffect : BulletEffect
 
     public override void Apply(in BulletHitContext ctx)
     {
-        var target = ctx.Hit.collider.GetComponentInParent<IFreezable>();
-        target?.Freeze(freezeDuration);
+        Collider col = ctx.Hit.collider;
+        if (BulletDamage.IsImmune(col, ctx.Bullet)) return;
+
+        col.GetComponentInParent<IFreezable>()?.Freeze(freezeDuration);
     }
 }
