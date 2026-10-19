@@ -8,6 +8,8 @@ public class BulletData : ScriptableObject
     public float damage = 10f;
     public float lifetime = 3f;
     public float radius = 0.05f;
+    public int maxAmmo = 0;
+    public Sprite bulletIcon;
     public LayerMask hitMask = 0;
     public GameObject hitEffectPrefab;
     public BulletEffect[] onHitEffects; // Empty = regular bullet
