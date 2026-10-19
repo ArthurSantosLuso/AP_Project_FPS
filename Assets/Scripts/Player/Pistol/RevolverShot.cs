@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Collections.Generic;
 
 public class RevolverShot : Ability
 {
@@ -17,19 +18,31 @@ public class RevolverShot : Ability
     [SerializeField] private float maxAimDistance = 100f;
 
     [Header("Revolver Configuration")]
-    [Tooltip("Max number of bullets player can have at the same time")]
+    [Tooltip("Number of slots (different bullet types) in the cylinder")]
     [SerializeField] private int cylinderSize = 6;
 
-    private int                 _currentBulletCount = 0;
-    private float               _nextFireTime;
-    private Queue<BulletData>   revolverCylinder;
+
+    private float                       _nextFireTime;
+    private List<BulletData>            _slots = new List<BulletData>();
+    private Dictionary<BulletData, int> _ammo = new Dictionary<BulletData, int>();
+
+    public event Action OnCylinderChanged;
 
     private void Awake()
     {
         if (shotPoint == null) shotPoint = transform;
         if (aimCamera == null) aimCamera = Camera.main;
 
-        revolverCylinder = new Queue<BulletData>();
+        _slots = new List<BulletData>();
+        _ammo = new Dictionary<BulletData, int>();
+    }
+
+    public BulletData GetBulletAt(int slotIndex) => slotIndex < _slots.Count ? _slots[slotIndex] : null;
+
+    public int GetAmmoAt(int slotIndex)
+    {
+        BulletData data = GetBulletAt(slotIndex);
+        return data != null && _ammo.TryGetValue(data, out int amount) ? amount : 0;
     }
 
     /// <summary>
@@ -57,13 +70,15 @@ public class RevolverShot : Ability
         // Call the method to trigger VFX
         shootVFX.TriggerVFX();
         // Get the bullet data
-        BulletData bulletData = revolverCylinder.Dequeue();
+        BulletData bulletData = _slots[0];
+        // the slot stays in the cylinder even at 0
+        _ammo[bulletData]--;
         // Instantiate and store bullet game object
         GameObject go = Instantiate(bulletData.bulletPrefab);
         // Setup the bullet
         go.GetComponent<Bullet>().SetupBullet(bulletData, shotPoint.position, GetShotRotation(), gameObject);
-        // Update the aux bullet count variable
-        _currentBulletCount = revolverCylinder.Count;
+
+        OnCylinderChanged?.Invoke();
     }
 
     public override void Perform()
@@ -81,7 +96,7 @@ public class RevolverShot : Ability
         else
         {
             // Just play audio when out of ammo
-            if (_currentBulletCount == 0)
+            if (GetAmmoAt(0) == 0)
                 PlayActionFailedAudio();
             
             Debug.Log("Cant shot!");
@@ -90,20 +105,46 @@ public class RevolverShot : Ability
 
     protected override bool CanAttack()
     {
+        if (GetBulletAt(0) == null) return false;
         // Player cannot shot if has no ammo or the time for next shot is not full yet
-        if (Time.time < _nextFireTime || _currentBulletCount < 1) return false;
+        if (Time.time < _nextFireTime || GetAmmoAt(0) < 1) return false;
         else return true; 
     }
 
-    public void AddBullet(BulletData bulletToAdd)
+    public int AddBullet(BulletData type, int amount = 1)
     {
-        // Verify if there is free space on revolver cylinder
-        if (_currentBulletCount < cylinderSize)
+        if (!_ammo.ContainsKey(type))
         {
-            // Add bullet to revolver
-            revolverCylinder.Enqueue(bulletToAdd);
-            // Add to the count aux variable
-            _currentBulletCount = revolverCylinder.Count;
+            // no free hole
+            if (_slots.Count >= cylinderSize) return 0; 
+            _slots.Add(type);
+            _ammo[type] = 0;
         }
+
+        int added = Mathf.Min(amount, type.maxAmmo - _ammo[type]);
+        if (added <= 0) return 0;
+
+        _ammo[type] += added;
+        OnCylinderChanged?.Invoke();
+        return added;
+    }
+
+    public void RotateCylinder(int direction)
+    {
+        if (_slots.Count < 2) return;
+
+        if (direction > 0)
+        {
+            BulletData first = _slots[0];
+            _slots.RemoveAt(0);
+            _slots.Add(first);
+        }
+        else
+        {
+            BulletData last = _slots[_slots.Count - 1];
+            _slots.RemoveAt(_slots.Count - 1);
+            _slots.Insert(0, last);
+        }
+        OnCylinderChanged?.Invoke();
     }
 }
