@@ -209,7 +209,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.157
+    m_Value: 0.2
   smoothness:
     m_OverrideState: 1
     m_Value: 0.231
@@ -231,7 +231,7 @@ MonoBehaviour:
   active: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 3.13
+    m_Value: 0.82
   tintColor:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -246,7 +246,7 @@ MonoBehaviour:
     m_Value: 8.92
   warpedFlareIntensity:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 3.5
   warpedFlareScale:
     m_OverrideState: 0
     m_Value: {x: 1, y: 1}
@@ -281,7 +281,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 4
   chromaticAbberationIntensity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.5
 --- !u!114 &5718473628301926919
 MonoBehaviour:
