@@ -998,7 +998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectWaterBullet
   bulletToCollect: {fileID: 11400000, guid: b489f634eec90a548a8a6c4f80ffbcbc, type: 2}
-  revolver: {fileID: 745829908}
+  revolver: {fileID: 0}
   collectAudio: {fileID: 8300000, guid: 73ed5dc76404d794c910360288845bee, type: 3}
 --- !u!1 &297725939
 GameObject:
@@ -2029,17 +2029,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ba3c5874053be050090891318bff4d85, type: 3}
   m_PrefabInstance: {fileID: 717905610}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &745829908 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6805324514879434504, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-  m_PrefabInstance: {fileID: 1322361637}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc48bfeab19ef641ab0e919955eb935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RevolverShot
 --- !u!1001 &758897337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2562,7 +2551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectWaterBullet
   bulletToCollect: {fileID: 11400000, guid: b489f634eec90a548a8a6c4f80ffbcbc, type: 2}
-  revolver: {fileID: 745829908}
+  revolver: {fileID: 0}
   collectAudio: {fileID: 8300000, guid: 73ed5dc76404d794c910360288845bee, type: 3}
 --- !u!1001 &976680992
 PrefabInstance:
@@ -3117,7 +3106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectWaterBullet
   bulletToCollect: {fileID: 11400000, guid: b489f634eec90a548a8a6c4f80ffbcbc, type: 2}
-  revolver: {fileID: 745829908}
+  revolver: {fileID: 0}
   collectAudio: {fileID: 8300000, guid: 73ed5dc76404d794c910360288845bee, type: 3}
 --- !u!1001 &1254020321
 PrefabInstance:
@@ -4172,7 +4161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectWaterBullet
   bulletToCollect: {fileID: 11400000, guid: b489f634eec90a548a8a6c4f80ffbcbc, type: 2}
-  revolver: {fileID: 745829908}
+  revolver: {fileID: 0}
   collectAudio: {fileID: 8300000, guid: 73ed5dc76404d794c910360288845bee, type: 3}
 --- !u!1 &1515212196
 GameObject:
@@ -5612,7 +5601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectWaterBullet
   bulletToCollect: {fileID: 11400000, guid: b489f634eec90a548a8a6c4f80ffbcbc, type: 2}
-  revolver: {fileID: 745829908}
+  revolver: {fileID: 0}
   collectAudio: {fileID: 8300000, guid: 73ed5dc76404d794c910360288845bee, type: 3}
 --- !u!1 &1991457833
 GameObject:
