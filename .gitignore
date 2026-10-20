@@ -106,3 +106,23 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Ferramentas de IA (assistentes, MCP, configs locais)
+/[Pp]ackages/com.coplaydev.unity-mcp/
+*[Mm][Cc][Pp]ForUnity*
+.mcp.json
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.codex/
+AGENTS.md
+.cursor/
+.cursorrules
+.cursorignore
+.github/copilot-instructions.md
+.gemini/
+GEMINI.md
+.aider*
+.windsurf/
+.windsurfrules
+.continue/
