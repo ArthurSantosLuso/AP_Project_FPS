@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : PausableMonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private EnemyShooter shooter;

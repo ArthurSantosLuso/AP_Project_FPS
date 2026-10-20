@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyShooter : MonoBehaviour
+public class EnemyShooter : PausableMonoBehaviour
 {
     [SerializeField] private EnemyProjectile projectilePrefab;
     [SerializeField] private Transform shotPoint;
