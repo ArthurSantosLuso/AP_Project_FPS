@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   bulletPrefab: {fileID: 1580899344318569217, guid: 62a02589e6d2fde4ca606bdab05320ef, type: 3}
   speed: 40
-  damage: 40
+  damage: 50
   lifetime: 3
   radius: 0.05
   maxAmmo: 2
