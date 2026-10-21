@@ -43,7 +43,14 @@ public class EnemyAI : PausableMonoBehaviour
         LookAtPlayer();
 
         if (Vector3.Distance(transform.position, _player.position) <= attackRange)
+        {
+            shooter.SetTargetStatus(true);
             shooter.TryShoot(_player);
+        }
+        else
+        {
+            shooter.SetTargetStatus(false);
+        }
     }
 
     private void DetectPlayer()
