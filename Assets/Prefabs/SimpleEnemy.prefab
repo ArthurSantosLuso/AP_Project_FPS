@@ -5787,7 +5787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0744fd4c167ba4288e50b17a0d9e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooter
-  projectilePrefab: {fileID: 1585811283607042354, guid: 5f089607ac372d94fad0339518c4bad9, type: 3}
+  projectilePrefab: {fileID: 5568766998397620681, guid: ac419d5e42aad2a45ba2129ed9674dc4, type: 3}
   shotPoint: {fileID: 6839139763103886072}
   fireInterval: 3
   fireRate: 0.5
