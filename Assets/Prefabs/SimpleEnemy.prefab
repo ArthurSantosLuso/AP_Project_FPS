@@ -5772,6 +5772,8 @@ MonoBehaviour:
   preferredDistance: 7
   turnSpeed: 8
   eyeHeight: 0.5
+  patrolRadius: 18
+  patrolWaitTime: 2
 --- !u!114 &7234986887145042727
 MonoBehaviour:
   m_ObjectHideFlags: 0

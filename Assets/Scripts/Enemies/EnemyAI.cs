@@ -11,15 +11,19 @@ public class EnemyAI : PausableMonoBehaviour
     [SerializeField] private float preferredDistance = 7f;
     [SerializeField] private float turnSpeed = 8f;
     [SerializeField] private float eyeHeight = 0.5f;
+    [SerializeField] private float patrolRadius = 6f;
+    [SerializeField] private float patrolWaitTime = 2f;
 
     private Transform _player;
     private Vector3 _personalSpaceDirection;
+    private Vector3 _startPosition;
     private bool _hasDetectedPlayer;
+    private float _patrolWaitTimer;
 
     private void Start()
     {
         _player = FindFirstObjectByType<FirstPersonMovement>().transform;
-        agent.updateRotation = false;
+        _startPosition = transform.position;
 
         enemyHealth.Damaged += _ => DetectPlayer();
     }
@@ -31,6 +35,7 @@ public class EnemyAI : PausableMonoBehaviour
         if (!_hasDetectedPlayer)
         {
             if (distanceToPlayer <= detectionRange && CanSeePlayer()) DetectPlayer();
+            else Patrol();
             return;
         }
 
@@ -46,6 +51,7 @@ public class EnemyAI : PausableMonoBehaviour
         if (_hasDetectedPlayer) return;
 
         _hasDetectedPlayer = true;
+        agent.updateRotation = false;
 
         Vector3 directionFromPlayer = transform.position - _player.position;
         directionFromPlayer.y = 0f;
@@ -71,6 +77,20 @@ public class EnemyAI : PausableMonoBehaviour
             && hit.transform == _player;
     }
 
+    private void Patrol()
+    {
+        if (agent.pathPending || agent.remainingDistance > agent.stoppingDistance) return;
+
+        _patrolWaitTimer -= Time.deltaTime;
+        if (_patrolWaitTimer > 0f) return;
+
+        Vector3 randomPoint = _startPosition + Random.insideUnitSphere * patrolRadius;
+        if (NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, patrolRadius, NavMesh.AllAreas))
+            agent.SetDestination(hit.position);
+
+        _patrolWaitTimer = patrolWaitTime;
+    }
+
     private void OnDrawGizmosSelected()
     {
         // Draw detection range 
@@ -79,5 +99,8 @@ public class EnemyAI : PausableMonoBehaviour
         // Draw attack range
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+        // Draw patrol range
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, patrolRadius);
     }
 }
