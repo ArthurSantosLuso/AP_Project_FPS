@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResistance
@@ -10,6 +11,14 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
     [SerializeField] private Color flashColor = Color.white;
     [SerializeField] private float targetFlashDuration = 0.06f;
     [SerializeField] private BulletResistance[] resistances;
+
+    [Header("Knock back propreties")]
+    [SerializeField] private float knockbackDistance = 1.5f;
+    [SerializeField] private float knockbackDuration = 0.15f;
+
+    private Coroutine _knockbackCoroutine;
+    private NavMeshAgent _agent;
+
 
 
     /// <summary>
@@ -39,6 +48,8 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
                 _resistanceMap[r.bullet] = r.multiplier;
             }
         }
+
+        _agent = GetComponent<NavMeshAgent>();
     }
 
     public float GetMultiplier(BulletData bullet)
@@ -49,6 +60,9 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
         ApplyDamage(damageValue);
 
         TryFlash();
+
+        if (!_isDead)
+            StartKnockback(-transform.forward);
     }
 
     public void DamageNoStagger(float damageValue)
@@ -56,6 +70,9 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
         ApplyDamage(damageValue);
 
         TryFlash();
+
+        if (!_isDead)
+            StartKnockback(-transform.forward);
     }
 
     private void ApplyDamage(float damageValue)
@@ -101,6 +118,41 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
         yield return new WaitForSecondsRealtime(targetFlashDuration);
 
         if (targetRenderer != null) targetRenderer.SetPropertyBlock(null);
+    }
+
+    private void StartKnockback(Vector3 direction)
+    {
+        if (_knockbackCoroutine != null)
+            StopCoroutine(_knockbackCoroutine);
+
+        _knockbackCoroutine = StartCoroutine(KnockbackRoutine(direction.normalized));
+    }
+
+    private IEnumerator KnockbackRoutine(Vector3 direction)
+    {
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = startPosition + direction * knockbackDistance;
+
+        float elapsed = 0f;
+
+        _agent.isStopped = true;
+
+        while (elapsed < knockbackDuration)
+        {
+            elapsed += Time.deltaTime;
+
+            float t = Mathf.Clamp01(elapsed / knockbackDuration);
+
+            t = Mathf.SmoothStep(0f, 1f, t);
+
+            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+        _knockbackCoroutine = null;
+        _agent.isStopped = false;
     }
 
     public bool CanDamage() => !_isDead && currentValue > 0f;
