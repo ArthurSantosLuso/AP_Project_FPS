@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - blueNoise:
-        m_Texture: {fileID: 2800000, guid: d7e0e00c6bef2d040bb75ad39027f11e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 63487c2310dc6cd41a2eba7ecb7e1a90, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - fogNoise:
@@ -42,12 +42,12 @@ Material:
     - lightScattering: 0.473
     - maxDistance: 100
     - noiseOffset: 0.1
-    - noiseTiling: 0.25
+    - noiseTiling: 0.15
     - stepSize: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - fogColor: {r: 1, g: 0.20115025, b: 0, a: 1}
-    - fogWind: {r: 0.5, g: 0.5, b: 0, a: 0.7}
+    - fogWind: {r: 0.5, g: 0.5, b: 0, a: 1}
     - lightContribution: {r: 10.831204, g: 13.880567, b: 16.766571, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
