@@ -19,7 +19,11 @@ public class EnemyShooter : PausableMonoBehaviour
     public void SetTargetStatus(bool isInRange)
     {
         _targetInRange = isInRange;
-        if (!isInRange) _timer = 0f;
+        if (!isInRange)
+        {
+            _timer = 0f;
+            effect.SetActive(false);
+        }
     }
 
     private void Update()
