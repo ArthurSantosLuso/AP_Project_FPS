@@ -1,14 +1,16 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : PausableMonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private EnemyShooter shooter;
+    [SerializeField] private EnemyHealth enemyHealth;
     [SerializeField] private float attackRange = 10f;
     [SerializeField] private float detectionRange = 15f;
     [SerializeField] private float preferredDistance = 7f;
     [SerializeField] private float turnSpeed = 8f;
+    [SerializeField] private float eyeHeight = 0.5f;
 
     private Transform _player;
     private Vector3 _personalSpaceDirection;
@@ -18,6 +20,8 @@ public class EnemyAI : MonoBehaviour
     {
         _player = FindFirstObjectByType<FirstPersonMovement>().transform;
         agent.updateRotation = false;
+
+        enemyHealth.Damaged += _ => DetectPlayer();
     }
 
     private void Update()
@@ -26,7 +30,7 @@ public class EnemyAI : MonoBehaviour
 
         if (!_hasDetectedPlayer)
         {
-            if (distanceToPlayer <= detectionRange) DetectPlayer();
+            if (distanceToPlayer <= detectionRange && CanSeePlayer()) DetectPlayer();
             return;
         }
 
@@ -39,6 +43,8 @@ public class EnemyAI : MonoBehaviour
 
     private void DetectPlayer()
     {
+        if (_hasDetectedPlayer) return;
+
         _hasDetectedPlayer = true;
 
         Vector3 directionFromPlayer = transform.position - _player.position;
@@ -54,6 +60,15 @@ public class EnemyAI : MonoBehaviour
         direction.y = 0f;
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+    }
+
+    private bool CanSeePlayer()
+    {
+        Vector3 eyePosition = transform.position + Vector3.up * eyeHeight;
+        Vector3 directionToPlayer = _player.position - eyePosition;
+
+        return Physics.Raycast(eyePosition, directionToPlayer, out RaycastHit hit, detectionRange, ~0, QueryTriggerInteraction.Ignore)
+            && hit.transform == _player;
     }
 
     private void OnDrawGizmosSelected()
