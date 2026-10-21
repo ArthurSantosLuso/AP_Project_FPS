@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6182acdd820c4eb4baf7bdf305632bcb, type: 3}
   m_Name: FireBullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  bulletPrefab: {fileID: 466407327512667719, guid: ac419d5e42aad2a45ba2129ed9674dc4, type: 3}
+  bulletPrefab: {fileID: 1580899344318569217, guid: 62a02589e6d2fde4ca606bdab05320ef, type: 3}
   speed: 40
   damage: 50
   lifetime: 1.5
