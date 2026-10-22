@@ -511,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -579,7 +579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy (10)
+      value: WaterEnemy_2
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -649,6 +649,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -793,6 +797,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1013,7 +1021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.163
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1081,7 +1089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy (12)
+      value: FireeEnemy_4
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -1155,6 +1163,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1299,6 +1311,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1912,7 +1928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1980,7 +1996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy (7)
+      value: SimpleEnemy_3
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -2024,7 +2040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3106469811415490294, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: resistances.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3106469811415490294, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: resistances.Array.data[0].bullet
@@ -2042,6 +2058,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -2186,6 +2206,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -2392,7 +2416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.18
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2460,7 +2484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy (13)
+      value: IceEnemy_3
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -2534,6 +2558,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -2678,6 +2706,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -3620,7 +3652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.04
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3688,7 +3720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy
+      value: SimpleEnemy_1
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -3734,6 +3766,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -3878,6 +3914,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -4000,7 +4040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4068,7 +4108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy (8)
+      value: FireEnemy_3
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -4142,6 +4182,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -4286,6 +4330,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -4517,7 +4565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4585,7 +4633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy (6)
+      value: IceEnemy_2
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -4659,6 +4707,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -4803,6 +4855,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -5413,7 +5469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.04
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5481,7 +5537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: IcyEnemy
+      value: IcyEnemy_1
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -5559,6 +5615,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -5707,6 +5767,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -5820,7 +5884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.04
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5888,7 +5952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy (1)
+      value: SimpleEnemy_2
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -5934,6 +5998,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -6078,6 +6146,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -6786,7 +6858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6854,7 +6926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: FireEnemy
+      value: FireEnemy_2
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -6928,6 +7000,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -7072,6 +7148,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -7318,7 +7398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7386,7 +7466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy (5)
+      value: WaterEnemy_1
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -7456,6 +7536,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -7600,6 +7684,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -7651,7 +7739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7719,7 +7807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy (9)
+      value: SimpleEnemy_4
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -7765,6 +7853,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -7909,6 +8001,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -8227,7 +8323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.04
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8295,7 +8391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: FireEnemy1
+      value: FireEnemy_1
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -8369,6 +8465,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -8513,6 +8613,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -8745,7 +8849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.163
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 885039070141622418, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8813,7 +8917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy (11)
+      value: SimpleEnemy_5
       objectReference: {fileID: 0}
     - target: {fileID: 2308480925500556943, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -8859,6 +8963,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3239846232288062020, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 3243519083565348354, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -9003,6 +9111,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1835290998}
     - target: {fileID: 9174263420026005042, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
       value: 6
