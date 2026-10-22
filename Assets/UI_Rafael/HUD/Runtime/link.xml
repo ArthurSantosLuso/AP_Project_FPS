@@ -1,0 +1,13 @@
+<linker>
+  <assembly fullname="Assembly-CSharp">
+    <type fullname="FirstPersonMovement" preserve="fields" />
+    <type fullname="ParryAbility" preserve="fields" />
+    <type fullname="RevolverShot">
+      <field name="_nextFireTime" />
+      <field name="fireRate" />
+    </type>
+    <type fullname="RevolverCylinderUI">
+      <field name="invertScroll" />
+    </type>
+  </assembly>
+</linker>

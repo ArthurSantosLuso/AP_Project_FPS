@@ -76,7 +76,7 @@ Material:
     - _QueueOffset: 0
     - _RoughnessValue: 0
     - _Smoothness: 0.12
-    - _Tilling: 0.75
+    - _Tilling: 0.36
     m_Colors:
     - _EmissionColor: {r: 0.7830189, g: 0.2622375, b: 0.27651036, a: 1}
     - _FinalMultiplyColor: {r: 1, g: 0.82449263, b: 0, a: 1}
