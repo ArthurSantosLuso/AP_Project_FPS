@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : ValueBase, IDamageable, IHealable
 {
@@ -59,6 +60,7 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
         // Death logic
         //LevelManager.Instance.DisplayDeathScreen();
         //GameManager.Instance.StopPlayerActions();
+        SceneManager.LoadScene(0);
     }
 
     public void AddHP(float value)
