@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Procedural_floating_object
+  m_Name: Procedural_puzzle
   m_Shader: {fileID: -6465566751694194690, guid: dd40f7978a3c6d94e9ce1228c2b28e03, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -82,7 +82,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Floor_color: {r: 0.23921569, g: 0.28162912, b: 0.6, a: 1}
+    - _Floor_color: {r: 0.6, g: 0.23921569, b: 0.2661134, a: 1}
     - _Line_color: {r: 1, g: 1, b: 1, a: 1}
     - _Wall_color: {r: 0, g: 0.11692067, b: 0.34901962, a: 1}
   m_BuildTextureStacks: []

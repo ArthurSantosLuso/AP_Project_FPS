@@ -6421,7 +6421,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.03
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -23452,7 +23452,7 @@ MonoBehaviour:
   controller: {fileID: 8871023123450388918}
   player: {fileID: 3701202999447605525}
   speed: 8
-  jumpForce: 8
+  jumpForce: 7
   sensetivity: 3
   gravity: 9.81
   dashSpeed: 30
