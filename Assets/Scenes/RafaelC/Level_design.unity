@@ -6106,7 +6106,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 14
   m_CollisionDetection: 1
 --- !u!65 &666640919
 BoxCollider:
@@ -6678,7 +6678,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 14
   m_CollisionDetection: 1
 --- !u!1 &689484256
 GameObject:
@@ -6970,6 +6970,10 @@ PrefabInstance:
       value: 20.78461
       objectReference: {fileID: 0}
     - target: {fileID: 277409132054013447, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 255
+      objectReference: {fileID: 0}
+    - target: {fileID: 277409132054013447, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_projectionMatrixMode
       value: 1
       objectReference: {fileID: 0}
@@ -7021,6 +7025,22 @@ PrefabInstance:
       propertyPath: speedLines
       value: 
       objectReference: {fileID: 1299185215}
+    - target: {fileID: 5932800550988689367, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      propertyPath: m_ClearDepth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932800550988689367, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      propertyPath: m_RenderShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932800550988689367, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066356555616061575, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8682,7 +8702,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 14
   m_CollisionDetection: 1
 --- !u!65 &890259944
 BoxCollider:
@@ -9447,7 +9467,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 14
   m_CollisionDetection: 1
 --- !u!65 &982685419
 BoxCollider:
@@ -10042,7 +10062,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 14
   m_CollisionDetection: 1
 --- !u!65 &1061552787
 BoxCollider:
@@ -16298,7 +16318,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 14
   m_CollisionDetection: 1
 --- !u!65 &1707778730
 BoxCollider:
@@ -19452,7 +19472,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 14
   m_CollisionDetection: 1
 --- !u!65 &2020815494
 BoxCollider:
@@ -19984,7 +20004,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 14
   m_CollisionDetection: 1
 --- !u!65 &2055079406
 BoxCollider:
