@@ -1573,12 +1573,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 16dc07e15de3d1a47a5a1e0da8f28512, type: 2}
     - target: {fileID: 3106469811415490294, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: resistances.Array.data[0].multiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106469811415490294, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: resistances.Array.data[1].multiplier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3106469811415490294, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: resistances.Array.data[2].multiplier
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3205247612739712500, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
@@ -12613,12 +12617,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 16dc07e15de3d1a47a5a1e0da8f28512, type: 2}
     - target: {fileID: 3106469811415490294, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: resistances.Array.data[0].multiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106469811415490294, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: resistances.Array.data[1].multiplier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3106469811415490294, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: resistances.Array.data[2].multiplier
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3205247612739712500, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Layer
