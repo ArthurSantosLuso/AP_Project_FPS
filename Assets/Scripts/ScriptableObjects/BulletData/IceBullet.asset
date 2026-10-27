@@ -17,7 +17,7 @@ MonoBehaviour:
   damage: 10
   lifetime: 1.5
   radius: 0.05
-  maxAmmo: 2
+  maxAmmo: 6
   bulletIcon: {fileID: -779230255416244904, guid: 2bf483e9079e71b4fb47db4672d80c90, type: 3}
   hitMask:
     serializedVersion: 2

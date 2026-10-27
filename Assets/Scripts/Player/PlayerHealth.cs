@@ -4,8 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : ValueBase, IDamageable, IHealable
 {
+    [SerializeField] private KeyCode cheatKey;
+
     [Header("UI Params")]
     [SerializeField] private Slider healthSlider;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(cheatKey))
+        {
+            InfiniteHealth();
+        }    
+    }
 
     public override void ApplyUpgrades()
     {

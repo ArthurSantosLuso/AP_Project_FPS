@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8944471089609953131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7862346825755169130}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pinky_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3700430132411136209}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lowerarm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 7661034434483726040}
   - component: {fileID: 3142197698488931243}
   - component: {fileID: 4718296008836147497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4998,7 +4998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2439489847800625885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: thumb_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5029,7 +5029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6505114717705487928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: revolver_latch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5061,7 +5061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1599986362676590609}
   - component: {fileID: 8147576186806552893}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FPS_Arms_Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5119,7 +5119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7575143768487336906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pinky_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5152,7 +5152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8909103508898885}
   - component: {fileID: 6505227583436670786}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5242,7 +5242,7 @@ GameObject:
   - component: {fileID: 6708137275325237724}
   - component: {fileID: 5260850095075137827}
   - component: {fileID: 5816202872058737105}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flash Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5367,7 +5367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4367246258080034259}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5403,7 +5403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1628228381638819737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: revolver_speedloader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5435,7 +5435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3733930584199494067}
   - component: {fileID: 2929384688317421082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5585,7 +5585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4645016006283089602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: revolver_sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5624,7 +5624,7 @@ GameObject:
   - component: {fileID: 7234986887145042727}
   - component: {fileID: 3106469811415490294}
   - component: {fileID: 8388485546922216456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SimpleEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5683,7 +5683,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 30f74370804c48446ad1b15632da2ab6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5767,9 +5767,10 @@ MonoBehaviour:
   agent: {fileID: 3806161016467521152}
   shooter: {fileID: 7234986887145042727}
   enemyHealth: {fileID: 3106469811415490294}
-  attackRange: 10
+  attackRange: 20
   detectionRange: 15
-  preferredDistance: 7
+  minPreferredDistance: 10
+  maxPreferredDistance: 20
   turnSpeed: 8
   eyeHeight: 0.5
   patrolRadius: 18
@@ -5788,7 +5789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooter
   projectilePrefab: {fileID: 5967845501091714881, guid: ac419d5e42aad2a45ba2129ed9674dc4, type: 3}
   shotPoint: {fileID: 6839139763103886072}
-  fireInterval: 3
+  fireInterval: 1.4
   fireRate: 0.5
   effect: {fileID: 1616446770339891452}
 --- !u!114 &3106469811415490294
@@ -5807,7 +5808,13 @@ MonoBehaviour:
   uiHealthBar: {fileID: 6505227583436670786}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   targetFlashDuration: 0.06
-  resistances: []
+  resistances:
+  - bullet: {fileID: 11400000, guid: 1dd67aacaaf995346ac6e2158f9c7107, type: 2}
+    multiplier: 0
+  - bullet: {fileID: 11400000, guid: 1b72f7c99735c56438935e1c03c89f9a, type: 2}
+    multiplier: 1
+  - bullet: {fileID: 11400000, guid: 16dc07e15de3d1a47a5a1e0da8f28512, type: 2}
+    multiplier: 2
   knockbackDistance: 1.5
   knockbackDuration: 0.15
 --- !u!114 &8388485546922216456
@@ -5835,7 +5842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4005218040211758399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: revolver_barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5870,7 +5877,7 @@ GameObject:
   - component: {fileID: 6685396965380225811}
   - component: {fileID: 534875608262559057}
   - component: {fileID: 4849201706217576155}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5943,7 +5950,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4338050922444797101}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ring_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5977,7 +5984,7 @@ GameObject:
   - component: {fileID: 4382079509448903446}
   - component: {fileID: 1520835334207954141}
   - component: {fileID: 9191180988663015029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10869,7 +10876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4020678863415721597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: index_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10901,7 +10908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7685382444520441577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pinky_metacarpal_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10933,7 +10940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8679924847362228584}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lowerarm_twist_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10964,7 +10971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6092720667842506512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ring_metacarpal_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10997,7 +11004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4924296548989211707}
   - component: {fileID: 3133796295582701163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boxer_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11147,7 +11154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4740599952886261198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11178,7 +11185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5083444253246288411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: index_metacarpal_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11210,7 +11217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2260550300742155355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11247,7 +11254,7 @@ GameObject:
   - component: {fileID: 5705888016801506280}
   - component: {fileID: 9074464831898582611}
   - component: {fileID: 1484754665243249176}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11320,7 +11327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8318871584002190391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: upperarm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11352,7 +11359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 436761240523242100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: revolver_hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11383,7 +11390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4044293208651253936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shoulder_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11415,7 +11422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5820268462428804168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: revolver_trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11446,7 +11453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813468195104990327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: middle_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11478,7 +11485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1288685992492279618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: middle_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11510,7 +11517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7994646921150802155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: index_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11546,7 +11553,7 @@ GameObject:
   - component: {fileID: 7819169644173077466}
   - component: {fileID: 3775165618494972254}
   - component: {fileID: 3239846232288062020}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EnemyCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11658,7 +11665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5768588514800778411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: revolver_cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11690,7 +11697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 988772091158197344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VFX Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11727,7 +11734,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8978392080291377544}
   - component: {fileID: 3571026151222166059}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Speedloader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11877,7 +11884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7174767164864047045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: thumb_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11909,7 +11916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6448102975122125339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: thumb_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11943,7 +11950,7 @@ GameObject:
   - component: {fileID: 547206880335772106}
   - component: {fileID: 1452833067096127843}
   - component: {fileID: 7342462673618141689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flash Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16835,7 +16842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5866830214035798870}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: middle_metacarpal_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16867,7 +16874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6317846028446377519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pinky_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16899,7 +16906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 516046159539651755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ring_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16933,7 +16940,7 @@ GameObject:
   - component: {fileID: 3848046766859529857}
   - component: {fileID: 2151061992029433247}
   - component: {fileID: 2970534107068592648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21827,7 +21834,7 @@ GameObject:
   - component: {fileID: 2920034254665782896}
   - component: {fileID: 1067798585218461986}
   - component: {fileID: 8890041400547224704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunPowerLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21952,7 +21959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6839139763103886072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21983,7 +21990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7042327650073454900}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: revolver_muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22015,7 +22022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6302515920385739613}
   - component: {fileID: 8210205959029627181}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hannd_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22165,7 +22172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6584794460862366199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ring_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22198,7 +22205,7 @@ GameObject:
   - component: {fileID: 4586166265786851621}
   - component: {fileID: 1527472191444985357}
   - component: {fileID: 7692902431421065652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmokeVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22314,7 +22321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5479902775643680042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hand_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22352,7 +22359,7 @@ GameObject:
   - component: {fileID: 4515582760921592351}
   - component: {fileID: 8770053886294103136}
   - component: {fileID: 6002312701675201765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22443,7 +22450,7 @@ GameObject:
   - component: {fileID: 6257122210828857182}
   - component: {fileID: 6129124537503680728}
   - component: {fileID: 7115545427946077707}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22575,7 +22582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7541510682164613730}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: middle_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22606,7 +22613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 609381235258786084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: index_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22637,7 +22644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4862554732888767031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArmRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22668,6 +22675,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3172704603131225455}
     m_Modifications:
+    - target: {fileID: 945249369523363528, guid: 888deb3374e215c45a268fd563aee4eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2808558305733932408, guid: 888deb3374e215c45a268fd563aee4eb, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -22720,9 +22731,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4210314494141654465, guid: 888deb3374e215c45a268fd563aee4eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8948389859456388738, guid: 888deb3374e215c45a268fd563aee4eb, type: 3}
       propertyPath: m_Name
       value: AnticipationEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948389859456388738, guid: 888deb3374e215c45a268fd563aee4eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8948389859456388738, guid: 888deb3374e215c45a268fd563aee4eb, type: 3}
       propertyPath: m_IsActive

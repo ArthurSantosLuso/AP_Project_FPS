@@ -8,7 +8,9 @@ public class EnemyAI : PausableMonoBehaviour
     [SerializeField] private EnemyHealth enemyHealth;
     [SerializeField] private float attackRange = 10f;
     [SerializeField] private float detectionRange = 15f;
-    [SerializeField] private float preferredDistance = 7f;
+    [SerializeField] private float minPreferredDistance = 5f;
+    [SerializeField] private float maxPreferredDistance = 9f;
+
     [SerializeField] private float turnSpeed = 8f;
     [SerializeField] private float eyeHeight = 0.5f;
     [SerializeField] private float patrolRadius = 6f;
@@ -19,6 +21,7 @@ public class EnemyAI : PausableMonoBehaviour
     private Vector3 _startPosition;
     private bool _hasDetectedPlayer;
     private float _patrolWaitTimer;
+    private float _preferredDistance;
 
     private void Start()
     {
@@ -39,10 +42,10 @@ public class EnemyAI : PausableMonoBehaviour
             return;
         }
 
-        agent.SetDestination(_player.position);
+        MaintainDistance(distanceToPlayer);
         LookAtPlayer();
 
-        if (Vector3.Distance(transform.position, _player.position) <= attackRange)
+        if (distanceToPlayer <= attackRange)
         {
             shooter.SetTargetStatus(true);
             shooter.TryShoot(_player);
@@ -53,12 +56,37 @@ public class EnemyAI : PausableMonoBehaviour
         }
     }
 
+    private void MaintainDistance(float distanceToPlayer)
+    {
+        const float tolerance = 1f; 
+
+        if (distanceToPlayer > _preferredDistance + tolerance)
+        {
+            agent.SetDestination(_player.position);
+        }
+        else if (distanceToPlayer < _preferredDistance - tolerance)
+        {
+            Vector3 away = transform.position - _player.position;
+            away.y = 0f;
+            Vector3 target = _player.position + away.normalized * _preferredDistance;
+
+            if (NavMesh.SamplePosition(target, out NavMeshHit hit, 3f, NavMesh.AllAreas))
+                agent.SetDestination(hit.position);
+        }
+        else
+        {
+            agent.ResetPath();
+        }
+    }
+
     private void DetectPlayer()
     {
         if (_hasDetectedPlayer) return;
 
         _hasDetectedPlayer = true;
         agent.updateRotation = false;
+
+        _preferredDistance = Random.Range(minPreferredDistance, maxPreferredDistance);
 
         Vector3 directionFromPlayer = transform.position - _player.position;
         directionFromPlayer.y = 0f;

@@ -4,16 +4,23 @@ public class EnemyShooter : PausableMonoBehaviour
 {
     [SerializeField] private EnemyProjectile projectilePrefab;
     [SerializeField] private Transform shotPoint;
-    [SerializeField] private float fireInterval = 3f;
+    [SerializeField] private float minFireInterval = 3f;
+    [SerializeField] private float maxFireInterval = 3f;
     [SerializeField] private float fireRate = 0.5f;
     [SerializeField] private GameObject effect;
 
     private float _nextFireTime;
+    private float _fireInterval;
 
 
     private float _timer;
     private bool _targetInRange;
     private bool _canShot;
+
+    private void Start()
+    {
+        _fireInterval = Random.Range(minFireInterval, maxFireInterval);
+    }
 
     public void SetTargetStatus(bool isInRange)
     {
@@ -29,11 +36,11 @@ public class EnemyShooter : PausableMonoBehaviour
     {
         if (_targetInRange) _timer += Time.deltaTime;
 
-        if (_timer >= fireInterval) _canShot = true;
+        if (_timer >= _fireInterval) _canShot = true;
 
         if (!_canShot)
         {
-            float n = fireInterval - _timer;
+            float n = _fireInterval - _timer;
 
             if (n <= 1.1f)
             {
