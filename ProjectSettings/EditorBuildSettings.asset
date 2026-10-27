@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Deliveries/Milestone1/MainMenu.unity
+    guid: 4ee35dab93957de40b47a8469c52e586
+  - enabled: 1
     path: Assets/Scenes/Deliveries/Milestone1/Prototype2.unity
     guid: d5acebf993577e94ea82624249e17746
   m_configObjects:
