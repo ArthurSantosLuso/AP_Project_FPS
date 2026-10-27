@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7755137789339298769}
   - component: {fileID: -2883882853110555963}
   m_Layer: 0
-  m_Name: Ice_bullet_player
+  m_Name: BulletWaterPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ef45235978d06408e0f3b90d810531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  data: {fileID: 11400000, guid: 1b72f7c99735c56438935e1c03c89f9a, type: 2}
+  data: {fileID: 11400000, guid: 16dc07e15de3d1a47a5a1e0da8f28512, type: 2}
 --- !u!1 &1426026279801746808
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5, g: 0.96274495, b: 1, a: 1}
+      maxColor: {r: 0, g: 0.50961685, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5051,7 +5051,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d25970bc052a8fc4d85b5cdbd509b86a, type: 2}
+  - {fileID: 2100000, guid: 733b3142c1940084b8871c7adea1c5bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5367,7 +5367,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.95, b: 0.81633174, a: 1}
+      maxColor: {r: 0, g: 0.48310384, b: 0.62299997, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10096,7 +10096,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7abd9865de1d76f498dc70a4d8692ace, type: 2}
+  - {fileID: 2100000, guid: d050e6ba092f1dc48bbc3841f6376d81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
