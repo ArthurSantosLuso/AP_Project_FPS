@@ -37,12 +37,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - densityMult: 0.06
-    - densityThreshold: 0.6
+    - densityMult: 0.05
+    - densityThreshold: 0.5
     - lightScattering: 0.473
     - maxDistance: 100
     - noiseOffset: 0.1
-    - noiseTiling: 0.15
+    - noiseTiling: 0.05
     - stepSize: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
