@@ -42,7 +42,7 @@
                     "id": "852140f2-7766-474d-8707-702459ba45f3",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
                 },
@@ -93,6 +93,16 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "PauseGame",
+                    "type": "Button",
+                    "id": "470c0c71-2ab9-463e-bf3e-be3397ef660f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
                 }
@@ -370,6 +380,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Punch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "465349c0-139e-410b-b3c1-87365456fca1",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "PauseGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d67f830-aff8-4f8e-8bd1-41a9a5e20260",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
