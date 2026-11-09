@@ -23561,6 +23561,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c9c34139-c7bd-4e8f-95a7-21bd58024a43
     m_ActionName: 'Player/Punch[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8939479719961633922}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: OnTriggerPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 470c0c71-2ab9-463e-bf3e-be3397ef660f
+    m_ActionName: 'Player/PauseGame[/Keyboard/escape,/Keyboard/tab]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
