@@ -165,5 +165,21 @@ public class PlayerInput : MonoBehaviour
         //}
     }
 
+    public void OnTriggerPause(InputAction.CallbackContext context)
+    {        
+        if ((Application.platform == RuntimePlatform.WebGLPlayer || Application.isEditor) 
+            && context.control == Keyboard.current.escapeKey)
+            return; 
+
+        if (context.phase == InputActionPhase.Performed)
+        {
+            bool currentState = GameState.IsPaused;
+            GameState.SetPaused(!currentState);
+            currentState = GameState.IsPaused;
+
+            if (currentState) Debug.Log($"Game Paused: {currentState}");
+        }
+    }
+
     private bool VerifyIfPlayerCanAct() => true/*GameManager.Instance.CanPlayerAct*/;
 }

@@ -10,7 +10,7 @@ public static class GameState
         if (IsPaused == paused) return;
         IsPaused = paused;
         Time.timeScale = paused ? 0f : 1f;
-        AudioListener.pause = true;
+        AudioListener.pause = paused;
         OnPauseChanged?.Invoke(paused);
     }
 }
