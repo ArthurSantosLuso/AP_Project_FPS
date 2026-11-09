@@ -165,19 +165,22 @@ public class PlayerInput : MonoBehaviour
         //}
     }
 
+    // If editor or web, pause via Tab
+    // If windows, pause via esc
     public void OnTriggerPause(InputAction.CallbackContext context)
-    {        
+    {
+        // If presses Tab on windows build, don't trigger pause
+        if (Application.platform == RuntimePlatform.WindowsPlayer && context.control == Keyboard.current.pKey) return;
+
+        // If presses ESC on editor or web build, don't trigger pause
         if ((Application.platform == RuntimePlatform.WebGLPlayer || Application.isEditor) 
             && context.control == Keyboard.current.escapeKey)
-            return; 
+            return;
 
         if (context.phase == InputActionPhase.Performed)
         {
             bool currentState = GameState.IsPaused;
             GameState.SetPaused(!currentState);
-            currentState = GameState.IsPaused;
-
-            if (currentState) Debug.Log($"Game Paused: {currentState}");
         }
     }
 
