@@ -84,6 +84,6 @@ Material:
     m_Colors:
     - _Floor_color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Line_color: {r: 1, g: 1, b: 1, a: 1}
-    - _Wall_color: {r: 0.654088, g: 0.57720786, b: 0.45868433, a: 1}
+    - _Wall_color: {r: 0.39953718, g: 0.43980062, b: 0.5471698, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
