@@ -38,6 +38,8 @@ public class CameraShake : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (GameState.IsPaused) return;
+
         float shakeAmount = _trauma * _trauma * maxAngle;
         float time = Time.unscaledTime * 30f;
         var noise = new Vector3(

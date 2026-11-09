@@ -37,6 +37,8 @@ public class ScreenFeedback : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         float deltaTime = Time.unscaledDeltaTime;
         Color flashColor = _flashImage.color;
         flashColor.a = Mathf.MoveTowards(flashColor.a, 0f, _flashFadeSpeed * deltaTime * Mathf.Max(flashColor.a, 0.1f));

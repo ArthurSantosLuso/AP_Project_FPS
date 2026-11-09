@@ -28,6 +28,8 @@ public class RevolverCylinderUI : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         float scroll = Input.mouseScrollDelta.y;
         if (Mathf.Approximately(scroll, 0f)) return;
 

@@ -6,6 +6,8 @@ public class CameraLookAt : MonoBehaviour
 
     void Update()
     {
+        if (GameState.IsPaused) return;
+
         if (_playerCamera != null)
         {
             transform.LookAt(transform.position + _playerCamera.transform.rotation * Vector3.forward, _playerCamera.transform.rotation * Vector3.up);

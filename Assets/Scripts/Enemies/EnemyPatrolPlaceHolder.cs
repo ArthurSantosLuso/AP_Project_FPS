@@ -14,6 +14,8 @@ public class EnemyPatrolPlaceHolder : PausableMonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         float offset = Mathf.Sin(Time.time * moveSpeed) * moveDistance;
         transform.position = _startPosition + transform.right * offset;
     }

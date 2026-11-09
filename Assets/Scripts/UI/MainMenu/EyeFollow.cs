@@ -12,6 +12,8 @@ public class EyeFollow : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         Follow();
     }
 

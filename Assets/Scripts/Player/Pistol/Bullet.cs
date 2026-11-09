@@ -45,6 +45,8 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         timeAlive += Time.deltaTime;
         if (timeAlive >= _data.lifetime)
         {

@@ -9,6 +9,8 @@ public class EnemyProjectile : Parryable
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         _timeAlive += Time.deltaTime;
         if (_timeAlive >= 1.5f)
         {

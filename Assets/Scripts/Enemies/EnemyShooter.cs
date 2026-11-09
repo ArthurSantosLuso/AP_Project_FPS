@@ -34,6 +34,8 @@ public class EnemyShooter : PausableMonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         if (_targetInRange) _timer += Time.deltaTime;
 
         if (_timer >= _fireInterval) _canShot = true;

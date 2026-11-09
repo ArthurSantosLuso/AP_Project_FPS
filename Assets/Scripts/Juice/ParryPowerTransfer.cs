@@ -49,6 +49,8 @@ public class ParryPowerTransfer : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         if (_charge != null && Time.time >= _chargeEndTime) ReleaseCharge();
         if (_gunLight.enabled && Time.unscaledTime >= _gunLightEndTime) _gunLight.enabled = false;
     }

@@ -8,6 +8,8 @@ public class DestroyAfterSeconds : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         _timer += Time.deltaTime;
 
         if (_timer >= lifeTime) Destroy(gameObject);

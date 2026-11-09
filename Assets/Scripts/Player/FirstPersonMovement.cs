@@ -37,9 +37,9 @@ public class FirstPersonMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; 
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (GameState.IsPaused) return;
 
         _playerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         _playerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));

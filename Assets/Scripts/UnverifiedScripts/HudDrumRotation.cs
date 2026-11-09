@@ -120,6 +120,8 @@ namespace Rafael.Hud
 
         private void Update()
         {
+            if (GameState.IsPaused) return;
+
             if (artwork == null || elapsed >= duration) return;
             elapsed = Mathf.Min(elapsed + Time.unscaledDeltaTime, duration);
             float t = Mathf.SmoothStep(0f, 1f, elapsed / duration);

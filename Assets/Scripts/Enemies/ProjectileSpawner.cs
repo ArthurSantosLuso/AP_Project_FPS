@@ -9,6 +9,8 @@ public class ProjectileSpawner : PausableMonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         _timer += Time.deltaTime;
 
         if (_timer > 1.5f)

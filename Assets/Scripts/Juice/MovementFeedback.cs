@@ -33,6 +33,8 @@ public class MovementFeedback : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         UpdateFootsteps();
         UpdateLanding();
         UpdateDash();

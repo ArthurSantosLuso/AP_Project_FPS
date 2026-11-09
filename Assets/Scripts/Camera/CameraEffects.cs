@@ -42,6 +42,8 @@ public class CameraEffects : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (GameState.IsPaused) return;
+
         UpdateFieldOfView();
         UpdateTilt();
         UpdateLandingDip();

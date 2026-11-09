@@ -24,6 +24,8 @@ public class CameraSway : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (GameState.IsPaused) return;
+
         // Verify if player is walking (Dashing and air not included)
         bool isWalking = _movement.IsGrounded && !_movement.IsDashing
             && _movement.MovementInput.sqrMagnitude > 0.01f;

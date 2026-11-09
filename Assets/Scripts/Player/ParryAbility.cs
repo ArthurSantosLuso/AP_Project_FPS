@@ -17,6 +17,8 @@ public class ParryAbility : Ability
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         if (!_canParry)
         {
             _parryTimer += Time.deltaTime;

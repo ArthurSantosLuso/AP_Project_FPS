@@ -33,6 +33,8 @@ public class EnemyAI : PausableMonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
 
         if (!_hasDetectedPlayer)

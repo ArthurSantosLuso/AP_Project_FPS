@@ -27,6 +27,8 @@ public class CollectBulletOnInteract : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         if (_canCollect)
         {
             if (Input.GetKeyDown(KeyCode.E))

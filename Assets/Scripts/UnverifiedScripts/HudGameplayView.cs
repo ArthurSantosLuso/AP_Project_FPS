@@ -48,6 +48,8 @@ namespace Rafael.Hud
 
         private void LateUpdate()
         {
+            if (GameState.IsPaused) return;
+
             if (health != null)
             {
                 float ratio = health.MaxValue > 0f ? Mathf.Clamp01(health.CurrentValue / health.MaxValue) : 0f;

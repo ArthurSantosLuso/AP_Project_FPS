@@ -8,6 +8,7 @@ public class OpenClose : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return; 
         if (Input.GetKeyDown(key))
         {
             foreach (GameObject obj in objToOpenClose)

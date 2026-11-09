@@ -11,6 +11,8 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         if (Input.GetKeyDown(cheatKey))
         {
             InfiniteHealth();

@@ -48,6 +48,8 @@ public class HitMarker : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsPaused) return;
+
         if (!marker.gameObject.activeSelf) return;
 
         marker.localScale = Vector3.Lerp(marker.localScale, Vector3.one, 20f * Time.unscaledDeltaTime);

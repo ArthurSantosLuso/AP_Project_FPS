@@ -22,6 +22,7 @@ public class Floater : MonoBehaviour
 
     void Update()
     {
+        if (GameState.IsPaused) return;
         timer += Time.deltaTime;
 
         if (timer >= directionChangeInterval)
