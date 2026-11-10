@@ -108,8 +108,6 @@ public class PlayerInput : MonoBehaviour
     {
         if (!VerifyIfPlayerCanAct()) return;
 
-        OnAimInput?.Invoke(true);
-
         if (context.phase == InputActionPhase.Performed)
             OnAimInput?.Invoke(true);
         else if (context.phase == InputActionPhase.Canceled)
