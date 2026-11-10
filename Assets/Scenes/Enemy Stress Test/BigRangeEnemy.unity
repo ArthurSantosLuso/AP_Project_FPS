@@ -231,6 +231,14 @@ PrefabInstance:
       propertyPath: revolver
       value: 
       objectReference: {fileID: 59594928}
+    - target: {fileID: 1763912368554022082, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1303418114516716511, guid: f1f7a2e9ccc143ebeb0aead227198e90, type: 2}
+    - target: {fileID: 2171610848695836227, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1303418114516716511, guid: f1f7a2e9ccc143ebeb0aead227198e90, type: 2}
     - target: {fileID: 2272615427460871889, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: m_Name
       value: PlayerCanvas
@@ -327,6 +335,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8096852568297176478, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1303418114516716511, guid: f1f7a2e9ccc143ebeb0aead227198e90, type: 2}
     - target: {fileID: 8642751362974431527, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: revolver
       value: 
