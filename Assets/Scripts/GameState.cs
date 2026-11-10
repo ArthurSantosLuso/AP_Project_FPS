@@ -3,6 +3,7 @@ using UnityEngine;
 public static class GameState
 {
     public static bool IsPaused { get; private set; }
+
     public static event System.Action<bool> OnPauseChanged;
     
     public static void SetPaused(bool paused)

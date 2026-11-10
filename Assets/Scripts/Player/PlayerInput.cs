@@ -1,6 +1,4 @@
 using System;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -108,12 +106,16 @@ public class PlayerInput : MonoBehaviour
     {
         if (!VerifyIfPlayerCanAct()) return;
 
-        OnAimInput?.Invoke(true);
-
         if (context.phase == InputActionPhase.Performed)
+        {
             OnAimInput?.Invoke(true);
+            AimHeld = true;
+        }
         else if (context.phase == InputActionPhase.Canceled)
+        {
             OnAimInput?.Invoke(false);
+            AimHeld = false;
+        }
     }
 
     public void OnSkipDialogue(InputAction.CallbackContext context)
