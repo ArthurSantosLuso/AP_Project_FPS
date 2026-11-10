@@ -6,33 +6,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
-    //[SerializeField]
-    [SerializeField] private Animator crosshairAnimator;
-    //private UIHandler uiHandler;
-
     private Character character;
     private FirstPersonMovement _firstPersonMovement;
-   
-    //private Interactor interactor;
 
-    // Aim
-    [SerializeField] private AudioClip aimInAudio;
-    [SerializeField] private AudioClip aimOutAudio;
     public bool AimHeld { get; private set; }
-   
-
-    public Vector2 MoveInput { get; private set; }
     public bool SprintHeld { get; private set; }
-
+    public Vector2 MoveInput { get; private set; }
 
     public Action OnWeaponChange;
+    public Action<bool> OnAimInput;
 
     private void Start()
     {
-        // uiHandler = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIHandler>();
         character = GetComponent<Character>();
         _firstPersonMovement = GetComponent<FirstPersonMovement>();
-        // interactor = GetComponent<Interactor>();
     }
 
     public void OnWeaponChangeInput(InputAction.CallbackContext context)
@@ -121,18 +108,12 @@ public class PlayerInput : MonoBehaviour
     {
         if (!VerifyIfPlayerCanAct()) return;
 
-        if (context.phase == InputActionPhase.Performed)
-        {
-            AimHeld = true;
-            AudioManager.Instance.PlaySound(aimInAudio);
-        }
-        else if (context.phase == InputActionPhase.Canceled)
-        {
-            AimHeld = false;
-            AudioManager.Instance.PlaySound(aimOutAudio);
-        }
+        OnAimInput?.Invoke(true);
 
-        crosshairAnimator.SetBool("IsAiming", AimHeld);
+        if (context.phase == InputActionPhase.Performed)
+            OnAimInput?.Invoke(true);
+        else if (context.phase == InputActionPhase.Canceled)
+            OnAimInput?.Invoke(false);
     }
 
     public void OnSkipDialogue(InputAction.CallbackContext context)
@@ -146,16 +127,6 @@ public class PlayerInput : MonoBehaviour
             //}
         }
     }
-
-    //// >>>>>>>>>>>>>>> Temporary <<<<<<<<<<<<<<<<<<
-    //public void OnInfiniteStamina(InputAction.CallbackContext context)
-    //{
-    //    if (context.phase == InputActionPhase.Performed)
-    //    {
-    //        stamina.InfiniteStamina();
-    //        health.InfiniteHealth();
-    //    }
-    //}
 
     public void OnToggleConfigCanva(InputAction.CallbackContext context)
     {
@@ -173,7 +144,7 @@ public class PlayerInput : MonoBehaviour
         if (Application.platform == RuntimePlatform.WindowsPlayer && context.control == Keyboard.current.pKey) return;
 
         // If presses ESC on editor or web build, don't trigger pause
-        if ((Application.platform == RuntimePlatform.WebGLPlayer || Application.isEditor) 
+        if ((Application.platform == RuntimePlatform.WebGLPlayer || Application.isEditor)
             && context.control == Keyboard.current.escapeKey)
             return;
 

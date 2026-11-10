@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
+
+    public GameObject PlayerLocalInstance => player;
+
     #region Singleton
     private static GameManager _instance;
 
@@ -22,6 +26,8 @@ public class GameManager : MonoBehaviour
             Init();
         else if (_instance != this)
             Destroy(gameObject);
+
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Init()

@@ -474,6 +474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8076803481269174834}
   - component: {fileID: 7327413316023370297}
+  - component: {fileID: 1342474565903396276}
   m_Layer: 5
   m_Name: Crosshair
   m_TagString: Untagged
@@ -530,6 +531,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1342474565903396276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021137842740349451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f5d9bd68213234888bfc3888cf3b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AimCrosshair
+  aimInAudio: {fileID: 8300000, guid: 3bc08f69fd4111c4bb1598098076e037, type: 3}
+  aimOutAudio: {fileID: 8300000, guid: a591f20596b7b294b89ab39fba06c07f, type: 3}
 --- !u!1 &1115364019519864058
 GameObject:
   m_ObjectHideFlags: 0
