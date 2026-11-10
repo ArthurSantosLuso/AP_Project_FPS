@@ -119,6 +119,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &41018858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5356693719774360497, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+  m_PrefabInstance: {fileID: 897755052}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c308ce828b4cc46a5042232794f646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParryAbility
+--- !u!114 &59594928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2357976757906568526, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+  m_PrefabInstance: {fileID: 897755052}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc48bfeab19ef641ab0e919955eb935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RevolverShot
+--- !u!225 &423422527 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 5004414795522688695, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+  m_PrefabInstance: {fileID: 1575380326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &897755052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +194,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4970092816861793775, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+      propertyPath: speedLines
+      value: 
+      objectReference: {fileID: 423422527}
     - target: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_Name
       value: Player
@@ -184,10 +215,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 824175784884269010, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: parry
+      value: 
+      objectReference: {fileID: 41018858}
+    - target: {fileID: 824175784884269010, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1888798482}
+    - target: {fileID: 824175784884269010, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 1888798484}
+    - target: {fileID: 824175784884269010, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: revolver
+      value: 
+      objectReference: {fileID: 59594928}
+    - target: {fileID: 1763912368554022082, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1303418114516716511, guid: f1f7a2e9ccc143ebeb0aead227198e90, type: 2}
+    - target: {fileID: 2171610848695836227, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1303418114516716511, guid: f1f7a2e9ccc143ebeb0aead227198e90, type: 2}
     - target: {fileID: 2272615427460871889, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: m_Name
       value: PlayerCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2548934250045368051, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: revolver
+      value: 
+      objectReference: {fileID: 59594928}
     - target: {fileID: 4114915666740600398, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -276,6 +335,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8096852568297176478, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1303418114516716511, guid: f1f7a2e9ccc143ebeb0aead227198e90, type: 2}
+    - target: {fileID: 8642751362974431527, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+      propertyPath: revolver
+      value: 
+      objectReference: {fileID: 59594928}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -408,6 +475,28 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &1888798482 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2873379133418613361, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+  m_PrefabInstance: {fileID: 897755052}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872d67c25d961264b86c861caaad91ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!114 &1888798484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2871613101378338267, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
+  m_PrefabInstance: {fileID: 897755052}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175aa8b1ff3ef344399adfa95e78d5e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FirstPersonMovement
 --- !u!1 &1894570160
 GameObject:
   m_ObjectHideFlags: 0
