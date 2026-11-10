@@ -5789,7 +5789,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooter
   projectilePrefab: {fileID: 5967845501091714881, guid: ac419d5e42aad2a45ba2129ed9674dc4, type: 3}
   shotPoint: {fileID: 6839139763103886072}
-  fireInterval: 1.4
+  minFireInterval: 3
+  maxFireInterval: 3
   fireRate: 0.5
   effect: {fileID: 1616446770339891452}
 --- !u!114 &3106469811415490294
