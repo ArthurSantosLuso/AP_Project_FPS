@@ -1,9 +1,15 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField] private RevolverShot revolver;
+    [SerializeField] private BulletData fireBullet;
+    [SerializeField] private BulletData waterBullet;
+    [SerializeField] private BulletData iceBullet;
+
     private Character character;
     private FirstPersonMovement _firstPersonMovement;
 
@@ -18,6 +24,18 @@ public class PlayerInput : MonoBehaviour
     {
         character = GetComponent<Character>();
         _firstPersonMovement = GetComponent<FirstPersonMovement>();
+    }
+
+    private void Update()
+    {
+        if (GameState.IsPaused) return;
+
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            revolver.AddBullet(fireBullet, 6);
+            revolver.AddBullet(waterBullet, 10);
+            revolver.AddBullet(iceBullet, 6);
+        }
     }
 
     public void OnWeaponChangeInput(InputAction.CallbackContext context)

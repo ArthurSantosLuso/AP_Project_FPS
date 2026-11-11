@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Deliveries/Milestone1/MainMenu.unity
     guid: 4ee35dab93957de40b47a8469c52e586
   - enabled: 1
-    path: Assets/Scenes/Deliveries/Milestone1/Prototype2.unity
-    guid: d5acebf993577e94ea82624249e17746
+    path: Assets/Scenes/Deliveries/Sprint2/Sprint2Scene.unity
+    guid: 4e305cd1721196641b5f2ef93e6186f0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

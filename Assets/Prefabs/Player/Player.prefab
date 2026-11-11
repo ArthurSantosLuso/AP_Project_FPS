@@ -23295,6 +23295,7 @@ GameObject:
   - component: {fileID: 2873379133418613361}
   - component: {fileID: 8939479719961633922}
   - component: {fileID: 456769977586520493}
+  - component: {fileID: 945160531436215457}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -23652,9 +23653,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7717289b7f785448b9d970178b16b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
-  crosshairAnimator: {fileID: 0}
-  aimInAudio: {fileID: 8300000, guid: 3bc08f69fd4111c4bb1598098076e037, type: 3}
-  aimOutAudio: {fileID: 8300000, guid: a591f20596b7b294b89ab39fba06c07f, type: 3}
+  revolver: {fileID: 2357976757906568526}
+  fireBullet: {fileID: 11400000, guid: 1dd67aacaaf995346ac6e2158f9c7107, type: 2}
+  waterBullet: {fileID: 11400000, guid: 16dc07e15de3d1a47a5a1e0da8f28512, type: 2}
+  iceBullet: {fileID: 11400000, guid: 1b72f7c99735c56438935e1c03c89f9a, type: 2}
 --- !u!114 &456769977586520493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23674,6 +23676,18 @@ MonoBehaviour:
   minLandingSpeed: 4
   landingTraumaPerSpeed: 0.03
   dashClip: {fileID: 8300000, guid: 014a9d55239fa73489de238a62ad5f66, type: 3}
+--- !u!114 &945160531436215457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c75045a98ca4fb144bb06b7c740612c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Triggerable
 --- !u!1 &8344768065072925334
 GameObject:
   m_ObjectHideFlags: 0

@@ -174,5 +174,5 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
     }
 
     public bool CanDamage() => !_isDead && currentValue > 0f;
-    public bool HasBlood() => true;   
+    public bool HasBlood() => true;
 }
