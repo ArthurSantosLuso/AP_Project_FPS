@@ -8,6 +8,7 @@ public class EnemyShooter : PausableMonoBehaviour
     [SerializeField] private float maxFireInterval = 3f;
     [SerializeField] private float fireRate = 0.5f;
     [SerializeField] private GameObject effect;
+    [SerializeField] private AudioClip shotAudio;
 
     private float _nextFireTime;
     private float _fireInterval;
@@ -55,13 +56,14 @@ public class EnemyShooter : PausableMonoBehaviour
     public void TryShoot(Transform target)
     {
         if (!_canShot) return;
-        //if (Time.time < _nextFireTime) return;
 
-        //_nextFireTime = Time.time + 1f / fireRate;
         shotPoint.LookAt(target);
         Instantiate(projectilePrefab, shotPoint.position, shotPoint.rotation);
+        AudioManager.Instance.PlaySound(shotAudio, Random.Range(0.9f, 1.1f));
+
         _canShot = false;
         _timer = 0f;
+        _fireInterval = Random.Range(minFireInterval, maxFireInterval);
         effect.SetActive(false);
     }
 }
