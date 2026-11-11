@@ -6,17 +6,20 @@ public class EnemyFeedback : MonoBehaviour
     [SerializeField] private AudioClip hurtAudio;
     [SerializeField] private AudioClip deathAudio;
     [SerializeField] private GameObject deathEffect;
+    [SerializeField] private AudioClip dodgeAudio;
 
     private void Start()
     {
         enemyHealth.Damaged += OnDamaged;
         enemyHealth.OnDeath += OnDied;
+        enemyHealth.Dodged += OnDodged;
     }
 
     private void OnDestroy()
     {
         enemyHealth.Damaged -= OnDamaged;
         enemyHealth.OnDeath -= OnDied;
+        enemyHealth.Dodged -= OnDodged;
     }
 
     private void OnDamaged(float damage)
@@ -32,5 +35,9 @@ public class EnemyFeedback : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
+    }
+    private void OnDodged()
+    {
+        AudioManager.Instance.PlaySound(dodgeAudio, Random.Range(0.9f, 1.1f));
     }
 }

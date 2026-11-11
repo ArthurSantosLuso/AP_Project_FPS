@@ -11,6 +11,7 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
     [SerializeField] private Color flashColor = Color.white;
     [SerializeField] private float targetFlashDuration = 0.06f;
     [SerializeField] private BulletResistance[] resistances;
+    [SerializeField] private float dodgeChance = 0.3f;
 
     [Header("Knock back propreties")]
     [SerializeField] private float knockbackDistance = 1.5f;
@@ -25,6 +26,11 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
     /// Raised after damage is applied. Use by anything that want to react to hits.
     /// </summary>
     public event Action<float> Damaged;
+
+    /// <summary>
+    /// Raised when the enemy dodges an attack. Use by anything that want to react to dodges.
+    /// </summary>
+    public event Action Dodged;
 
     /// <summary>
     /// Raised once when health reaches zero. If nobody subscribes, the enemy is destroyed.
@@ -57,6 +63,8 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
 
     public void Damage(float damageValue)
     {
+        if (TryDodge()) return;
+
         ApplyDamage(damageValue);
 
         TryFlash();
@@ -67,6 +75,8 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
 
     public void DamageNoStagger(float damageValue)
     {
+        if (TryDodge()) return;
+
         ApplyDamage(damageValue);
 
         TryFlash();
@@ -90,6 +100,14 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
         // Verify if entity died
         if (currentValue <= 0f)
             Kill();
+    }
+
+    private bool TryDodge()
+    {
+        if (UnityEngine.Random.value >= dodgeChance) return false;
+
+        Dodged?.Invoke();
+        return true;
     }
 
     private void Kill()

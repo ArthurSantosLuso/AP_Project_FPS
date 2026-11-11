@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.AI;
 
 public class EnemyAI : PausableMonoBehaviour
@@ -23,6 +24,10 @@ public class EnemyAI : PausableMonoBehaviour
     [SerializeField] private float patrolRadius = 6f;
     [SerializeField] private float patrolWaitTime = 2f;
 
+    [SerializeField] private float dodgeDuration = 0.4f;
+    [SerializeField] private float dodgeDistance = 1.5f;
+
+
     private EnemyState _state = EnemyState.Patrol;
     private Transform _player;
     private Vector3 _personalSpaceDirection;
@@ -31,6 +36,9 @@ public class EnemyAI : PausableMonoBehaviour
     private float _patrolWaitTimer;
     private float _preferredDistance;
     private float _repositionTimer;
+    private bool _isDodging;
+
+    public bool IsDodging => _isDodging;
 
     private void Start()
     {
@@ -38,11 +46,12 @@ public class EnemyAI : PausableMonoBehaviour
         _startPosition = transform.position;
 
         enemyHealth.Damaged += _ => EnterEngaged();
+        enemyHealth.Dodged += StartDodge;
     }
 
     private void Update()
     {
-        if (GameState.IsPaused) return;
+        if (GameState.IsPaused || _isDodging) return;
 
         switch (_state)
         {
@@ -53,6 +62,7 @@ public class EnemyAI : PausableMonoBehaviour
                 UpdateEngaged();
                 break;
         }
+
     }
 
     private void UpdatePatrol()
@@ -163,6 +173,32 @@ public class EnemyAI : PausableMonoBehaviour
             agent.SetDestination(hit.position);
 
         _patrolWaitTimer = patrolWaitTime;
+    }
+
+    private void StartDodge()
+    {
+        StartCoroutine(DodgeRoutine());
+    }
+
+    private IEnumerator DodgeRoutine()
+    {
+        _isDodging = true;
+        agent.isStopped = true;
+
+        Vector3 startPosition = transform.position;
+        float side = Random.value < 0.5f ? -1f : 1f;
+        Vector3 targetPosition = startPosition + transform.right * side * dodgeDistance;
+
+        float elapsed = 0f;
+        while (elapsed < dodgeDuration)
+        {
+            elapsed += Time.deltaTime;
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / dodgeDuration);
+            yield return null;
+        }
+
+        agent.isStopped = false;
+        _isDodging = false;
     }
 
     private void OnDrawGizmosSelected()

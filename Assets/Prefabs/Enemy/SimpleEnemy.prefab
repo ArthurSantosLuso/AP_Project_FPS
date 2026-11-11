@@ -5777,6 +5777,8 @@ MonoBehaviour:
   eyeHeight: 0.5
   patrolRadius: 25
   patrolWaitTime: 2
+  dodgeDuration: 0.4
+  dodgeDistance: 1.5
 --- !u!114 &7234986887145042727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5819,6 +5821,7 @@ MonoBehaviour:
     multiplier: 1
   - bullet: {fileID: 11400000, guid: 16dc07e15de3d1a47a5a1e0da8f28512, type: 2}
     multiplier: 2
+  dodgeChance: 0.3
   knockbackDistance: 1.5
   knockbackDuration: 0.15
 --- !u!114 &4788523231407084808
@@ -5837,6 +5840,7 @@ MonoBehaviour:
   hurtAudio: {fileID: 8300000, guid: fe673a56fdb8b71469849fba6eb3bbd4, type: 3}
   deathAudio: {fileID: 8300000, guid: 7adac2b310f1d0d409f7837d64e9fb32, type: 3}
   deathEffect: {fileID: 0}
+  dodgeAudio: {fileID: 8300000, guid: 014a9d55239fa73489de238a62ad5f66, type: 3}
 --- !u!114 &8388485546922216456
 MonoBehaviour:
   m_ObjectHideFlags: 0
