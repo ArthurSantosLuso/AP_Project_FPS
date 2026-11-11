@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public class TargetDummy : MonoBehaviour, IDamageable
+public class TargetDummy : Condition, IDamageable
 {
     public bool CanDamage()
     {
@@ -9,7 +7,8 @@ public class TargetDummy : MonoBehaviour, IDamageable
 
     public void Damage(float damageValue)
     {
-        Destroy(gameObject);
+        SetConclusion(true);
+        gameObject.SetActive(false);
     }
 
     public void DamageNoStagger(float damageValue)
