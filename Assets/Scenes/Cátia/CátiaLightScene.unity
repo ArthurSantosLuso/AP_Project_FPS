@@ -5893,18 +5893,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 707020986}
-    - target: {fileID: 1763912368554022082, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: f35a899d03d08ac9d9c5002e3c5ef235, type: 2}
-    - target: {fileID: 1763912368554022082, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_characterSpacing
-      value: 3.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2171610848695836227, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: f35a899d03d08ac9d9c5002e3c5ef235, type: 2}
     - target: {fileID: 2272615427460871889, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: m_Name
       value: PlayerCanvas
@@ -5993,22 +5981,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5307079131173005725, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_text
-      value: F1 - See Keys
-      objectReference: {fileID: 0}
-    - target: {fileID: 5307079131173005725, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 5307079131173005725, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 5307079131173005725, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6790810375978261721, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6017,10 +5989,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8096852568297176478, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: f35a899d03d08ac9d9c5002e3c5ef235, type: 2}
     - target: {fileID: 8642751362974431527, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
       propertyPath: revolver
       value: 
