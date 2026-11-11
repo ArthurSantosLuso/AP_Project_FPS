@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaterBullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   bulletPrefab: {fileID: 466407327512667719, guid: 8da02e981b033c44c951889c3f9358e5, type: 3}
-  speed: 40
+  speed: 200
   damage: 20
   lifetime: 1.5
   radius: 0.05

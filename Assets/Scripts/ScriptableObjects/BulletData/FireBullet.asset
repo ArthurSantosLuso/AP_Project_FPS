@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireBullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   bulletPrefab: {fileID: 466407327512667719, guid: 6728c42c32fb49e42b2f77cf8db98737, type: 3}
-  speed: 40
+  speed: 30
   damage: 50
   lifetime: 1.5
   radius: 0.05
