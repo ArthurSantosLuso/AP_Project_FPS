@@ -72,7 +72,7 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
         // Death logic
         //LevelManager.Instance.DisplayDeathScreen();
         //GameManager.Instance.StopPlayerActions();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void AddHP(float value)

@@ -884,7 +884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331240a7fe4f6354fa81df2f3317aa76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OpenCloseScene
-  sceneToOpen: Prototype2
+  sceneToOpen: Sprint2Scene
 --- !u!1 &726737009
 GameObject:
   m_ObjectHideFlags: 0
