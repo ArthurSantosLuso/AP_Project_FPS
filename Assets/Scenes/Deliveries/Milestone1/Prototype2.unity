@@ -11586,7 +11586,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: c82e04bbbb5b96f46b65da9a86b5934e, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 4b2f784b9e45a87499fc64fe92bc7eb9, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1505021979
 Transform:
@@ -12199,6 +12199,30 @@ PrefabInstance:
     - target: {fileID: 5705888016801506280, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: attackRange
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: fieldOfView
+      value: 78.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: patrolRadius
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: detectionRange
+      value: 22.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: maxPreferredDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
+      propertyPath: minPreferredDistance
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Camera
