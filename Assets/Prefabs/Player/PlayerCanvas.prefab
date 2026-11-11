@@ -1568,7 +1568,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 0.11
+  m_PlaneDistance: 0.2
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -2382,7 +2382,7 @@ MonoBehaviour:
   m_text: DASH
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1f7a2e9ccc143ebeb0aead227198e90, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f06a0624eb2fa04f080657810159786a, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f35a899d03d08ac9d9c5002e3c5ef235, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3209,7 +3209,7 @@ MonoBehaviour:
   m_text: HEALTH
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1f7a2e9ccc143ebeb0aead227198e90, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f06a0624eb2fa04f080657810159786a, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f35a899d03d08ac9d9c5002e3c5ef235, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3243,7 +3243,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3.4
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -3796,7 +3796,7 @@ MonoBehaviour:
   m_text: PARRY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1f7a2e9ccc143ebeb0aead227198e90, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f06a0624eb2fa04f080657810159786a, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f35a899d03d08ac9d9c5002e3c5ef235, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5384,7 +5384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &580110161877988178
 RectTransform:
   m_ObjectHideFlags: 0
