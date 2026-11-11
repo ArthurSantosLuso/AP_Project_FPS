@@ -5623,6 +5623,7 @@ GameObject:
   - component: {fileID: 7408959006702174930}
   - component: {fileID: 7234986887145042727}
   - component: {fileID: 3106469811415490294}
+  - component: {fileID: 4788523231407084808}
   - component: {fileID: 8388485546922216456}
   m_Layer: 6
   m_Name: SimpleEnemy
@@ -5767,13 +5768,14 @@ MonoBehaviour:
   agent: {fileID: 3806161016467521152}
   shooter: {fileID: 7234986887145042727}
   enemyHealth: {fileID: 3106469811415490294}
-  attackRange: 20
-  detectionRange: 15
-  minPreferredDistance: 10
-  maxPreferredDistance: 20
+  attackRange: 30
+  detectionRange: 23
+  fieldOfView: 90
+  minPreferredDistance: 20
+  maxPreferredDistance: 40
   turnSpeed: 8
   eyeHeight: 0.5
-  patrolRadius: 18
+  patrolRadius: 25
   patrolWaitTime: 2
 --- !u!114 &7234986887145042727
 MonoBehaviour:
@@ -5793,6 +5795,7 @@ MonoBehaviour:
   maxFireInterval: 3
   fireRate: 0.5
   effect: {fileID: 1616446770339891452}
+  shotAudio: {fileID: 8300000, guid: f7f72b84062a8ed4a9f60d242cd43b08, type: 3}
 --- !u!114 &3106469811415490294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5818,6 +5821,22 @@ MonoBehaviour:
     multiplier: 2
   knockbackDistance: 1.5
   knockbackDuration: 0.15
+--- !u!114 &4788523231407084808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308480925500556943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4869e39f1c23938489f4f6675d7114d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFeedback
+  enemyHealth: {fileID: 3106469811415490294}
+  hurtAudio: {fileID: 8300000, guid: fe673a56fdb8b71469849fba6eb3bbd4, type: 3}
+  deathAudio: {fileID: 8300000, guid: 7adac2b310f1d0d409f7837d64e9fb32, type: 3}
+  deathEffect: {fileID: 0}
 --- !u!114 &8388485546922216456
 MonoBehaviour:
   m_ObjectHideFlags: 0

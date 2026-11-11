@@ -12200,30 +12200,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
-      propertyPath: attackRange
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
-      propertyPath: fieldOfView
-      value: 78.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
-      propertyPath: patrolRadius
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
-      propertyPath: detectionRange
-      value: 22.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
-      propertyPath: maxPreferredDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7408959006702174930, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
-      propertyPath: minPreferredDistance
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 9046560789857307107, guid: 199688e04b5d45740a3ed25f89b9ec32, type: 3}
       propertyPath: m_Camera
       value: 
