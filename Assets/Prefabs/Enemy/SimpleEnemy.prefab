@@ -5855,7 +5855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Freezable
   unfreezeGraceTime: 0.1
   entityAnimator: {fileID: 0}
-  frozenVFX: {fileID: 5132673496616156292, guid: 893ce42d03b5a844fbea203a9e510f78, type: 3}
+  frozenVFX: {fileID: 421561508518432709, guid: 658a10cc607962d42a34a11aa0da51e4, type: 3}
   iceMaterial: {fileID: 2100000, guid: ae9db865c745d6049b02c9957035ea0c, type: 2}
 --- !u!1 &2311641993419616390
 GameObject:

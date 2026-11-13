@@ -35,7 +35,7 @@ public class EnemyProjectile : Parryable
         if (other.GetComponent<IDamageable>() != null && other.GetComponent<EnemyHealth>() == null)
         {
             other.GetComponent<IDamageable>().Damage(damage);
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }

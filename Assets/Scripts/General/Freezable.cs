@@ -7,8 +7,7 @@ public class Freezable : MonoBehaviour, IFreezable
     [SerializeField] float unfreezeGraceTime = 0.1f;
     [SerializeField] private Animator entityAnimator;
     [SerializeField] private GameObject frozenVFX;
-    [SerializeField] private Material iceMaterial;
-    // Add later the camp to stop navmesh in case of an enemy
+    //[SerializeField] private Material iceMaterial;
 
     private GameObject _currentFrozenVFXGameObject;
     private Dictionary<Renderer, Material[]> originals = new();
@@ -82,19 +81,19 @@ public class Freezable : MonoBehaviour, IFreezable
                 pausable.Pause();
 
             
-            foreach (Renderer r in GetComponentsInChildren<Renderer>())
-            {
-                if (r is ParticleSystemRenderer || r is TrailRenderer) continue;
+            //foreach (Renderer r in GetComponentsInChildren<Renderer>())
+            //{
+            //    if (r is ParticleSystemRenderer || r is TrailRenderer) continue;
 
-                Material[] mats = r.sharedMaterials;
-                originals[r] = mats;
+            //    Material[] mats = r.sharedMaterials;
+            //    originals[r] = mats;
 
-                var iced = new Material[mats.Length];
-                for (int i = 0; i < iced.Length; i++)
-                    iced[i] = iceMaterial;
-                r.sharedMaterials = iced;
+            //    var iced = new Material[mats.Length];
+            //    for (int i = 0; i < iced.Length; i++)
+            //        iced[i] = iceMaterial;
+            //    r.sharedMaterials = iced;
 
-            }
+            //}
 
             _currentFrozenVFXGameObject = Instantiate(frozenVFX, transform.position, Quaternion.identity, transform);
         }
