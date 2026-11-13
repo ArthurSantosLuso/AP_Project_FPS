@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         Application.focusChanged += GameFocusChanged;
+        GameState.SetPaused(false);
     }
 
     private void OnDisable()

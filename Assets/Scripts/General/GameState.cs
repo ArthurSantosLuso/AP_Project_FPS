@@ -13,5 +13,16 @@ public static class GameState
         Time.timeScale = paused ? 0f : 1f;
         AudioListener.pause = paused;
         OnPauseChanged?.Invoke(paused);
+
+        if (paused)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
+        }
     }
 }
