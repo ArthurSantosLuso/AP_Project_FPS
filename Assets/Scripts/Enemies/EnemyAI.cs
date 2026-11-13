@@ -62,7 +62,6 @@ public class EnemyAI : PausableMonoBehaviour
                 UpdateEngaged();
                 break;
         }
-
     }
 
     private void UpdatePatrol()

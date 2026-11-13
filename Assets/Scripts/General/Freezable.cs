@@ -1,16 +1,17 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class Freezable : MonoBehaviour, IFreezable
 {
     [SerializeField] float unfreezeGraceTime = 0.1f;
     [SerializeField] private Animator entityAnimator;
     [SerializeField] private GameObject frozenVFX;
-    //[SerializeField] private Material iceMaterial;
+    [SerializeField] private NavMeshAgent agent;
 
     private GameObject _currentFrozenVFXGameObject;
-    private Dictionary<Renderer, Material[]> originals = new();
 
     /// <summary>
     /// Get if entity is frozen or not
@@ -21,7 +22,11 @@ public class Freezable : MonoBehaviour, IFreezable
     private Coroutine _routine;
     private float _frozenAt;
 
-    private void Awake() => _notifier = GetComponentInParent<IDamageNotifier>();
+    private void Awake()
+    {
+        _notifier = GetComponentInParent<IDamageNotifier>();
+        agent = GetComponentInParent<NavMeshAgent>();
+    }
     
     private void OnEnable()
     {
@@ -31,7 +36,21 @@ public class Freezable : MonoBehaviour, IFreezable
     private void OnDisable()
     {
         if (_notifier != null) _notifier.Damaged -= OnDamaged;
-        if (IsFrozen) Unfreeze();
+
+        if (_routine != null)
+        {
+            StopCoroutine(_routine);
+            _routine = null;
+        }
+
+        if (IsFrozen)
+        {
+            // Object is being disabled/destroyed, skip agent logic, just reset state
+            IsFrozen = false;
+            if (entityAnimator != null) entityAnimator.speed = 1f;
+            if (_currentFrozenVFXGameObject != null) Destroy(_currentFrozenVFXGameObject);
+            _currentFrozenVFXGameObject = null;
+        }
     }
 
     public void Freeze(float duration)
@@ -76,43 +95,24 @@ public class Freezable : MonoBehaviour, IFreezable
         IsFrozen = frozen;
         if (frozen)
         {
-            if (entityAnimator != null ) entityAnimator.speed = 0f;
+
+            AgentStopper.SetAgentState(agent, false);
+
+            if (entityAnimator != null) entityAnimator.speed = 0f;
             foreach (PausableMonoBehaviour pausable in GetComponents<PausableMonoBehaviour>())
                 pausable.Pause();
 
-            
-            //foreach (Renderer r in GetComponentsInChildren<Renderer>())
-            //{
-            //    if (r is ParticleSystemRenderer || r is TrailRenderer) continue;
-
-            //    Material[] mats = r.sharedMaterials;
-            //    originals[r] = mats;
-
-            //    var iced = new Material[mats.Length];
-            //    for (int i = 0; i < iced.Length; i++)
-            //        iced[i] = iceMaterial;
-            //    r.sharedMaterials = iced;
-
-            //}
-
-            _currentFrozenVFXGameObject = Instantiate(frozenVFX, transform.position, Quaternion.identity, transform);
+            _currentFrozenVFXGameObject = Instantiate(frozenVFX, transform.position, transform.rotation, transform);
         }
         else
         {
+            AgentStopper.SetAgentState(agent, true);
+
             if (entityAnimator != null) entityAnimator.speed = 1f;
             foreach (PausableMonoBehaviour pausable in GetComponents<PausableMonoBehaviour>())
                 pausable.UnPause();
 
-            foreach (var kv in originals)
-            {
-                if (kv.Key != null)
-                {
-                    kv.Key.sharedMaterials = kv.Value;
-                }
-            }
-            originals.Clear();
-
-            Destroy(_currentFrozenVFXGameObject);
+            if (_currentFrozenVFXGameObject != null) Destroy(_currentFrozenVFXGameObject);
             _currentFrozenVFXGameObject = null;
         }
     }
