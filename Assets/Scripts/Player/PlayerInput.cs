@@ -108,6 +108,8 @@ public class PlayerInput : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
+        if (!VerifyIfPlayerCanAct()) return;
+
         if (context.phase == InputActionPhase.Performed)
         {
             //if (DialogueManager.Instance.IsDialoguePlaying)
@@ -175,5 +177,5 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    private bool VerifyIfPlayerCanAct() => true/*GameManager.Instance.CanPlayerAct*/;
+    private bool VerifyIfPlayerCanAct() => GameState.IsPaused ? false : true;
 }
