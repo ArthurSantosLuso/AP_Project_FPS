@@ -32,11 +32,6 @@ public class FirstPersonMovement : MonoBehaviour
     public float VerticalSpeed => _velocity.y;
     public bool IsDashing => _dashTimer > 0f;
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked; 
-    }
-
     void Update()
     {
         if (GameState.IsPaused) return;

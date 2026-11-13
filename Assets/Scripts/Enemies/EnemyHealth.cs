@@ -19,6 +19,7 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
 
     private Coroutine _knockbackCoroutine;
     private NavMeshAgent _agent;
+    private Freezable _freezable;
 
 
 
@@ -56,6 +57,7 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
         }
 
         _agent = GetComponent<NavMeshAgent>();
+        _freezable = GetComponentInChildren<Freezable>();
     }
 
     public float GetMultiplier(BulletData bullet)
@@ -138,8 +140,17 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
         if (targetRenderer != null) targetRenderer.SetPropertyBlock(null);
     }
 
+    private void SetAgentStopped(bool stopped)
+    {
+        AgentStopper.SetAgentState(_agent, stopped);
+        //if (_agent != null && _agent.enabled && _agent.isOnNavMesh)
+        //    _agent.isStopped = stopped;
+    }
+
     private void StartKnockback(Vector3 direction)
     {
+        if (_freezable != null && _freezable.IsFrozen) return;
+
         if (_knockbackCoroutine != null)
             StopCoroutine(_knockbackCoroutine);
 
@@ -153,24 +164,26 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
 
         float elapsed = 0f;
 
-        _agent.isStopped = true;
+        SetAgentStopped(true);
 
         while (elapsed < knockbackDuration)
         {
+            // Freeze landed mid-knockback: stop moving and bail out
+            if (_freezable != null && _freezable.IsFrozen)
+            {
+                _knockbackCoroutine = null;
+                yield break;
+            }
+
             elapsed += Time.deltaTime;
-
-            float t = Mathf.Clamp01(elapsed / knockbackDuration);
-
-            t = Mathf.SmoothStep(0f, 1f, t);
-
+            float t = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(elapsed / knockbackDuration));
             transform.position = Vector3.Lerp(startPosition, targetPosition, t);
-
             yield return null;
         }
 
         transform.position = targetPosition;
         _knockbackCoroutine = null;
-        _agent.isStopped = false;
+        SetAgentStopped(false);
     }
 
     public bool CanDamage() => !_isDead && currentValue > 0f;

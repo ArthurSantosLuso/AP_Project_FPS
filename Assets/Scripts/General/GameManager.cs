@@ -40,11 +40,16 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        Application.focusChanged += GameFocusChanged;
+        GameState.Initialize(false);
+
+        if (!Application.isFocused) GameState.SetPaused(true);
     }
 
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        Application.focusChanged -= GameFocusChanged;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -55,5 +60,10 @@ public class GameManager : MonoBehaviour
     private void FindPlayer()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void GameFocusChanged(bool hasFocus)
+    {
+        if (!hasFocus) GameState.SetPaused(true);
     }
 }

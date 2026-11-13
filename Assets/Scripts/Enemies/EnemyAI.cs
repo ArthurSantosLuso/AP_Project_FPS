@@ -62,7 +62,6 @@ public class EnemyAI : PausableMonoBehaviour
                 UpdateEngaged();
                 break;
         }
-
     }
 
     private void UpdatePatrol()
@@ -183,7 +182,8 @@ public class EnemyAI : PausableMonoBehaviour
     private IEnumerator DodgeRoutine()
     {
         _isDodging = true;
-        agent.isStopped = true;
+        AgentStopper.SetAgentState(agent, true);
+        // agent.isStopped = true;
 
         Vector3 startPosition = transform.position;
         float side = Random.value < 0.5f ? -1f : 1f;
@@ -197,7 +197,8 @@ public class EnemyAI : PausableMonoBehaviour
             yield return null;
         }
 
-        agent.isStopped = false;
+        AgentStopper.SetAgentState(agent, false);
+        // agent.isStopped = false;
         _isDodging = false;
     }
 
