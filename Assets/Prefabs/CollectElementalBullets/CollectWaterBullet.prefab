@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7894330975386699742}
   - component: {fileID: 4192180046336233414}
   - component: {fileID: 2281684693888155519}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CollectWaterBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
