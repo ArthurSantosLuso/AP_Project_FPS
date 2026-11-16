@@ -12,8 +12,8 @@ public class ParryAbility : Ability
     [SerializeField] private BulletData bulletToAddWhenParry;
     [SerializeField] private RevolverShot revolver;
 
-    private float   _parryTimer;
-    private bool    _canParry = true;
+    private float _parryTimer;
+    private bool _canParry = true;
 
     private void Update()
     {
@@ -35,7 +35,7 @@ public class ParryAbility : Ability
     {
         if (CanAttack())
         {
-            parryVFX.TriggerVFX();
+            parryVFX.TriggerParryFirstPartVFX();
             _canParry = false;
             PlayActionAudio();
         }
@@ -49,15 +49,18 @@ public class ParryAbility : Ability
 
     private void OnTriggerEnter(Collider other)
     {
-            Parryable parryable = other.GetComponent<Parryable>();
-        
-            if (parryable != null)
-            {
-                // Absorve bullet logic...
-                revolver.AddBullet(bulletToAddWhenParry);
+        Parryable parryable = other.GetComponent<Parryable>();
 
-                parryable.Parry();
-                AudioManager.Instance.PlaySound(parrySuccessAudio);
-            }
+        if (parryable != null)
+        {
+            // Parried something
+            parryVFX.TriggerParrySecondPartVFX();
+
+            // Absorve bullet logic...
+            revolver.AddBullet(bulletToAddWhenParry);
+
+            parryable.Parry();
+            AudioManager.Instance.PlaySound(parrySuccessAudio);
+        }
     }
 }
