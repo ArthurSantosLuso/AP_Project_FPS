@@ -70,7 +70,7 @@ public class BomberAI : PausableMonoBehaviour
     {
         _state = BomberState.Chase;
         _lifeTimer = lifeTime;
-        Debug.Log($"Detetou | timer: {_lifeTimer} | distância: {Vector3.Distance(transform.position, _player.position)}");
+        //Debug.Log($"Detetou | timer: {_lifeTimer} | distância: {Vector3.Distance(transform.position, _player.position)}");
     }
 
     private void UpdateChase()
@@ -86,7 +86,7 @@ public class BomberAI : PausableMonoBehaviour
         {
             Destroy(gameObject);
             return;
-            Debug.Log("Destruiu por tempo");
+            //Debug.Log("Destruiu por tempo");
         }
 
         Vector3 targetPoint = _player.position + Vector3.up * chestHeight;
@@ -97,7 +97,7 @@ public class BomberAI : PausableMonoBehaviour
             _player.GetComponent<IDamageable>().Damage(explosionDamage);
             Destroy(gameObject);
             return;
-            Debug.Log($"Destruiu por contacto | distância: {toTarget.magnitude}");
+            //Debug.Log($"Destruiu por contacto | distância: {toTarget.magnitude}");
         }
 
         Vector3 direction = toTarget.normalized;
