@@ -3,31 +3,36 @@ using UnityEngine.AI;
 
 public static class AgentStopper
 {
-    public static void SetAgentState(NavMeshAgent agent, bool active = false)
+    public static void SetAgentEnabled(NavMeshAgent agent, bool enabled)
     {
-        if (active)
+        if (agent == null) return;
+
+        if (enabled)
         {
-            if (agent != null)
+            if (!agent.enabled) agent.enabled = true;
+
+            if (!agent.isOnNavMesh &&
+                NavMesh.SamplePosition(agent.transform.position, out NavMeshHit hit, 3f, NavMesh.AllAreas))
             {
-                agent.enabled = true;
-                if (agent.isOnNavMesh)
-                {
-                    agent.isStopped = false;
-                    agent.ResetPath();
-                }
+                agent.Warp(hit.position);
+            }
+
+            if (agent.isOnNavMesh)
+            {
+                agent.isStopped = false;
+                agent.ResetPath();
             }
         }
         else
         {
-            if (agent != null && agent.enabled)
+            if (!agent.enabled) return;
+
+            if (agent.isOnNavMesh)
             {
-                if (agent.isOnNavMesh)
-                {
-                    agent.isStopped = true;
-                    agent.ResetPath();
-                }
-                agent.enabled = false;
+                agent.isStopped = true;
+                agent.ResetPath();
             }
+            agent.enabled = false;
         }
     }
 }

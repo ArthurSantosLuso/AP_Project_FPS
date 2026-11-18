@@ -96,7 +96,7 @@ public class Freezable : MonoBehaviour, IFreezable
         if (frozen)
         {
 
-            AgentStopper.SetAgentState(agent, false);
+            AgentStopper.SetAgentEnabled(agent, false);
 
             if (entityAnimator != null) entityAnimator.speed = 0f;
             foreach (PausableMonoBehaviour pausable in GetComponents<PausableMonoBehaviour>())
@@ -106,7 +106,7 @@ public class Freezable : MonoBehaviour, IFreezable
         }
         else
         {
-            AgentStopper.SetAgentState(agent, true);
+            AgentStopper.SetAgentEnabled(agent, true);
 
             if (entityAnimator != null) entityAnimator.speed = 1f;
             foreach (PausableMonoBehaviour pausable in GetComponents<PausableMonoBehaviour>())

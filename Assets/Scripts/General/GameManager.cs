@@ -64,6 +64,6 @@ public class GameManager : MonoBehaviour
 
     private void GameFocusChanged(bool hasFocus)
     {
-        if (!hasFocus) GameState.SetPaused(true);
+        // if (!hasFocus) GameState.SetPaused(true);
     }
 }

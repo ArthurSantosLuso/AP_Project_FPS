@@ -51,7 +51,7 @@ public class EnemyAI : PausableMonoBehaviour
 
     private void Update()
     {
-        if (GameState.IsPaused || _isDodging) return;
+        if (GameState.IsPaused || _isDodging || !agent.enabled || !agent.isOnNavMesh) return;
 
         switch (_state)
         {
@@ -123,6 +123,7 @@ public class EnemyAI : PausableMonoBehaviour
 
         if (distanceToPlayer > _preferredDistance + tolerance)
         {
+            Debug.Log("Tentei fazer algo com o agent");
             agent.SetDestination(_player.position);
         }
         else if (distanceToPlayer < _preferredDistance - tolerance)
@@ -136,6 +137,7 @@ public class EnemyAI : PausableMonoBehaviour
         }
         else
         {
+            Debug.Log("Tentei fazer algo com o agent");
             agent.ResetPath();
         }
     }
@@ -182,7 +184,7 @@ public class EnemyAI : PausableMonoBehaviour
     private IEnumerator DodgeRoutine()
     {
         _isDodging = true;
-        AgentStopper.SetAgentState(agent, true);
+        AgentStopper.SetAgentEnabled(agent, false);
         // agent.isStopped = true;
 
         Vector3 startPosition = transform.position;
@@ -197,7 +199,7 @@ public class EnemyAI : PausableMonoBehaviour
             yield return null;
         }
 
-        AgentStopper.SetAgentState(agent, false);
+        AgentStopper.SetAgentEnabled(agent, true);
         // agent.isStopped = false;
         _isDodging = false;
     }

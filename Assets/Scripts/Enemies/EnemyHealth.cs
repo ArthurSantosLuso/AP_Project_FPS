@@ -140,12 +140,12 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
         if (targetRenderer != null) targetRenderer.SetPropertyBlock(null);
     }
 
-    private void SetAgentStopped(bool stopped)
-    {
-        AgentStopper.SetAgentState(_agent, stopped);
-        //if (_agent != null && _agent.enabled && _agent.isOnNavMesh)
-        //    _agent.isStopped = stopped;
-    }
+    //private void SetAgentStopped(bool stopped)
+    //{
+    //    AgentStopper.SetAgentState(_agent, stopped);
+    //    //if (_agent != null && _agent.enabled && _agent.isOnNavMesh)
+    //    //    _agent.isStopped = stopped;
+    //}
 
     private void StartKnockback(Vector3 direction)
     {
@@ -164,7 +164,7 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
 
         float elapsed = 0f;
 
-        SetAgentStopped(true);
+        AgentStopper.SetAgentEnabled(_agent, false);
 
         while (elapsed < knockbackDuration)
         {
@@ -183,7 +183,7 @@ public class EnemyHealth : ValueBase, IDamageable, IDamageNotifier, IBulletResis
 
         transform.position = targetPosition;
         _knockbackCoroutine = null;
-        SetAgentStopped(false);
+        AgentStopper.SetAgentEnabled(_agent, true);
     }
 
     public bool CanDamage() => !_isDead && currentValue > 0f;
