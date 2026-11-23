@@ -23636,6 +23636,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxValue: 100
   invulnerabilityKey: 283
+  damageSelfKey: 285
+  damageSelfAmount: 10
   healthSlider: {fileID: 0}
 --- !u!114 &8939479719961633922
 MonoBehaviour:
