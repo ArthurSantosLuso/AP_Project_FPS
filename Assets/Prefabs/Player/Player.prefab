@@ -23618,10 +23618,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Character
   shouldConsiderInteractable: 0
-  shouldAttack: 1
-  shouldUseStamina: 0
-  shouldUseHealth: 1
-  shouldUseUpgrades: 0
   weapons:
   - {fileID: 6577080810237895458}
   valuesBase:
@@ -23639,7 +23635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxValue: 100
-  cheatKey: 283
+  invulnerabilityKey: 283
   healthSlider: {fileID: 0}
 --- !u!114 &8939479719961633922
 MonoBehaviour:

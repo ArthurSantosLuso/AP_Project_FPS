@@ -4,18 +4,20 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : ValueBase, IDamageable, IHealable
 {
-    [SerializeField] private KeyCode cheatKey;
+    [SerializeField] private KeyCode invulnerabilityKey;
 
     [Header("UI Params")]
     [SerializeField] private Slider healthSlider;
+
+    private bool _invulnerability = false;
 
     private void Update()
     {
         if (GameState.IsPaused) return;
 
-        if (Input.GetKeyDown(cheatKey))
+        if (Input.GetKeyDown(invulnerabilityKey))
         {
-            InfiniteHealth();
+            ToggleInvulnerability();
         }    
     }
 
@@ -34,6 +36,8 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
     // Reduce player hp
     public void Damage(float damageValue)
     {
+        if (_invulnerability) return; // Don't apply damage if player is invunerable
+        
         base.ReduceValue(damageValue);
         OnValueChanged?.Invoke(0, currentValue, maxValue);
         healthSlider.value = currentValue;
@@ -99,11 +103,7 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
 
     public bool NeedsHealing() => currentValue < maxValue;
 
-    public void InfiniteHealth()
-    {
-        IncreaseMaximumValue(100000);
-        IncreaseValue(100000);
-    }
+    public void ToggleInvulnerability() => _invulnerability = !_invulnerability;
 
     public bool HasBlood()
     {
