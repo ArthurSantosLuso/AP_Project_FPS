@@ -23296,6 +23296,7 @@ GameObject:
   - component: {fileID: 8939479719961633922}
   - component: {fileID: 456769977586520493}
   - component: {fileID: 945160531436215457}
+  - component: {fileID: 7256351193856057875}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -23617,7 +23618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05aef6cf9c1f59647afddcbc39657021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  shouldConsiderInteractable: 0
+  shouldConsiderInteractable: 1
   weapons:
   - {fileID: 6577080810237895458}
   valuesBase:
@@ -23686,6 +23687,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75045a98ca4fb144bb06b7c740612c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Triggerable
+--- !u!114 &7256351193856057875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310918309783210065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918bd1d610d21f1448b474bceff75b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactor
 --- !u!1 &8344768065072925334
 GameObject:
   m_ObjectHideFlags: 0

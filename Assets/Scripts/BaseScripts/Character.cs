@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Character : /*Pausable*/MonoBehaviour
+public class Character : PausableMonoBehaviour
 {
     [SerializeField] private bool shouldConsiderInteractable;
-    [SerializeField] private bool shouldAttack;
-    [SerializeField] private bool shouldUseStamina;
-    [SerializeField] private bool shouldUseHealth;
-    [SerializeField] private bool shouldUseUpgrades = false;
+    //[SerializeField] private bool shouldAttack;
+    //[SerializeField] private bool shouldUseStamina;
+    //[SerializeField] private bool shouldUseHealth;
+    //[SerializeField] private bool shouldUseUpgrades = false;
 
     [SerializeField]
     private List<Weapon> weapons;
@@ -18,9 +18,9 @@ public class Character : /*Pausable*/MonoBehaviour
 
     public List<ValueBase> ValueBases => valuesBase;
     public bool ShouldConsiderInteractable => shouldConsiderInteractable;
-    public bool ShouldAttack => shouldAttack;
-    public bool ShouldUseStamina => shouldUseStamina;
-    public bool ShouldUseHealth => shouldUseHealth;
+    //public bool ShouldAttack => shouldAttack;
+    //public bool ShouldUseStamina => shouldUseStamina;
+    //public bool ShouldUseHealth => shouldUseHealth;
 
     private List<Ability> currentAbilities;
     private Animator animator;
@@ -50,7 +50,7 @@ public class Character : /*Pausable*/MonoBehaviour
             }
         }
 
-        if (ShouldAttack) ChangeToNextWeapon();
+        /*if (ShouldAttack) */ ChangeToNextWeapon();
 
         foreach (ValueBase valueBase in valuesBase)
         {

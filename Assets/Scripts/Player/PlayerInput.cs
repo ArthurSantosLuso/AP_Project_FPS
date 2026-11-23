@@ -10,8 +10,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private BulletData waterBullet;
     [SerializeField] private BulletData iceBullet;
 
-    private Character character;
+    private Character _character;
     private FirstPersonMovement _firstPersonMovement;
+    private Interactor _interactor;
 
     public bool AimHeld { get; private set; }
     public bool SprintHeld { get; private set; }
@@ -22,8 +23,9 @@ public class PlayerInput : MonoBehaviour
 
     private void Start()
     {
-        character = GetComponent<Character>();
+        _character = GetComponent<Character>();
         _firstPersonMovement = GetComponent<FirstPersonMovement>();
+        _interactor = GetComponent<Interactor>();
     }
 
     private void Update()
@@ -44,7 +46,7 @@ public class PlayerInput : MonoBehaviour
 
         if (context.phase == InputActionPhase.Performed)
         {
-            bool changed = character.ChangeToNextWeapon();
+            bool changed = _character.ChangeToNextWeapon();
             if (changed) OnWeaponChange?.Invoke();
         }
     }
@@ -55,7 +57,7 @@ public class PlayerInput : MonoBehaviour
 
         if (context.phase == InputActionPhase.Performed)
         {
-            character.UseAbility(0);
+            _character.UseAbility(0);
         }
     }
 
@@ -65,7 +67,7 @@ public class PlayerInput : MonoBehaviour
 
         if (context.phase == InputActionPhase.Performed)
         {
-            character.UseAbility(1);
+            _character.UseAbility(1);
         }
     }
 
@@ -75,7 +77,7 @@ public class PlayerInput : MonoBehaviour
 
         if (context.phase == InputActionPhase.Performed)
         {
-            character.UseAbility(2);
+            _character.UseAbility(2);
         }
     }
 
@@ -118,7 +120,7 @@ public class PlayerInput : MonoBehaviour
             //    return;
             //}
 
-            //interactor.ExecuteInteraction();
+            _interactor.ExecuteInteraction();
         }
     }
 
