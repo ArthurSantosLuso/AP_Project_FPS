@@ -125,6 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38aa559821df6ad449b40d29812def2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectBulletOnInteract
+  isAutomatic: 0
+  interactionHint: {fileID: 0}
   bulletToCollect: {fileID: 11400000, guid: 16dc07e15de3d1a47a5a1e0da8f28512, type: 2}
-  revolver: {fileID: 0}
+  amountToAdd: 1
   collectAudio: {fileID: 8300000, guid: 73ed5dc76404d794c910360288845bee, type: 3}
+  breakWhenCollect: 0
