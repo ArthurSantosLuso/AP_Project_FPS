@@ -26,6 +26,7 @@ public class MedKit : Interactable
             if (value is IHealable healable && healable.NeedsHealing())
             {
                 healable.Heal(amountToHeal);
+                HidePrompt();
                 Destroy(gameObject); // Consume the item
                 return;
             }
