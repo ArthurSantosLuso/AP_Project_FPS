@@ -34,9 +34,9 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F3))
         {
-            revolver.AddBullet(fireBullet, 6);
-            revolver.AddBullet(waterBullet, 10);
-            revolver.AddBullet(iceBullet, 6);
+            revolver.AddAmmo(fireBullet, 6);
+            revolver.AddAmmo(waterBullet, 10);
+            revolver.AddAmmo(iceBullet, 6);
         }
     }
 

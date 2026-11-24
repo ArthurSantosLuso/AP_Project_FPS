@@ -57,7 +57,7 @@ public class ParryAbility : Ability
             parryVFX.TriggerParrySecondPartVFX();
 
             // Absorve bullet logic...
-            revolver.AddBullet(bulletToAddWhenParry);
+            revolver.AddAmmo(bulletToAddWhenParry);
 
             parryable.Parry();
             AudioManager.Instance.PlaySound(parrySuccessAudio);

@@ -11,7 +11,13 @@ public abstract class Interactable : MonoBehaviour
     public abstract void TryInteract(Character entity = null);
     protected abstract void Interact(Character entity = null);
 
-    public virtual void ShowPrompt() => interactionHint.SetActive(true);
+    public virtual void ShowPrompt()
+    {
+        if (interactionHint != null) interactionHint.SetActive(true);
+    }
 
-    public virtual void HidePrompt() => interactionHint.SetActive(false);
+    public virtual void HidePrompt()
+    {
+        if (interactionHint != null) interactionHint.SetActive(false);
+    }
 }

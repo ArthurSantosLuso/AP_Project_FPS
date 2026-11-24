@@ -1,41 +1,37 @@
 using UnityEngine;
 
-public class CollectBulletOnInteract : MonoBehaviour
+public class CollectBulletOnInteract : Interactable
 {
+    [Header("Collect Settings")]
     [SerializeField] private BulletData bulletToCollect;
-    [SerializeField] private RevolverShot revolver;
-
+    [SerializeField] private int amountToAdd;
     [SerializeField] private AudioClip collectAudio;
+    [SerializeField] private bool breakWhenCollect = true;
 
-    private bool _canCollect;
-
-    private void OnTriggerEnter(Collider other)
+    public override void TryInteract(Character entity = null)
     {
-        if (other.GetComponent<FirstPersonMovement>() != null)
+        if (entity == null) return;
+        Interact(entity);
+    }
+
+    protected override void Interact(Character entity = null)
+    {
+        IAmmoReceiver receiver = entity.GetComponentInChildren<IAmmoReceiver>();
+        if (receiver == null)
         {
-            _canCollect = true;
-            Debug.Log("Can collect water bullet");
+            Debug.Log("receiver is null");
+            return;
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<FirstPersonMovement>() != null)
-            _canCollect = false;
-        Debug.Log("Cannot collect water bullet anymore");
-    }
+        receiver.AddAmmo(bulletToCollect, amountToAdd);
 
-    private void Update()
-    {
-        if (GameState.IsPaused) return;
+        if (collectAudio != null)
+            AudioManager.Instance.PlaySound(collectAudio);
 
-        if (_canCollect)
+        if (breakWhenCollect)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                revolver.AddBullet(bulletToCollect);
-                AudioManager.Instance.PlaySound(collectAudio);
-            }
+            HidePrompt();
+            Destroy(gameObject);
         }
     }
 }

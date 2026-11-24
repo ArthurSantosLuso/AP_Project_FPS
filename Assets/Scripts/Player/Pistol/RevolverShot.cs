@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-public class RevolverShot : Ability
+public class RevolverShot : Ability, IAmmoReceiver
 {
     [Header("References")]
     [SerializeField] private Bullet bulletPrefab;
@@ -111,22 +111,21 @@ public class RevolverShot : Ability
         else return true; 
     }
 
-    public int AddBullet(BulletData type, int amount = 1)
+    public void AddAmmo(BulletData type, int amount = 1)
     {
         if (!_ammo.ContainsKey(type))
         {
             // no free hole
-            if (_slots.Count >= cylinderSize) return 0; 
+            if (_slots.Count >= cylinderSize) return;
             _slots.Add(type);
             _ammo[type] = 0;
         }
 
         int added = Mathf.Min(amount, type.maxAmmo - _ammo[type]);
-        if (added <= 0) return 0;
+        if (added <= 0) return;
 
         _ammo[type] += added;
         OnCylinderChanged?.Invoke();
-        return added;
     }
 
     public void RotateCylinder(int direction)
@@ -147,4 +146,6 @@ public class RevolverShot : Ability
         }
         OnCylinderChanged?.Invoke();
     }
+
+
 }
