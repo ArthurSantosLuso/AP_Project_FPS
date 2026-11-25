@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3022441173309880684}
   - component: {fileID: 1446090151736535234}
   - component: {fileID: 7518046068177772142}
+  - component: {fileID: 7154067711845459511}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2511cadc68d4f843b625060eb45f832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  player: {fileID: 0}
 --- !u!114 &3022441173309880684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,3 +93,17 @@ MonoBehaviour:
   tintVolume: {fileID: 0}
   frameDuration: 0.04
   frameCount: 4
+--- !u!114 &7154067711845459511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382106444771350901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493b783c5b862cf4d8d17966a0074c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHandler
+  interactionHintPanel: {fileID: 0}
+  interactionName: {fileID: 0}

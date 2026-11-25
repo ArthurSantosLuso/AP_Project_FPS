@@ -14440,6 +14440,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &571718851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4240634328599827150, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+  m_PrefabInstance: {fileID: 571718847}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &571718852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3201341445569794545, guid: 6c2f94b94f2e7d040bc03d9783848f0f, type: 3}
+  m_PrefabInstance: {fileID: 571718847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &578401002
 GameObject:
   m_ObjectHideFlags: 0
@@ -41467,6 +41483,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7154067711845459511, guid: 0c65e389725c37b48881bc0f02b2302b, type: 3}
+      propertyPath: interactionName
+      value: 
+      objectReference: {fileID: 571718851}
+    - target: {fileID: 7154067711845459511, guid: 0c65e389725c37b48881bc0f02b2302b, type: 3}
+      propertyPath: interactionHintPanel
+      value: 
+      objectReference: {fileID: 571718852}
     - target: {fileID: 7518046068177772142, guid: 0c65e389725c37b48881bc0f02b2302b, type: 3}
       propertyPath: inkVolume
       value: 

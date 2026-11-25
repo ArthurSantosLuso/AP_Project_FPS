@@ -5,9 +5,11 @@ public abstract class Interactable : MonoBehaviour
     [Header("Interaction Settings")]
     [SerializeField] private bool isAutomatic = false;
     [SerializeField] private string interactionName;
-    // [SerializeField] private GameObject interactionHint;
+    [Tooltip("Optional. Point the player must look at. Defaults to this transform.")]
+    [SerializeField] private Transform interactionPoint;
 
     public bool IsAutomatic => isAutomatic;
+    public Vector3 InteractionPoint => interactionPoint != null ? interactionPoint.position : transform.position;
 
     public abstract void TryInteract(Character entity = null);
     protected abstract void Interact(Character entity = null);

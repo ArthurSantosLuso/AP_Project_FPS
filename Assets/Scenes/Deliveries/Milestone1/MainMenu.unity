@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331240a7fe4f6354fa81df2f3317aa76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OpenCloseScene
-  sceneToOpen: Prototype2
+  sceneToOpen: MainMenu
 --- !u!1 &342721256
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331240a7fe4f6354fa81df2f3317aa76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OpenCloseScene
-  sceneToOpen: Sprint2Scene
+  sceneToOpen: PlaytestScene24-11-26
 --- !u!1 &726737009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,7 +1520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2, y: -7.499878}
+  m_AnchoredPosition: {x: 2, y: -7.499756}
   m_SizeDelta: {x: -1380.0002, y: -724.9999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308329534
