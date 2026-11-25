@@ -8330,10 +8330,6 @@ PrefabInstance:
       propertyPath: speedLines
       value: 
       objectReference: {fileID: 1299185215}
-    - target: {fileID: 7256351193856057875, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
-      propertyPath: occlusionMask.m_Bits
-      value: 641
-      objectReference: {fileID: 0}
     - target: {fileID: 8310918309783210065, guid: 8c839a7e36154a6409695a5299f92038, type: 3}
       propertyPath: m_Name
       value: Player
