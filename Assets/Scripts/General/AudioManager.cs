@@ -1,8 +1,5 @@
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Xml.Serialization;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,113 +7,72 @@ public class AudioManager : MonoBehaviour
     [Range(0, 1)][SerializeField] private float musicVolume = 0.09f;
     [Range(0, 1)][SerializeField] private float sfxVolume = 1f;
 
-    private static AudioManager _instance;
+    public static AudioManager Instance { get; private set; }
 
-    public static AudioManager Instance
+    private AudioSource musicSource;
+    private readonly List<AudioSource> sfxSources = new();
+
+    private void Awake()
     {
-        get
+        if (Instance != null && Instance != this)
         {
-            if (_instance == null)
-                FindFirstObjectByType<AudioManager>().Init();
-
-            return _instance;
-        }
-    }
-
-    private struct AudioSourceSetup
-    {
-        public bool musicExclusive;
-        public AudioSource audioSource;
-
-        public AudioSourceSetup(AudioSource source, bool isForMusic)
-        {
-            audioSource = source;
-            musicExclusive = isForMusic;
-        }
-    }
-
-    private List<AudioSourceSetup> audioSources;
-
-    void Awake()
-    {
-        if (_instance == null)
-            Init();
-        else if (_instance != this)
             Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        musicSource = gameObject.AddComponent<AudioSource>();
+        musicSource.loop = true;
     }
 
     private void Start()
     {
-        PlayMusic(sceneMusic);
+        if (Instance == this) PlayMusic(sceneMusic);
     }
 
-    private void Init()
+    private void OnDestroy()
     {
-        _instance = this;
-        //DontDestroyOnLoad(gameObject);  
-
-        audioSources = new List<AudioSourceSetup>();
+        if (Instance == this) Instance = null;
     }
 
-    public void PlaySound(AudioClip audio, float pitch = 1f)
+    public void PlayMusic(AudioClip clip)
     {
-        AudioSource audioSource;
-        CheckForFreeAudioSource(out audioSource, false);
-        if (audioSource == null)
-            audioSource = CreateNewAudioSource(false);
+        if (musicSource.clip == clip && musicSource.isPlaying) return;
 
-        audioSource.pitch = pitch;
-        audioSource.PlayOneShot(audio, sfxVolume);
+        musicSource.clip = clip;
+        musicSource.volume = musicVolume;
+        musicSource.Play();
     }
 
-    public void PlayMusic(AudioClip audio)
+    public void PlaySound(AudioClip clip, float pitch = 1f)
     {
-        AudioSource audioSource;
-        CheckForFreeAudioSource(out audioSource, true);
+        if (clip == null) return;
 
-        if (audioSource == null)
-        {
-            audioSource = CreateNewAudioSource(true);
-        }
-        audioSource.volume = musicVolume;
-        audioSource.loop = true;
-        audioSource.clip = audio;
-        audioSource.Play();
+        AudioSource source = GetFreeSfxSource();
+        source.loop = false;
+        source.pitch = pitch;
+        source.volume = 1f;                    // sfxVolume is applied once, by PlayOneShot
+        source.PlayOneShot(clip, sfxVolume);
     }
 
-    public void CheckForFreeAudioSource(out AudioSource source, bool souldBeMusicExclusive)
+    public AudioSource PlayLoopingSound(AudioClip clip)
     {
-        foreach (AudioSourceSetup audioS in audioSources)
-        {
-            if (!audioS.audioSource.isPlaying && audioS.musicExclusive == souldBeMusicExclusive)
-            {
-                source = audioS.audioSource;
-                return;
-            }
-        }
-
-        source = null;
+        AudioSource source = GetFreeSfxSource();
+        source.clip = clip;
+        source.loop = true;
+        source.pitch = 1f;
+        source.volume = sfxVolume;
+        source.Play();
+        return source;
     }
 
-    public AudioSource CreateNewAudioSource(bool isMusicExclusive)
+    private AudioSource GetFreeSfxSource()
     {
-        AudioSource newAudioSource = gameObject.AddComponent<AudioSource>();
-        AudioSourceSetup audioSourceConfig = new AudioSourceSetup(newAudioSource, isMusicExclusive);
-        audioSources.Add(audioSourceConfig);
-        return audioSourceConfig.audioSource;
-    }
+        foreach (AudioSource s in sfxSources)
+            if (!s.isPlaying) return s;
 
-    public AudioSource PlayLoopingSound(AudioClip audio)
-    {
-        AudioSource audioSource;
-        CheckForFreeAudioSource(out audioSource, false);
-        if (audioSource == null)
-            audioSource = CreateNewAudioSource(false);
-
-        audioSource.clip = audio;
-        audioSource.loop = true;
-        audioSource.volume = sfxVolume;
-        audioSource.Play();
-        return audioSource;
+        AudioSource created = gameObject.AddComponent<AudioSource>();
+        sfxSources.Add(created);
+        return created;
     }
 }

@@ -691,6 +691,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   arriveDistance: 0.3
+  chaseLoopAudio: {fileID: 8300000, guid: 4fcb8b854595f654c913c92914a9a87a, type: 3}
 --- !u!114 &5911636309788374709
 MonoBehaviour:
   m_ObjectHideFlags: 0

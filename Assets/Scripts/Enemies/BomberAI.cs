@@ -21,6 +21,7 @@ public class BomberAI : PausableMonoBehaviour
     [SerializeField] private float chestHeight = 1f;
     [SerializeField] private Transform[] hidePoints;
     [SerializeField] private float arriveDistance = 0.3f;
+    [SerializeField] private AudioClip chaseLoopAudio;
 
 
     private BomberState _state = BomberState.Scan;
@@ -29,6 +30,7 @@ public class BomberAI : PausableMonoBehaviour
     private float _lifeTimer;
     private bool _wasBlocked;
     private Transform _hidePoint;
+    private AudioSource _loopSource;
 
     private void Start()
     {
@@ -70,6 +72,7 @@ public class BomberAI : PausableMonoBehaviour
     {
         _state = BomberState.Chase;
         _lifeTimer = lifeTime;
+        StartLoop();
         //Debug.Log($"Detetou | timer: {_lifeTimer} | distância: {Vector3.Distance(transform.position, _player.position)}");
     }
 
@@ -110,6 +113,7 @@ public class BomberAI : PausableMonoBehaviour
     {
         _state = BomberState.Hide;
         _hidePoint = GetNearestHidePoint();
+        StopLoop();
     }
 
     private Transform GetNearestHidePoint()
@@ -156,6 +160,22 @@ public class BomberAI : PausableMonoBehaviour
         return Physics.Raycast(eyePosition, directionToPlayer, out RaycastHit hit, detectionRange, ~0, QueryTriggerInteraction.Ignore)
             && hit.transform == _player;
     }
+
+    private void StartLoop()
+    {
+        if (_loopSource != null || chaseLoopAudio == null) return;   // already playing
+        _loopSource = AudioManager.Instance.PlayLoopingSound(chaseLoopAudio);
+    }
+
+    private void StopLoop()
+    {
+        if (_loopSource == null) return;
+        _loopSource.Stop();
+        _loopSource = null;
+    }
+
+    private void OnDestroy() => StopLoop();
+
 
     //To visualize the detection range and field of view in the editor
     private void OnDrawGizmosSelected()
