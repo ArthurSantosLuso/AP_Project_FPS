@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4192180046336233414}
   - component: {fileID: 2281684693888155519}
   m_Layer: 9
-  m_Name: CollectWaterBullet
+  m_Name: WaterBulletInfiniteProvider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectBulletOnInteract
   isAutomatic: 0
   interactionName: Absorb
+  interactionPoint: {fileID: 0}
   bulletToCollect: {fileID: 11400000, guid: 16dc07e15de3d1a47a5a1e0da8f28512, type: 2}
   amountToAdd: 1
   collectAudio: {fileID: 8300000, guid: 73ed5dc76404d794c910360288845bee, type: 3}

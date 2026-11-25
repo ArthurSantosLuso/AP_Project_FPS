@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6796890824641056946}
   - component: {fileID: 4163056577157235220}
   m_Layer: 9
-  m_Name: CollectIceBullet
+  m_Name: IceBulletInfiniteProvider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectBulletOnInteract
   isAutomatic: 0
   interactionName: Absorb
+  interactionPoint: {fileID: 0}
   bulletToCollect: {fileID: 11400000, guid: 1b72f7c99735c56438935e1c03c89f9a, type: 2}
   amountToAdd: 1
   collectAudio: {fileID: 8300000, guid: 73ed5dc76404d794c910360288845bee, type: 3}
