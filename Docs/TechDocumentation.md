@@ -78,7 +78,7 @@ Responsible* for Game design, UI implementation, <u>some</u> Art work:
 - Models
 - Shaders
 - VFX
-- Paricles.
+- Particles.
 
 ...and Game systems:
 
@@ -87,9 +87,19 @@ Responsible* for Game design, UI implementation, <u>some</u> Art work:
 - Game State
 - Game Manager
 
-*Responsible does not mean that other member have not done anything to that specific part of the project, just indicates that the member is the one in **change** of that part.
+*Responsible does not mean that other member have not done anything to that specific part of the project, just indicates that the member is the one in **charge** of that part.
 
 #### Cátia Nascimento - Artist
+
+Responsible* for Lights, VFX, Props and Textures.
+
+Auxiliates in the creation of all artistic parts of the game, including:
+
+- Game Mood and Feel
+- Game Art Style
+- Character Design
+- Level Design
+- Game UI
 
 #### Frederico Carvalho - Programmer
 
