@@ -32,7 +32,6 @@ public class UIHandler : MonoBehaviour
     private void Init()
     {
         _instance = this;
-        DontDestroyOnLoad(gameObject);
     }
     #endregion
 

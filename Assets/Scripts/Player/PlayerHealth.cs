@@ -24,7 +24,8 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
 
         if (Input.GetKeyDown(damageSelfKey))
         {
-            DamageNoStagger(damageSelfAmount);
+            KillPlayer();
+            // DamageNoStagger(damageSelfAmount);
         }
     }
 
