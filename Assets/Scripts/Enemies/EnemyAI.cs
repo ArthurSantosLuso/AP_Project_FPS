@@ -137,7 +137,6 @@ public class EnemyAI : PausableMonoBehaviour
         }
         else
         {
-            Debug.Log("Tentei fazer algo com o agent");
             agent.ResetPath();
         }
     }

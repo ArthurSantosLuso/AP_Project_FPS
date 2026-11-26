@@ -65,6 +65,13 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
         //    DamageFlash.Instance.CallFlash(0.2f, isLowHealth);
         //}
 
+        if (CameraShake.Instance != null) //trigger camera shake
+        {
+            // Multiplies by the value of the damage
+            // Big damage = big shake, Small damage = small shake
+            CameraShake.Instance.Shake(damageValue/* * shakeIntensityMultiplier, shakeDuration*/);
+        }
+
         if (DamageFlash.Instance != null) // Trigger image damage flash
         {
             // if health is above or equal to 50
