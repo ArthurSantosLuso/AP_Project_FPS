@@ -233,6 +233,51 @@ Auxiliates in the creation of all artistic parts of the game, including:
 ### 5.2 Naming Conventions
 <!-- Define naming rules for classes, variables, functions, scenes, models, textures, animations, audio, and other relevant resources. -->
 
+The following conventions must be followed when writing or modifying C# code. Consistent naming makes the codebase easier to read, maintain, and extend.
+
+- **Classes, properties, and methods** must use `PascalCase`.
+  - <badge color="success">Correct</badge> `PlayerController.cs`, `HealPlayer()`, `PlayerHealth`
+  - <badge color="danger">Incorrect</badge> `Player_Controller.cs`, `playercontroller.cs`, `playerController.cs`, `healplayer()`
+- **Class and file names** must match: the name of a class must be the same as its `.cs` file name.
+  - Example: the class `PlayerController` must be declared in `PlayerController.cs`.
+- **Local variables, method parameters, and fields** must use `camelCase`.
+  - <badge color="success">Correct</badge> `float playerMoveSpeed`
+  - <badge color="danger">Incorrect</badge> `float PlayerMoveSpeed`, `float player_move_speed`
+- **Private fields** must begin with an underscore (`_`), followed by a `camelCase` name.
+  - Example: `private int _playerHealth;`
+- **Constants** must use uppercase letters, with words separated by underscores (`UPPER_SNAKE_CASE`).
+  - <badge color="success">Correct</badge> `const int PI_NUMBER`
+- **Interfaces** must begin with an uppercase `I`, followed by a `PascalCase` name.
+  - Examples: `IConsumable`, `IInteractable`
+- **Enums and enum values** must use `PascalCase`.
+  - <badge color="success">Correct</badge> `PlayerState` and `PlayerState.Idle`
+  - <badge color="danger">Incorrect</badge> `player_state`, `PLAYER_STATE`
+- **Classes that inherit from Unity's `MonoBehaviour`** must follow the same `PascalCase` naming convention as other classes.
+  - Examples: `PlayerController`, `EnemySpawner`
+- **Unity event methods** (such as `Awake()`, `Start()`, `Update()`, and `OnTriggerEnter()`) must retain their original Unity naming and capitalisation.
+  - <badge color="success">Correct</badge> `private void Awake()`
+  - <badge color="danger">Incorrect</badge> `private void awake()`
+- **Fields exposed in the Unity Inspector** should use `[SerializeField]` rather than being made public without a specific reason.
+  - <badge color="success">Correct</badge> `[SerializeField] private float _moveSpeed`
+  - <badge color="danger">Incorrect</badge> `public float moveSpeed`
+- **References to Unity components** should be stored in private fields whenever other classes do not need direct access to them.
+  - <badge color="success">Correct</badge> `[SerializeField] private Rigidbody _rigidbody`
+  - <badge color="danger">Incorrect</badge> `public Rigidbody rigidbody`
+- **Public properties** should be used when other classes need access to a value without exposing the underlying field directly.
+  - Example: `public int PlayerHealth => _playerHealth;`
+- **Methods** must have names that clearly describe the action they perform.
+  - <badge color="success">Correct</badge> `TakeDamage()`, `UpdatePlayerHealth()`
+  - <badge color="danger">Incorrect</badge> `DoThing()`, `Handle()`
+- **Avoid unnecessary abbreviations** in class, method, and variable names.
+  - <badge color="success">Correct</badge> `playerHealth`, `movementSpeed`
+  - <badge color="danger">Incorrect</badge> `pHealth`, `movSpd`
+- **Each class should have one clear responsibility.** Avoid combining unrelated functionality in a single class.
+  - <badge color="success">Correct</badge> `PlayerController` handles player movement.
+  - <badge color="danger">Incorrect</badge> `PlayerController` handles movement, UI, audio, inventory, and the save system.
+- **Use `var` only when the type is obvious from the context.**
+  - <badge color="success">Correct</badge> `var player = GetComponent<PlayerController>();`
+  - <badge color="danger">Incorrect</badge> `var playerHealth = 100;` when the intended type is not clear.
+
 ### 5.3 Asset Formats and Technical Specifications
 <!-- Specify required formats, resolutions, dimensions, scales, orientations, limits, import settings, and other asset requirements. -->
 
