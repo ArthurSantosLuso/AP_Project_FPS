@@ -65,6 +65,15 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
         //    DamageFlash.Instance.CallFlash(0.2f, isLowHealth);
         //}
 
+        if (DamageFlash.Instance != null) // Trigger image damage flash
+        {
+            // if health is above or equal to 50
+            bool isLowHealth = (currentValue / (float)maxValue) <= 0.5f;
+
+            // if health is bellow 50
+            DamageFlash.Instance.CallFlash(0.2f, isLowHealth);
+        }
+
         VerifyLife();
     }
 
