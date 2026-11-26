@@ -43,30 +43,53 @@ The team is composed of 5 offical members and 2 outsources. The work covers vari
 ### 1.2 Roles and Responsibilities
 <!-- Identify each team role and explain its responsibilities. Include programming, art, design, production, audio, QA, and other relevant roles. -->
 
-- Programmer
-  - To Make sure the code has a well structured base, focusing the easy handiling of the code and "easy to add" new enemies, effects, etc...
-  - To guarantee the cs files and in-code (Fields, Methods, Parameters, etc...) naming convention is being respected across all project.
-  - Implement the defined systems, e.g. Enemies, Player, Managers.
+The roles below describe the main responsibilities within the team. Depending on the task and the team's workload, members may collaborate across disciplines or contribute outside their primary role.
 
-- Game Designer
-  - Imagine, plan and define the systems of the game.
-    - Player Movement and its parameters.
-    - Player animations and its lenght.
-    - Time between each gunfire.
-    - ...Define each minor detail of the systems.
-  - Create level design for all scenarious.
-  - Define and test puzzles.
-  - Define enemy behaviour.
+- **Programmer**
+  - Maintain a well-structured and understandable codebase, making it straightforward to extend existing systems and add content such as enemies and effects.
+  - Ensure that C# files and in-code elements (fields, methods, parameters, etc.) follow the project's naming conventions consistently.
+  - Implement and maintain the systems defined by the design, including gameplay systems for the player and enemies, as well as manager systems.
+  - Work with designers and artists to integrate gameplay requirements, assets, animations, and effects into the game.
 
-- Artist
+- **Game Designer**
+  - Imagine, plan, specify, and refine the game's mechanics and systems.
+  - Define gameplay behaviour and parameters, such as player movement, animation timing, weapon fire rate, and other details that affect how each system works.
+  - Create and develop the level designs for the game's scenarios.
+  - Design and test puzzles, ensuring that their rules and solutions are understandable and work as intended.
+  - Define enemy behaviours and communicate their requirements to the programming and art teams.
+  - Playtest mechanics and levels, using observations and feedback to improve the gameplay experience.
 
-- Character Artist (? como está separado, apenas o rafael a fazer isso)
+- **Artist**
+  - Create and prepare the visual assets required by the game, following the project's intended art direction.
+  - Develop and maintain the visual identity, mood, and feel of the game in collaboration with the rest of the team.
+  - Produce or contribute to assets such as environments, props, textures, lighting, visual effects, and user-interface elements, according to the division of work within the art team.
+  - Prepare assets for integration and collaborate with programmers and designers to ensure that they work correctly and communicate the intended gameplay information.
 
-- Sound Designer
+- **Character Artist**
+  - Focus on the visual creation and refinement of characters, including their appearance, animation, shape, materials, and visual details.
+  - Prepare character assets for use in the game and coordinate with the programming work where technical requirements affect the final result.
+  - This is currently a specialised responsibility handled by one team member; it is listed separately to distinguish character work from the broader art responsibilities.
 
-- Music Designer
+- **Sound Designer**
+  - Create, edit, and prepare sound effects that support gameplay, feedback, and the atmosphere of the game.
+  - Identify the events and interactions that require audio feedback, and coordinate with designers and programmers on when and how sounds should play.
+  - Import, organise, and validate sound assets in the project, checking that they are clear and correctly triggered in-game.
 
-- Producer
+- **Music Designer**
+  - Create or select the musical content that supports the game's atmosphere, pacing, and identity.
+  - Coordinate music requirements with the game design and production work, including where music should start, stop, or change during gameplay.
+  - Prepare and deliver music assets in a format suitable for integration, and review their implementation in-game.
+
+- **Producer**
+  - Coordinate the team's work, priorities, milestones, and deadlines.
+  - Help maintain visibility over task progress, dependencies, and potential production risks.
+  - Facilitate communication and handoffs between disciplines so that work can be planned and integrated effectively.
+  - Keep production information organised and communicate changes to priorities or schedules to the team.
+
+- **Quality Assurance (QA)**
+  - Test gameplay, levels, assets, and builds to identify defects, inconsistencies, and usability issues.
+  - Record bugs with clear reproduction steps and relevant context, and communicate findings to the responsible team members.
+  - Verify fixes and perform regression checks to ensure that changes have not introduced new problems.
 
 ### 1.3 Ownership and Points of Contact
 <!-- Indicate who is responsible for each major system, pipeline, or production area, and who should be contacted when help is needed. -->
