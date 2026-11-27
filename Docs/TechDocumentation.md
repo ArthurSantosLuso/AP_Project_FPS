@@ -9,8 +9,8 @@
 ## Document Information
 
 - **Project:** Altershot
-- **Last updated:** 20/11/2026
-- **Project version / build:** Sprint 3
+- **Last updated:** 26/11/2026
+- **Project version / build:** Sprint 4
 - **Repository:** [Github](https://github.com/ArthurSantosLuso/AP_Project_FPS)
 - **Related documentation:** [Links, e.g. GDD, art bible, production plan]
 
@@ -127,6 +127,25 @@ Auxiliates in the creation of all artistic parts of the game, including:
 #### Frederico Carvalho - Programmer
 
 #### Rafael Canhoto - Artist
+
+Responsible* for Game design, Environment, VFX, Textures.
+
+Enviroment:
+ - City Modules
+ - Lights
+ - Shaders for ambience
+
+VFX:
+ - Element effect
+ - Shot effect
+ - Damage effect
+
+Auxiliates in the creation of all artistic parts of the game, including:
+
+ - Mood and Feel
+ - Art Style
+ - Character Design
+ - Game UI
 
 #### Rafael Martins - Artist
 
@@ -280,6 +299,37 @@ The following conventions must be followed when writing or modifying C# code. Co
 
 ### 5.3 Asset Formats and Technical Specifications
 <!-- Specify required formats, resolutions, dimensions, scales, orientations, limits, import settings, and other asset requirements. -->
+
+- **3D Models format: FBX**
+  - <badge color="success">Correct</badge> `chair.fbx`
+  - <badge color="danger">Incorrect</badge> `chair.mb` or `chair.blend`
+
+- **Texture resolution**
+  - 4k Hero assets and assets close to the screen, lees than 1m.
+  - 2k Environment assets and props bigger than the player.
+  - 1k Small props and assets where the player can not get close.
+
+- **Models Scales**
+  - Real life scale.
+  - Scale man (180cm of heigh) is the reference used for modeling.
+
+- **Objects Orientation**
+  - Y axis, up.
+  - -Z axis, front.
+
+- **Limits**
+  - 
+
+- **Import Settings**
+  - Pivot has to be in contact of the ground and on origin of the world.
+    - Modular pieces: In a corner to better connection.
+    - Props: The center of the object or the center of the base that has the most contact with the ground.
+  - Position and Rotation has to be at 0, Scale has to be at 1.
+    - <badge color="success">Correct</badge> `Chair Position:x0,y0,z0; Rotation:x0,y0,z0; Scale:x1,y1,z1`
+    - <badge color="danger">Incorrect</badge> `Chair Position:x10,y-05,z0; Rotation:x0,y90,z0; Scale:x4,y3,z5`
+  - There is **no negative** rotations for objects in the environment.
+  
+
 
 ### 5.4 Code and Design Standards
 <!-- Describe the coding standards, design patterns, architectural rules, and reusable approaches the team should follow. -->
