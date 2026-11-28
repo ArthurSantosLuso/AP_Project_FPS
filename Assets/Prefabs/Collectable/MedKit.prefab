@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a07e33dc3e0a14395894c14ae2b004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MedKit
-  isAutomatic: 0
+  isAutomatic: 1
   interactionName: Heal
+  interactionPoint: {fileID: 0}
   amountToHeal: 100
