@@ -4,10 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : ValueBase, IDamageable, IHealable
 {
-    [SerializeField] private KeyCode invulnerabilityKey;
-    [SerializeField] private KeyCode damageSelfKey;
-    [SerializeField] private int damageSelfAmount;
-
     [Header("UI Params")]
     [SerializeField] private Slider healthSlider;
 
@@ -16,17 +12,6 @@ public class PlayerHealth : ValueBase, IDamageable, IHealable
     private void Update()
     {
         if (GameState.IsPaused) return;
-
-        if (Input.GetKeyDown(invulnerabilityKey))
-        {
-            ToggleInvulnerability();
-        }
-
-        if (Input.GetKeyDown(damageSelfKey))
-        {
-            KillPlayer();
-            // DamageNoStagger(damageSelfAmount);
-        }
     }
 
     public override void ApplyUpgrades()

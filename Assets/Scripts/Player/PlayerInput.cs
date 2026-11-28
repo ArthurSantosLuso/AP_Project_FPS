@@ -5,11 +5,6 @@ using UnityEngine.Rendering.VirtualTexturing;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private RevolverShot revolver;
-    [SerializeField] private BulletData fireBullet;
-    [SerializeField] private BulletData waterBullet;
-    [SerializeField] private BulletData iceBullet;
-
     private Character _character;
     private FirstPersonMovement _firstPersonMovement;
     private Interactor _interactor;
@@ -31,13 +26,6 @@ public class PlayerInput : MonoBehaviour
     private void Update()
     {
         if (GameState.IsPaused) return;
-
-        if (Input.GetKeyDown(KeyCode.F3))
-        {
-            revolver.AddAmmo(fireBullet, 6);
-            revolver.AddAmmo(waterBullet, 10);
-            revolver.AddAmmo(iceBullet, 6);
-        }
     }
 
     public void OnWeaponChangeInput(InputAction.CallbackContext context)
